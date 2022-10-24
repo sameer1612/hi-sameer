@@ -164,28 +164,28 @@
    * Porfolio isotope and filter
    */
   window.addEventListener("load", () => {
-    let portfolioContainer = select(".portfolio-container");
-    if (portfolioContainer) {
-      let portfolioIsotope = new Isotope(portfolioContainer, {
-        itemSelector: ".portfolio-item",
+    let blogContainer = select(".blog-container");
+    if (blogContainer) {
+      let blogIsotope = new Isotope(blogContainer, {
+        itemSelector: ".blog-item",
       });
 
-      let portfolioFilters = select("#portfolio-flters li", true);
+      let blogFilters = select("#blog-flters li", true);
 
       on(
         "click",
-        "#portfolio-flters li",
+        "#blog-flters li",
         function (e) {
           e.preventDefault();
-          portfolioFilters.forEach(function (el) {
+          blogFilters.forEach(function (el) {
             el.classList.remove("filter-active");
           });
           this.classList.add("filter-active");
 
-          portfolioIsotope.arrange({
+          blogIsotope.arrange({
             filter: this.getAttribute("data-filter"),
           });
-          portfolioIsotope.on("arrangeComplete", function () {
+          blogIsotope.on("arrangeComplete", function () {
             AOS.refresh();
           });
         },
@@ -195,16 +195,16 @@
   });
 
   /**
-   * Initiate portfolio lightbox
+   * Initiate blog lightbox
    */
-  const portfolioLightbox = GLightbox({
-    selector: ".portfolio-lightbox",
+  const blogLightbox = GLightbox({
+    selector: ".blog-lightbox",
   });
 
   /**
-   * Portfolio details slider
+   * blog details slider
    */
-  new Swiper(".portfolio-details-slider", {
+  new Swiper(".blog-details-slider", {
     speed: 400,
     loop: true,
     autoplay: {
@@ -257,24 +257,5 @@
       once: true,
       mirror: false,
     });
-  });
-
-  $(document).ready(() => {
-    fetch("https://dev.to/api/articles/latest?username=sameer1612")
-      .then((res) => res.json())
-      .then((data) => {
-        const articles = data.map((article) => {
-          return `<div class="col-lg-4 col-md-6 portfolio-item filter-web">
-        <div class="text-center">
-          <a target="_blank" href="${article.canonical_url}">
-            <img src="${article.cover_image}" class="img-fluid rounded" style="object-fit: contain;" alt="${article.title}" />
-            <p class="text-secondary mt-2">${article.title}</p>
-          </a>
-        </div>
-      </div>`;
-        });
-
-        $("#articles-container").append(articles);
-      });
   });
 })();
