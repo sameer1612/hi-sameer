@@ -2,125 +2,56 @@
   <div class="container">
     <div class="section-title">
       <h2>Testimonials</h2>
-      <p>Presented using feed from LinkedIn:</p>
+      <p class="text-muted">Sourced from LinkedIn</p>
     </div>
 
-    <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div class="testimonial-item" data-aos="fade-up" data-aos-delay="400">
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Sameer was an exceptional student in terms of intellectual
-              capability and his interest in development. He has
-              undertaken projects in field of IOT and Web development. He
-              was a technology enthusiast as well as a good teacher at
-              college mentoring his fellows and junior students.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+    <div id="carouselExampleCaptions" class="carousel carousel-dark slide " data-bs-ride="false">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+          aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+          aria-label="Slide 5"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5"
+          aria-label="Slide 6"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="carousel-caption d-none d-md-block">
+            <img src={{testimonials[0].photoUrl}} class="rounded-circle" alt={{testimonials[0].name}}>
+            <h4 class="name mt-2">{{testimonials[0].name}}</h4>
+            <p class="name"></p>
+            <p class="text-secondary">
+              {{testimonials[0].message}}
             </p>
-            <img
-              src="https://media-exp3.licdn.com/dms/image/C5603AQETwMQj5QD96g/profile-displayphoto-shrink_400_400/0/1550997222936?e=1629936000&v=beta&t=Sm--f8DVd-9PA3KqpiDlCTbQEujq5vwt-EsvHuPrNQ8"
-              class="testimonial-img" alt="Tarini Charana Mishra" />
-            <h3>Tarini Charana Mishra</h3>
-            <h4>Professor, SIT Bhubaneswar</h4>
           </div>
         </div>
-
-        <div class="swiper-slide">
-          <div class="testimonial-item" data-aos="fade-up">
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              It's always a pleasure to discuss ideas with him for his
-              in-depth knowledge of the subject. He is a thorough
-              professional in his dealings - punctual, focused, sincere
-              and dedicated. He is adventurous, would not hesitate to get
-              in to new ideas and new technologies. He is an asset to any
-              team he works with.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+        <div class="carousel-item" *ngFor="let testimonial of testimonials.slice(1)">
+          <div class="carousel-caption d-none d-md-block">
+            <img src={{testimonial.photoUrl}} class="rounded-circle" alt={{testimonial.name}}>
+            <h4 class="name mt-2">{{testimonial.name}}</h4>
+            <p class="name">{{testimonial.about}}</p>
+            <p class="text-secondary">
+              {{testimonial.message}}
             </p>
-            <img
-              src="https://media-exp3.licdn.com/dms/image/C5603AQEDXansp8Nk0w/profile-displayphoto-shrink_800_800/0/1516275651640?e=1629936000&v=beta&t=B-rH_ku-7EyDGIfNKH3gNgPZgQXFaqasr8jlEwkpSIs"
-              class="testimonial-img" alt="Alok Patnaik, KIIT" />
-            <h3>Alok Patnaik</h3>
-            <h4>Professor &amp; Astronomy Researcher</h4>
-          </div>
-        </div>
-
-        <div class="swiper-slide">
-          <div class="testimonial-item" data-aos="fade-up" data-aos-delay="100">
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Sameer is a very technology passionate guy I have ever met.
-              He has started his career in my team as an intern to fresher
-              to a fully grown developer. I witnessed his quick growth and
-              maturity of technology in him.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-            <img
-              src="https://media-exp3.licdn.com/dms/image/C4D03AQFXFNx45fsW2g/profile-displayphoto-shrink_400_400/0/1516790798818?e=1629936000&v=beta&t=nSGBSNkVIF78R3wlWDNVqhJNw8JdK_M2XPUNCrQKCtw"
-              class="testimonial-img" alt="Nirmal Hota" />
-            <h3>Nirmal Hota</h3>
-            <h4>Project Manager, Mindfire Solutions</h4>
-          </div>
-        </div>
-
-        <div class="swiper-slide">
-          <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Sameer's multitasking ability was unlike I've seen before.
-              I've worked with many developers but when it comes to Ruby
-              on Rails, he's really good at it. In short span of time, he
-              has gained ample of experience in Ruby on Rails. Sameer will
-              be a valuable asset to any company.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-            <img
-              src="https://media-exp3.licdn.com/dms/image/C4E03AQGxzQrTU2YeZg/profile-displayphoto-shrink_400_400/0/1619025926557?e=1629936000&v=beta&t=_iNaqioovLMUCSW_0ZdBZEqtBYqlZ6pK50TYww7WEog"
-              class="testimonial-img" alt="Rishav Kumar" />
-            <h3>Rishav Kumar</h3>
-            <h4>Software Engineer, Big Binary</h4>
-          </div>
-        </div>
-
-        <div class="swiper-slide">
-          <div class="testimonial-item" data-aos="fade-up" data-aos-delay="300">
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              He proves his uniqueness and dedication each time he get a
-              chance to resolve complex issues or handling the client.
-              Never forgets to add some extra efforts towards sharing the
-              same knowledge among team mates. It was a pleasure working
-              with Sameer and wish him a great future ahead.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-            <img
-              src="https://media-exp3.licdn.com/dms/image/C5103AQGndH3foX7vdQ/profile-displayphoto-shrink_400_400/0/1581145172850?e=1629936000&v=beta&t=V5B2pvu0yG-bUJ2Kndevs_qKdSP3sfikjK8ubOhMw2g"
-              class="testimonial-img" alt="JP Mohapatra" />
-            <h3>JP Mohapatra</h3>
-            <h4>Sr.Software engineer at Mindfire solutions</h4>
-          </div>
-        </div>
-
-        <div class="swiper-slide">
-          <div class="testimonial-item" data-aos="fade-up" data-aos-delay="400">
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Sameer is a very good learner of new technologies and worked
-              in different projects with new technologies. He is a very
-              good team player and his commitment for a work is one of the
-              best thing.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-            <img
-              src="https://media-exp3.licdn.com/dms/image/C4E03AQGBfBGPLmSuxQ/profile-displayphoto-shrink_400_400/0/1619240620866?e=1629936000&v=beta&t=0rYlmTRY8b2IU3b_2EJffIAAFA8SSk9PeAdhigW-ykM"
-              class="testimonial-img" alt="Sarthak Sahoo, Infosys" />
-            <h3>Sarthak Sahoo</h3>
-            <h4>Systems Engineer, Infosys</h4>
           </div>
         </div>
       </div>
-      <div class="swiper-pagination"></div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev">
+        <span class="carousel-control carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next">
+        <span class="carousel-control carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
   </div>
 </section>
