@@ -1,0 +1,35 @@
+$primary: rgb(2, 90, 78);
+
+@import 'bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap');
+
+body {
+  background-image: linear-gradient(
+    to right top,
+    #6dffbf,
+    #98feb6,
+    #b8fdb1,
+    #d2fcb1,
+    #e7fbb5,
+    #f3f5b6,
+    #fbefba,
+    #ffeac0,
+    #ffe0c5,
+    #ffd8d3,
+    #ffd4e5,
+    #fbd5f7
+  );
+  height: 99vh;
+  overflow-y: hidden;
+}
+
+@font-face {
+  font-family: 'Acorn';
+  src: url('../fonts/acorn/Acorn-Bold.eot');
+  src: local('Acorn Bold'), local('Acorn-Bold'), url('../fonts/acorn/Acorn-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/acorn/Acorn-Bold.woff2') format('woff2'), url('../fonts/acorn/Acorn-Bold.woff') format('woff'),
+    url('../fonts/acorn/Acorn-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}

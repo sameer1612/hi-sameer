@@ -1,0 +1,31 @@
+.link {
+  text-decoration: none;
+  color: rgb(73, 92, 89);
+
+  .btn {
+    padding: 0.5rem 1.5rem;
+    border: none;
+  }
+}
+
+.active {
+  border: none !important;
+  font-weight: 500 !important;
+
+  .btn {
+    background: rgba(237, 252, 252, 0.4);
+    box-sizing: border-box;
+
+    &:hover {
+      background: rgba(237, 252, 252, 0.4);
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .link {
+    .btn {
+      padding: 0.3rem 0.9rem;
+    }
+  }
+}

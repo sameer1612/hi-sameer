@@ -1,0 +1,62 @@
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.hero {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.title-wrapper {
+  position: relative;
+}
+
+.title-1 {
+  font-family: 'Acorn';
+  font-size: 6rem;
+}
+
+.title-2 {
+  font-family: 'Acorn';
+  font-size: 3rem;
+}
+
+.subtitle {
+  color: rgb(76, 103, 99);
+  font-weight: 500;
+  font-size: large;
+  width: 45%;
+}
+
+.shuriken {
+  position: absolute;
+  right: -2rem;
+  top: 0;
+  transition: transform 0.7s ease-in-out;
+
+  &:hover {
+    transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .title-1 {
+    font-size: 3rem;
+  }
+
+  .title-2 {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    width: 80%;
+  }
+
+  .shuriken {
+    right: 0;
+    top: -2rem;
+  }
+}
