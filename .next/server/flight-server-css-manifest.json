@@ -1,0 +1,18 @@
+{
+  "cssImports": {
+    "/Users/sameer/codes/hi-sameer/src/app/layout.tsx": [
+      "/Users/sameer/codes/hi-sameer/node_modules/next/font/google/target.css?{\"path\":\"src/app/layout.tsx\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"inter\"}",
+      "/Users/sameer/codes/hi-sameer/src/app/globals.css"
+    ],
+    "/Users/sameer/codes/hi-sameer/src/app/page.tsx": [
+      "/Users/sameer/codes/hi-sameer/src/app/page.module.css"
+    ]
+  },
+  "cssModules": {
+    "/Users/sameer/codes/hi-sameer/src/app/page": [
+      "/Users/sameer/codes/hi-sameer/src/app/page.module.css",
+      "/Users/sameer/codes/hi-sameer/src/app/globals.css",
+      "/Users/sameer/codes/hi-sameer/node_modules/next/font/google/target.css?{\"path\":\"src/app/layout.tsx\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"inter\"}"
+    ]
+  }
+}
