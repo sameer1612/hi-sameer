@@ -16,8 +16,8 @@ export default function Header() {
         <Link className={'link ' + (pathname === '/about' ? 'active' : '')} href="about">
           <button className="btn rounded-pill">About</button>
         </Link>
-        <Link className={'link ' + (pathname === '/services' ? 'active' : '')} href="services">
-          <button className="btn rounded-pill">Services</button>
+        <Link className={'link ' + (pathname === '/tech' ? 'active' : '')} href="tech">
+          <button className="btn rounded-pill">Tech</button>
         </Link>
         <Link className={'link ' + (pathname === '/blog' ? 'active' : '')} href="blog">
           <button className="btn rounded-pill">Blog</button>

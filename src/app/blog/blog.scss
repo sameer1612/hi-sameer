@@ -1,0 +1,17 @@
+.blog-card {
+  border: none;
+  overflow: hidden;
+  background: rgb(204, 250, 235);
+
+  a {
+    text-decoration: none;
+  }
+
+  img {
+    transition: transform 1s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

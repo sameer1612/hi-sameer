@@ -6,8 +6,8 @@ export default function Home() {
     <main>
       <div className="hero text-center">
         <div className="title-wrapper">
-          <h1 className="title-1 text-primary mt-5">Hi. I am Sameer.</h1>
-          <h3 className="title-2 text-primary mt-2">Not yet another engineer !</h3>
+          <h1 className="title-1 text-primary mt-5">I am Sameer</h1>
+          <h3 className="title-2 text-secondary mt-2 text-italic">Not yet another engineer !</h3>
           <Image src="/images/ninja.png" alt="shuriken" width={75} height={75} className="shuriken"></Image>
         </div>
         <p className="subtitle">

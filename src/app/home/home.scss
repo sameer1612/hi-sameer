@@ -1,7 +1,3 @@
-body {
-  font-family: 'Inter', sans-serif;
-}
-
 .hero {
   height: 80vh;
   display: flex;
@@ -14,21 +10,13 @@ body {
   position: relative;
 }
 
-.title-1 {
-  font-family: 'Acorn';
-  font-size: 6rem;
-}
-
-.title-2 {
-  font-family: 'Acorn';
-  font-size: 3rem;
-}
-
 .subtitle {
   color: rgb(76, 103, 99);
   font-weight: 500;
-  font-size: large;
-  width: 45%;
+  font-size: 1.5rem;
+  width: 900px;
+
+  font-family: 'Kalam', cursive;
 }
 
 .shuriken {

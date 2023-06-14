@@ -1,7 +1,7 @@
 $primary: rgb(2, 90, 78);
+$secondary: rgb(36, 126, 114);
 
 @import 'bootstrap/scss/bootstrap';
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap');
 
 body {
   background-image: linear-gradient(
@@ -19,8 +19,8 @@ body {
     #ffd4e5,
     #fbd5f7
   );
-  height: 99vh;
-  overflow-y: hidden;
+  min-height: 99vh;
+  font-family: 'Inter';
 }
 
 @font-face {
@@ -32,4 +32,24 @@ body {
   font-weight: bold;
   font-style: normal;
   font-display: swap;
+}
+
+@font-face {
+  font-family: 'Kalam';
+  src: url('../fonts/kalam/Kalam-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/inter/Inter.ttf');
+}
+
+.title-1 {
+  font-family: 'Acorn';
+  font-size: 8rem;
+}
+
+.title-2 {
+  font-family: 'Acorn';
+  font-size: 3rem;
 }
