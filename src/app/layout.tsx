@@ -10,7 +10,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet" />
+        <meta property="og:url" content="https://hi-sameer.vercel.app" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={'/images/sameer.png'} />
       </head>
       <body>
         <Header></Header>
