@@ -36,6 +36,18 @@ export default async function Tech() {
         {
           name: 'MongoDB',
           imageUrl: 'https://brandeps.com/logo-download/M/MongoDB-logo-vector-01.svg'
+        },
+        {
+          name: 'Nest JS',
+          imageUrl: 'https://docs.nestjs.com/assets/logo-small.svg'
+        },
+        {
+          name: 'Bootstrap',
+          imageUrl: 'https://brandeps.com/icon-download/B/Bootstrap-icon-vector-07.svg'
+        },
+        {
+          name: 'Material UI',
+          imageUrl: 'https://brandeps.com/icon-download/M/Material-ui-icon-vector-01.svg'
         }
       ]
     },
@@ -57,19 +69,19 @@ export default async function Tech() {
         {
           name: 'Firebase',
           imageUrl: 'https://brandeps.com/logo-download/F/Firebase-logo-vector-02.svg'
-        }
-      ]
-    },
-    {
-      label: 'Hit or miss',
-      technologies: [
+        },
+        {
+          name: 'Linux',
+          imageUrl: 'https://brandeps.com/icon-download/L/Linux-icon-vector-02.svg'
+        },
         {
           name: 'Haskell',
           imageUrl: 'https://brandeps.com/icon-download/H/Haskell-wordmark-icon-vector-01.svg'
         },
         {
           name: 'C++',
-          imageUrl: 'https://cdn.worldvectorlogo.com/logos/c--4.svg'
+          imageUrl:
+            'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1822px-ISO_C%2B%2B_Logo.svg.png'
         }
       ]
     }
