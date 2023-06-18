@@ -1,5 +1,5 @@
 $primary: rgb(2, 90, 78);
-$secondary: rgb(36, 126, 114);
+$secondary: rgb(84, 126, 120);
 
 @import 'bootstrap/scss/bootstrap';
 
@@ -25,13 +25,24 @@ body {
 
 @font-face {
   font-family: 'Acorn';
-  src: url('../fonts/acorn/Acorn-Bold.eot');
-  src: local('Acorn Bold'), local('Acorn-Bold'), url('../fonts/acorn/Acorn-Bold.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/acorn/Acorn-Bold.woff2') format('woff2'), url('../fonts/acorn/Acorn-Bold.woff') format('woff'),
-    url('../fonts/acorn/Acorn-Bold.ttf') format('truetype');
+  src: url('../fonts/acorn/Acorn-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Acorn';
   font-weight: bold;
-  font-style: normal;
-  font-display: swap;
+  src: url('../fonts/acorn/Acorn-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Acorn';
+  font-weight: 500;
+  src: url('../fonts/acorn/Acorn-SemiBold.ttf');
+}
+@font-face {
+  font-family: 'Acorn';
+  font-weight: 300;
+  src: url('../fonts/acorn/Acorn-Light.ttf');
 }
 
 @font-face {
@@ -47,9 +58,33 @@ body {
 .title-1 {
   font-family: 'Acorn';
   font-size: 8rem;
+  font-weight: bold;
 }
 
 .title-2 {
   font-family: 'Acorn';
   font-size: 3rem;
+}
+
+.font-acorn {
+  font-family: 'Acorn';
+}
+
+.bg-surface {
+  background: rgb(226, 226, 226);
+}
+
+.section-title {
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .title-1 {
+    font-size: 3rem;
+  }
+
+  .title-2 {
+    font-size: 1.5rem;
+  }
 }

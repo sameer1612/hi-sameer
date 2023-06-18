@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { DiGithubFull } from 'react-icons/di';
 import { FaEnvelope, FaLinkedinIn, FaMediumM } from 'react-icons/fa';
 import './about.scss';
+import Timeline from './timeline';
 
 export default function About() {
   const socials = [
@@ -38,7 +39,7 @@ export default function About() {
           height={300}
           alt="sameer kumar"
           className="profile-pic mb-5"></Image>
-        <div className="card about-card text-primary">
+        <div className="card about-card text-primary rounded-5 mb-5">
           <p className="bio">
             I'm Sameer, a passionate web developer and creative enthusiast. With a deep love for all things tech, I
             thrive in the ever-evolving world of web development. Armed with a keyboard and an insatiable curiosity, I
@@ -47,10 +48,8 @@ export default function About() {
             of web development, I discovered the power to shape ideas into tangible realities. From dynamic websites
             that seamlessly engage users to innovative applications that simplify complex tasks, I relish the
             opportunity to push the boundaries of what's possible.
-          </p>
-        </div>
-        <div className="card about-card text-primary mt-1">
-          <p className="bio">
+            <br />
+            <br />
             With every project, I immerse myself in the client's vision, understanding their unique goals and
             aspirations. I believe that successful websites not only look visually stunning but also deliver exceptional
             user experiences. Beyond the technical aspects, I find inspiration in the vibrant world around me. I
@@ -59,24 +58,30 @@ export default function About() {
             process. I value open communication and work closely with clients to ensure their vision is brought to life.
             By fostering a collaborative environment, I create long-lasting partnerships built on trust, reliability,
             and exceptional results.
-          </p>
-        </div>
-        <div className="card about-card text-primary mt-1 mb-3">
-          <p className="bio">
+            <br />
+            <br />
             Whether you're an individual with a groundbreaking idea, a startup seeking a striking online presence, or a
             business aiming to expand its digital footprint, I'm here to help you turn your dreams into reality.
             Together, let's embark on a digital journey that will leave a lasting impression. Join me on this exciting
-            adventure, and let's transform your online presence into something extraordinary. <br /> Together, we'll
-            make the something spectacular, one line of code at a time.
+            adventure, and let's transform your online presence into something extraordinary.
+            <br />
+            <br />
+            Together, we'll make the something spectacular, one line of code at a time.
           </p>
         </div>
 
+        <h1 className="font-acorn text-primary mt-5 my-journey-title">My Journey</h1>
+        <Timeline />
+
         <div className="socials">
-          {socials.map(social => (
-            <Link href={social.url} key={social.name} className="circle-link shadow-sm" target="blank">
-              {social.icon}
-            </Link>
-          ))}
+          <h1 className="font-acorn text-primary my-journey-title">Let's connect</h1>
+          <div className="circles">
+            {socials.map(social => (
+              <Link href={social.url} key={social.name} className="circle-link shadow-sm" target="blank">
+                {social.icon}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </main>
