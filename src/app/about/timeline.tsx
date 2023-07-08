@@ -23,7 +23,7 @@ export default function Timeline() {
       date: '2022 - Present',
       stack: 'Angular, React, Nest, MongoDB, Azure',
       description: `Company policies aligning perfectly with my principles, offered me a perfect blend of challenge and learning.
-      Created a collaborative system for editing and managing rich text documents. Another colossal undertaking involved refining a 
+      Worked on a collaborative system for editing and managing rich text documents. Another big undertaking involved refining a 
       comprehensive project management solution, encompassing everything from Gantt views, costing, planning, execution, and monitoring.`
     },
     {
@@ -33,7 +33,7 @@ export default function Timeline() {
       date: '2021 - 2022',
       stack: 'React, Ruby on Rails, MySQL, Dokku',
       description: `Working with a dedicated Ruby on Rails company brought both width and depth in knowledge of my favourite framwework. 
-        Played with rails companions like rspec, capybara, react with webpacker, active admin, sendgrid, etc.`
+        Played with rails and its companions like rspec, capybara, react with webpacker, active admin, sendgrid, etc.`
     },
     {
       title: 'Software Engineer',
