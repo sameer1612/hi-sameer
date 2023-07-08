@@ -46,7 +46,7 @@ export default function Timeline() {
       Along with rails I gained exposure into python, opencv, setiment analysis, mongo, GCP, cloud vision and autoML.`
     },
     {
-      title: 'App Developer',
+      title: 'Mobile App Developer',
       location: 'LocalWire',
       icon: <FaMobileAlt />,
       date: '2018 - 2019',
@@ -63,15 +63,6 @@ export default function Timeline() {
       stack: 'Computer Science and Engineering',
       description: `Unraveled journey from processors to visuals on screen. Broadened my knowledge and chose web development as my forte. 
       Enjoyed building many IOT & Web projects, mentoring juniors and the thrill of hackathons.`
-    },
-    {
-      title: 'Introduction to coding',
-      location: 'Somewhere in hills',
-      icon: <FaHome />,
-      date: '2009',
-      stack: 'Java',
-      description: `Reached late to school's book distribution event. I had to settle for an used java book, while other kids got captivating stories. 
-      And, boy it glittered my eyes over the summer vacation. Career decision made!`
     }
   ];
 
