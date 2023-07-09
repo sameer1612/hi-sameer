@@ -3,7 +3,7 @@ import './tech.scss';
 export default async function Tech() {
   const techStack: { label: string; technologies: { name: string; imageUrl: string; url: string }[] }[] = [
     {
-      label: 'You can interview me for',
+      label: 'I am awesome in',
       technologies: [
         {
           name: 'Ruby on Rails',
