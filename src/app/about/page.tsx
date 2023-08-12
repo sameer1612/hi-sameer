@@ -33,12 +33,7 @@ export default function About() {
     <main>
       <h1 className="title-1 text-center text-primary my-5">About</h1>
       <div className="d-flex flex-column align-items-center">
-        <Image
-          src="/images/sameer.png"
-          width={300}
-          height={300}
-          alt="sameer kumar"
-          className="profile-pic mb-5"></Image>
+        <Image src="/images/sameer.png" width={400} height={400} alt="Sameer Kumar, Software Engineer"></Image>
         <div className="card about-card text-primary rounded-5 mb-5">
           <p className="bio">
             I'm Sameer, a passionate web developer and creative enthusiast. With a deep love for all things tech, I
