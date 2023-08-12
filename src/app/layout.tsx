@@ -12,7 +12,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <meta property="og:url" content="https://hi-sameer.vercel.app" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content={'/images/sameer.png'} />
+        <meta property="og:image" content={'/images/sameer.jpeg'} />
         <meta name="theme-color" content="#ffe0c5" />
       </head>
       <body>
