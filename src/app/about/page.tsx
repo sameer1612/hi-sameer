@@ -31,7 +31,7 @@ export default function About() {
 
   return (
     <main>
-      <h1 className="title-1 text-center text-primary my-5">About</h1>
+      <h1 className="title-1 text-center text-primary mt-5">About</h1>
       <div className="d-flex flex-column align-items-center">
         <Image src="/images/sameer.png" width={400} height={400} alt="Sameer Kumar, Software Engineer"></Image>
         <div className="card about-card text-primary rounded-5 mb-5">
