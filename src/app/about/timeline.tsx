@@ -67,7 +67,7 @@ export default function Timeline() {
   ];
 
   return (
-    <VerticalTimeline layout="1-column">
+    <VerticalTimeline layout="1-column" className="mb-5">
       {milestones.map(milestone => (
         <VerticalTimelineElement
           key={milestone.title}
