@@ -1,5 +1,3 @@
-$light-bg: rgba(255, 255, 255, 0.5);
-
 .about-card {
   width: 75%;
   padding: 2rem;
@@ -20,59 +18,6 @@ $light-bg: rgba(255, 255, 255, 0.5);
   border-radius: 50%;
 }
 
-.socials {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  align-items: center;
-  margin-block: 8rem;
-
-  .circles {
-    margin-top: 2rem;
-    display: flex;
-    width: 75%;
-    justify-content: space-evenly;
-
-    .circle-link {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      background-color: $light-bg;
-      display: grid;
-      place-items: center;
-
-      svg {
-        font-size: 8rem;
-      }
-    }
-  }
-}
-
-.source-linkedin {
-  opacity: 0.75;
-}
-
-.testimonial-grid {
-  padding-inline: 5rem;
-  color: rgb(2, 90, 78);
-
-  .testimonial-card {
-    background-color: $light-bg;
-    padding: 1em;
-    font-size: 15px;
-    min-height: 12rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    small {
-      opacity: 0.75;
-      font-size: 0.875rem;
-      bottom: 1rem;
-    }
-  }
-}
-
 @media only screen and (max-width: 600px) {
   .about-card {
     width: 90%;
@@ -80,27 +25,6 @@ $light-bg: rgba(255, 255, 255, 0.5);
 
     .bio {
       font-size: 1rem;
-    }
-  }
-
-  .testimonial-grid {
-    padding-inline: 1rem;
-  }
-
-  .socials {
-    margin-block: 3rem;
-
-    .circles {
-      width: 95%;
-
-      .circle-link {
-        width: 75px;
-        height: 75px;
-
-        svg {
-          font-size: 2rem;
-        }
-      }
     }
   }
 }

@@ -67,24 +67,27 @@ export default function Timeline() {
   ];
 
   return (
-    <VerticalTimeline layout="1-column" className="mb-5">
-      {milestones.map(milestone => (
-        <VerticalTimelineElement
-          key={milestone.title}
-          className="vertical-timeline-element--work"
-          contentStyle={{ background: 'rgba(255, 255, 255, 0.5)', color: 'rgb(2, 90, 78)' }}
-          contentArrowStyle={{ borderRight: '8px solid rgba(255, 255, 255, 0.5)' }}
-          date={milestone.date}
-          iconStyle={{ background: 'rgb(2, 90, 78)', color: '#fff' }}
-          icon={milestone.icon}>
-          <h3 className="vertical-timeline-element-title title font-acorn text-primary">{milestone.title}</h3>
-          <h5 className="vertical-timeline-element-subtitle location font-acorn text-secondary">
-            {milestone.location}
-          </h5>
-          <p className="stack lead ">{milestone.stack}</p>
-          <p className="mb-3 description">{milestone.description}</p>
-        </VerticalTimelineElement>
-      ))}
-    </VerticalTimeline>
+    <>
+      <h1 className="font-acorn text-primary mt-5 my-journey-title">My Journey</h1>
+      <VerticalTimeline layout="1-column" className="mb-5">
+        {milestones.map(milestone => (
+          <VerticalTimelineElement
+            key={milestone.title}
+            className="vertical-timeline-element--work"
+            contentStyle={{ background: 'rgba(255, 255, 255, 0.5)', color: 'rgb(2, 90, 78)' }}
+            contentArrowStyle={{ borderRight: '8px solid rgba(255, 255, 255, 0.5)' }}
+            date={milestone.date}
+            iconStyle={{ background: 'rgb(2, 90, 78)', color: '#fff' }}
+            icon={milestone.icon}>
+            <h3 className="vertical-timeline-element-title title font-acorn text-primary">{milestone.title}</h3>
+            <h5 className="vertical-timeline-element-subtitle location font-acorn text-secondary">
+              {milestone.location}
+            </h5>
+            <p className="stack lead ">{milestone.stack}</p>
+            <p className="mb-3 description">{milestone.description}</p>
+          </VerticalTimelineElement>
+        ))}
+      </VerticalTimeline>
+    </>
   );
 }
