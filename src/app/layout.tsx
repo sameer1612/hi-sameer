@@ -1,5 +1,6 @@
 import './globals.scss';
 import Header from './components/header/header';
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata = {
   title: 'Sameer Kumar',
@@ -18,6 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <Header></Header>
         {children}
+        <Analytics />
       </body>
     </html>
   );
