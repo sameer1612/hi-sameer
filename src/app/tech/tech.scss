@@ -1,13 +1,18 @@
-.tech-card {
+.card {
   background-color: rgba($color: #000000, $alpha: 0.05);
-  min-height: 300px;
 }
 
 .techs {
   padding: 2rem;
 
-  .lead {
-    text-decoration: none;
+  .img-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      height: 100px;
+    }
   }
 }
 
