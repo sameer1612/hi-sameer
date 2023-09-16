@@ -2,6 +2,7 @@ $primary: rgb(2, 90, 78);
 $secondary: rgb(84, 126, 120);
 
 @import 'bootstrap/scss/bootstrap';
+@import 'bootstrap-icons/font/bootstrap-icons.min.css';
 
 body {
   background-image: linear-gradient(

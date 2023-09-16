@@ -7,13 +7,23 @@
 
   .img-wrapper {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 
     img {
-      height: 100px;
+      width: 100px;
+    }
+
+    a {
+      text-decoration: none;
+      font-weight: 500;
     }
   }
+}
+
+.intro {
+  width: 50%;
 }
 
 .tech-label {
@@ -28,5 +38,9 @@
   .techs {
     display: grid;
     grid-template-columns: 1fr 1fr;
+  }
+
+  .intro {
+    width: 100%;
   }
 }
