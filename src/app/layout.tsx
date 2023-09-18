@@ -17,7 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="theme-color" content="#ffe0c5" />
       </head>
       <body>
-        <Header></Header>
+        <Header />
         {children}
         <Analytics />
       </body>

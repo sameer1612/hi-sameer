@@ -44,7 +44,7 @@ export const techStack: { label: string; technologies: { name: string; imageUrl:
       },
       {
         name: 'Nest JS',
-        imageUrl: 'https://docs.nestjs.com/assets/logo-small.svg',
+        imageUrl: 'https://seeklogo.com/images/N/nestjs-logo-09342F76C0-seeklogo.com.png',
         url: 'https://nestjs.com/'
       },
       {
