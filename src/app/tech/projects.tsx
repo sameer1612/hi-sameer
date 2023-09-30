@@ -25,6 +25,6 @@ export const projects: {
   {
     title: 'Explore More at Github',
     description: '',
-    url: 'https://tiers-of-joy.vercel.app'
+    url: 'https://github.com/sameer1612'
   }
 ];
