@@ -8,7 +8,9 @@ interface Article {
 }
 
 async function fetchArticles(): Promise<Article[]> {
-  const res = await fetch('https://dev.to/api/articles/latest?username=sameer1612');
+  const res = await fetch('https://dev.to/api/articles/latest?username=sameer1612', {
+    cache: 'no-cache'
+  });
   const json_res = await res.json();
 
   return json_res.map((article: any) => {
