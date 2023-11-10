@@ -1,3 +1,3 @@
 # hi-sameer
 
-> Visit: https://hi-sameer.vercel.app/
+> https://hi-sameer.vercel.app/
