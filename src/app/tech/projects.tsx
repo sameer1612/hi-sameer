@@ -4,12 +4,6 @@ export const projects: {
   url: string;
 }[] = [
   {
-    title: 'Ask my docs',
-    description:
-      'Ask question about any document that you add to this application. It can be a long confusing organisation document, a book, etc. It is build using openai api and qdrant vector store.',
-    url: 'https://github.com/sameer1612/.dotfiles'
-  },
-  {
     title: 'Tiers of Joy',
     description:
       'A drag and drop tier list maker to categorise tiles. Useful for discussion sessions. I saw many youtube/twitch videos centered around this activity.',
@@ -32,6 +26,12 @@ export const projects: {
     title: 'Neovim Config',
     description:
       'Most of my free time these days goes in understanding neovim and writing plugin configuration for it. Here is a repo with all my dotfiles.',
+    url: 'https://github.com/sameer1612/.dotfiles'
+  },
+  {
+    title: 'Ask my docs',
+    description:
+      'Ask question about any document that you add to this application. It can be a long confusing organisation document, a book, etc. It is build using openai api and qdrant vector store.',
     url: 'https://github.com/sameer1612/.dotfiles'
   },
   {
