@@ -35,6 +35,11 @@ export const projects: {
     url: 'https://github.com/sameer1612/.dotfiles'
   },
   {
+    title: 'Voice Extractor',
+    description: 'A cli utility to clean audio files by removing all silence and hold music. Super useful to condence long call recordings to much smaller audio containing only back to back human voices.',
+    url: 'https://github.com/sameer1612/voice-extractor'
+  },
+  {
     title: 'Explore More at Github',
     description: 'Most of them are silly experiments which I write to validate something that I just learnt.',
     url: 'https://github.com/sameer1612'
