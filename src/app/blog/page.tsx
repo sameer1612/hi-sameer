@@ -26,7 +26,7 @@ export default async function Blog() {
   const articles = await fetchArticles();
 
   return (
-    <main>
+    <main className="blog-container">
       <div className="text-center">
         <h1 className="title-1 text-primary my-5">Blog</h1>
         <div className="row container-fluid mx-auto my-5">{articles.map(article => ArticleCard(article))}</div>
