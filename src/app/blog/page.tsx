@@ -1,5 +1,8 @@
+'use client';
+
 import Link from 'next/link';
 import './blog.scss';
+import { useEffect, useState } from 'react';
 
 interface Article {
   canonical_url: string;
@@ -8,9 +11,7 @@ interface Article {
 }
 
 async function fetchArticles(): Promise<Article[]> {
-  const res = await fetch('https://dev.to/api/articles/latest?username=sameer1612', {
-    cache: 'no-cache'
-  });
+  const res = await fetch('https://dev.to/api/articles/latest?username=sameer1612');
   const json_res = await res.json();
 
   return json_res.map((article: any) => {
@@ -22,8 +23,12 @@ async function fetchArticles(): Promise<Article[]> {
   });
 }
 
-export default async function Blog() {
-  const articles = await fetchArticles();
+export default function Blog() {
+  const [articles, setArticles] = useState<Article[]>([]);
+
+  useEffect(() => {
+    fetchArticles().then(articles => setArticles(articles));
+  }, []);
 
   return (
     <main className="blog-container">
@@ -35,9 +40,9 @@ export default async function Blog() {
   );
 }
 
-function ArticleCard(article: Article) {
+function ArticleCard(article: Readonly<Article>) {
   return (
-    <div className="col-lg-4 col-md-6 col-sm-12 my-2">
+    <div key={article.canonical_url} className="col-lg-4 col-md-6 col-sm-12 my-2">
       <div className="card rounded blog-card">
         <Link href={article.canonical_url} className="card-link" target="blank">
           <img className="card-img rounded-0" src={article.cover_image} alt={article.title}></img>

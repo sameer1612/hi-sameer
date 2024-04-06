@@ -1,6 +1,10 @@
 {
   "hosting": {
-    "public": "dist/hi-sameer",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+    "public": "out",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
   }
 }

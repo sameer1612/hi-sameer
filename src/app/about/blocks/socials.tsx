@@ -28,17 +28,15 @@ export function Socials() {
   ];
 
   return (
-    <>
-      <div className="socials">
-        <h1 className="font-acorn text-primary my-journey-title">Let's connect</h1>
-        <div className="circles">
-          {socials.map(social => (
-            <Link href={social.url} key={social.name} className="circle-link shadow-sm" target="blank">
-              {social.icon}
-            </Link>
-          ))}
-        </div>
+    <div className="socials">
+      <h1 className="font-acorn text-primary my-journey-title">Let's connect</h1>
+      <div className="circles">
+        {socials.map(social => (
+          <Link href={social.url} key={social.name} className="circle-link shadow-sm" target="blank">
+            {social.icon}
+          </Link>
+        ))}
       </div>
-    </>
+    </div>
   );
 }

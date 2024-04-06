@@ -1,7 +1,6 @@
 import { projects } from './projects';
 import { techStack } from './stack';
 import './tech.scss';
-import Image from 'next/image';
 
 export default async function Tech() {
   return (
@@ -16,7 +15,7 @@ export default async function Tech() {
 
         <div className="container my-5">
           {techStack.map(({ label, technologies }) => (
-            <div className="card my-2">
+            <div className="card my-2" key={label}>
               <p className="font-weight-bold text-primary mx-3 my-2 tech-label">{label}</p>
               <div className="techs row">
                 {technologies.map(tech => (
