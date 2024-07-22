@@ -10,6 +10,12 @@ export const projects: {
     url: 'https://tiers-of-joy.vercel.app'
   },
   {
+    title: 'Figma vector drawings',
+    description:
+      'Recently I picked up a new hobby and it is to draw vector drawings using figma. Kinda fun, learning by doing!',
+    url: 'https://github.com/sameer1612/Figma-drawings'
+  },
+  {
     title: 'Next Best',
     description: `NextBest is an AI powered recommendation system. It can recommend movies and series based on your past interests.
        It can be extended to any category of interests like books, food, destinations, etc.
@@ -36,7 +42,8 @@ export const projects: {
   },
   {
     title: 'Voice Extractor',
-    description: 'A cli utility to clean audio files by removing all silence and hold music. Super useful to condence long call recordings to much smaller audio containing only back to back human voices.',
+    description:
+      'A cli utility to clean audio files by removing all silence and hold music. Super useful to condence long call recordings to much smaller audio containing only back to back human voices.',
     url: 'https://github.com/sameer1612/voice-extractor'
   },
   {
