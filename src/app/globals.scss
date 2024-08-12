@@ -1,7 +1,7 @@
-$primary: rgb(2, 90, 78);
-$secondary: rgb(84, 126, 120);
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons.min.css';
 
 body {
@@ -20,7 +20,7 @@ body {
     #ffd4e5,
     #fbd5f7
   );
-  min-height: 99vh;
+  min-height: 100vh;
   font-family: 'Inter';
 }
 
@@ -69,10 +69,6 @@ body {
 
 .font-acorn {
   font-family: 'Acorn';
-}
-
-.bg-surface {
-  background: rgb(226, 226, 226);
 }
 
 .section-title {
