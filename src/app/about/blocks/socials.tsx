@@ -34,7 +34,7 @@ export function Socials() {
           <Link
             href={social.url}
             key={social.name}
-            className="rounded-full bg-white p-6 text-5xl lg:p-12 lg:text-7xl"
+            className="rounded-full bg-white p-6 text-4xl lg:p-12 lg:text-7xl"
             target="blank"
           >
             {social.icon}

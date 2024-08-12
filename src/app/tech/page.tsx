@@ -35,9 +35,9 @@ export default async function Tech() {
         <h1 className="font-acorn my-4 text-primary">Fun Projects</h1>
         <div className="mt-4 grid grid-cols-1 gap-1 md:grid-cols-2">
           {projects.map(project => (
-            <div className="card flex flex-col justify-between p-4" key={project.title}>
-              <h4 className="mb-4 text-primary">{project.title}</h4>
-              <p className="mb-2">{project.description} </p>
+            <div className="card flex flex-col justify-between gap-4 p-4" key={project.title}>
+              <h4 className="text-primary">{project.title}</h4>
+              <p>{project.description} </p>
               <a href={project.url} target="blank">
                 <button className="rounded bg-primary px-4 py-2 text-white">Visit</button>
               </a>

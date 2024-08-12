@@ -88,7 +88,7 @@ export default function Timeline() {
                 {milestone.location}
               </h5>
               <p className="stack">{milestone.stack}</p>
-              <p className="description mb-3 text-justify">{milestone.description}</p>
+              <p className="description mb-3 text-secondary">{milestone.description}</p>
             </VerticalTimelineElement>
           )) as any
         }

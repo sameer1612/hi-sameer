@@ -52,7 +52,7 @@ export function Testimonials() {
         {testimonials.map(testimonial => (
           <div className="rounded bg-white bg-opacity-60 p-4" key={testimonial.author}>
             <div className="flex h-full flex-col justify-between gap-4">
-              <p className="content">{testimonial.content}</p>
+              <p className="font-medium text-secondary">{testimonial.content}</p>
               <small className="text-secondary">
                 - {testimonial.author}, {testimonial.designation}
               </small>
