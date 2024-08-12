@@ -29,9 +29,9 @@ export const projects: {
     url: 'https://256-shades-of-gray.vercel.app/'
   },
   {
-    title: 'Neovim Config',
+    title: 'Dotfiles',
     description:
-      'Most of my free time these days goes in understanding neovim and writing plugin configuration for it. Here is a repo with all my dotfiles.',
+      'Most of my free time these days goes in understanding terminal utils like neovim and writing plugin configuration for them. Here is a repo with all my dotfiles.',
     url: 'https://github.com/sameer1612/.dotfiles'
   },
   {

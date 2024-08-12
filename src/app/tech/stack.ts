@@ -1,11 +1,16 @@
 export const techStack: { label: string; technologies: { name: string; imageUrl: string; url: string }[] }[] = [
   {
-    label: 'Mostly',
+    label: 'I love',
     technologies: [
       {
         name: 'Ruby on Rails',
         imageUrl: '/images/tech/ruby-logo-087AF79367-seeklogo.com.png?v=638150157750000000',
         url: 'https://rubyonrails.org/'
+      },
+      {
+        name: 'Angular',
+        imageUrl: '/images/tech/angular-logo-B76B1CDE98-seeklogo.com.png',
+        url: 'https://angular.io/'
       },
       {
         name: 'Node.js',
@@ -18,50 +23,25 @@ export const techStack: { label: string; technologies: { name: string; imageUrl:
         url: 'https://reactjs.org/'
       },
       {
-        name: 'Python',
-        imageUrl: '/images/tech/python-logo-A32636CAA3-seeklogo.com.png',
-        url: 'https://www.python.org/'
+        name: 'Linux',
+        imageUrl: '/images/tech/Linux_Tux-logo-DA252F3C21-seeklogo.com.png',
+        url: 'https://www.linux.org/'
       },
       {
-        name: 'Angular',
-        imageUrl: '/images/tech/angular-logo-B76B1CDE98-seeklogo.com.png',
-        url: 'https://angular.io/'
-      },
-      {
-        name: 'JavaScript/TypeScript',
-        imageUrl: '/images/tech/typescript-logo-B29A3F462D-seeklogo.com.png',
-        url: 'https://www.typescriptlang.org/'
-      },
-      {
-        name: 'MySQL',
-        imageUrl: '/images/tech/MySQL-logo-vector-01.svg',
-        url: 'https://www.mysql.com/'
-      },
-      {
-        name: 'MongoDB',
-        imageUrl: '/images/tech/mongodb-logo-D13D67C930-seeklogo.com.png',
-        url: 'https://www.mongodb.com/'
-      },
-      {
-        name: 'Nest JS',
-        imageUrl: '/images/tech/nestjs-logo-09342F76C0-seeklogo.com.png',
-        url: 'https://nestjs.com/'
-      },
-      {
-        name: 'Bootstrap',
-        imageUrl: '/images/tech/bootstrap-5-logo-85A1F11F4F-seeklogo.com.png',
-        url: 'https://getbootstrap.com/'
-      },
-      {
-        name: 'Material UI',
-        imageUrl: '/images/tech/Material-ui-icon-vector-01.svg',
-        url: 'https://mui.com/'
+        name: 'Elixir',
+        imageUrl: '/images/tech/elixir.png',
+        url: 'https://elixir-lang.org/'
       }
     ]
   },
   {
-    label: 'Sometimes',
+    label: 'I know',
     technologies: [
+      {
+        name: 'Python',
+        imageUrl: '/images/tech/python-logo-A32636CAA3-seeklogo.com.png',
+        url: 'https://www.python.org/'
+      },
       {
         name: 'Vue',
         imageUrl: '/images/tech/vuejs-logo-17D586B587-seeklogo.com.png',
@@ -73,24 +53,14 @@ export const techStack: { label: string; technologies: { name: string; imageUrl:
         url: 'https://flutter.dev/'
       },
       {
+        name: 'Nest JS',
+        imageUrl: '/images/tech/nestjs-logo-09342F76C0-seeklogo.com.png',
+        url: 'https://nestjs.com/'
+      },
+      {
         name: 'Java',
         imageUrl: '/images/tech/java-logo-7F8B35BAB3-seeklogo.com.png',
         url: 'https://www.java.com/'
-      },
-      {
-        name: 'Firebase',
-        imageUrl: '/images/tech/firebase-logo-402F407EE0-seeklogo.com.png',
-        url: 'https://firebase.google.com/'
-      },
-      {
-        name: 'Linux',
-        imageUrl: '/images/tech/Linux_Tux-logo-DA252F3C21-seeklogo.com.png',
-        url: 'https://www.linux.org/'
-      },
-      {
-        name: 'Haskell',
-        imageUrl: '/images/tech/haskell-logo-DC3DD9209C-seeklogo.com.png',
-        url: 'https://www.haskell.org/'
       }
     ]
   }
