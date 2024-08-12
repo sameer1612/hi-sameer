@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import './blog.scss';
 import { useEffect, useState } from 'react';
 
 interface Article {
@@ -18,7 +17,7 @@ async function fetchArticles(): Promise<Article[]> {
     return {
       canonical_url: article.canonical_url,
       cover_image: article.cover_image,
-      title: article.title
+      title: article.title,
     } as Article;
   });
 }
@@ -31,10 +30,12 @@ export default function Blog() {
   }, []);
 
   return (
-    <main className="blog-container">
+    <main className="mx-auto p-4 md:w-5/6 lg:w-4/5 xl:w-3/4">
       <div className="text-center">
-        <h1 className="title-1 text-primary my-5">Blog</h1>
-        <div className="row container-fluid mx-auto my-5">{articles.map(article => ArticleCard(article))}</div>
+        <h1 className="title-1 mb-8 text-primary">Blog</h1>
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {articles.map(article => ArticleCard(article))}
+        </div>
       </div>
     </main>
   );
@@ -42,15 +43,11 @@ export default function Blog() {
 
 function ArticleCard(article: Readonly<Article>) {
   return (
-    <div key={article.canonical_url} className="col-lg-4 col-md-6 col-sm-12 my-2">
-      <div className="card rounded blog-card">
-        <Link href={article.canonical_url} className="card-link" target="blank">
-          <img className="card-img rounded-0" src={article.cover_image} alt={article.title}></img>
-          <div className="card-body">
-            <p className="card-title">{article.title}</p>
-          </div>
-        </Link>
-      </div>
+    <div key={article.canonical_url} className="card overflow-hidden rounded">
+      <Link href={article.canonical_url} target="blank">
+        <img className="rounded-t" src={article.cover_image} alt={article.title}></img>
+        <p className="min-h-16 bg-primary bg-opacity-25 p-2">{article.title}</p>
+      </Link>
     </div>
   );
 }

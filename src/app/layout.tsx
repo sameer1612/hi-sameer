@@ -4,7 +4,7 @@ import { Analytics } from '@vercel/analytics/react';
 
 export const metadata = {
   title: 'Sameer Kumar',
-  description: 'Software Engineer'
+  description: 'Software Engineer',
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

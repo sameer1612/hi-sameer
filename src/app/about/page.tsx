@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import './about.scss';
 import { Socials } from './blocks/socials';
 import { Testimonials } from './blocks/testimonials';
 import Timeline from './blocks/timeline';
@@ -7,11 +6,11 @@ import Timeline from './blocks/timeline';
 export default function About() {
   return (
     <main>
-      <h1 className="title-1 text-center text-primary mt-5">About</h1>
-      <div className="d-flex flex-column align-items-center">
+      <h1 className="title-1 my-4 text-center text-primary">About</h1>
+      <div className="flex flex-col items-center">
         <Image src="/images/sameer.png" width={400} height={400} alt="Sameer Kumar, Software Engineer"></Image>
-        <div className="card about-card text-primary rounded-5 mb-5">
-          <p className="bio">
+        <div className="card mb-4 w-11/12 rounded p-8 text-primary lg:w-4/5 xl:w-3/4">
+          <p className="text-justify">
             I'm Sameer, a passionate web developer and creative enthusiast. With a deep love for all things tech, I
             thrive in the ever-evolving world of web development. Armed with a keyboard and an insatiable curiosity, I
             embark on exciting coding adventures, crafting immersive digital experiences that captivate audiences. My

@@ -1,20 +1,17 @@
 .vertical-timeline-element-content {
-  box-shadow: none;
-  border-radius: 1rem;
+  @apply rounded shadow-none;
 
   .location {
-    font-size: large;
+    @apply text-xl;
   }
 
   .stack {
-    color: rgb(76, 103, 99);
-    font-weight: 500;
-    font-size: 15px;
+    @apply text-base font-medium text-dark-teal;
   }
 
   .description {
     border-left: 2px solid rgba(84, 126, 120, 0.25);
-    padding-left: 8px;
-    font-size: 15px;
+
+    @apply px-4 text-base;
   }
 }
