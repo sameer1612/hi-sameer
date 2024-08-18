@@ -46,7 +46,7 @@ function ArticleCard(article: Readonly<Article>) {
     <div key={article.canonical_url} className="card overflow-hidden rounded">
       <Link href={article.canonical_url} target="blank">
         <img className="rounded-t" src={article.cover_image} alt={article.title}></img>
-        <p className="min-h-16 bg-primary bg-opacity-25 p-2">{article.title}</p>
+        <p className="flex min-h-16 items-center justify-center bg-primary bg-opacity-25 p-2">{article.title}</p>
       </Link>
     </div>
   );
