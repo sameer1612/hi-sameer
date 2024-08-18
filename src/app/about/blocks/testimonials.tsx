@@ -1,6 +1,11 @@
 export function Testimonials() {
   const testimonials = [
     {
+      author: 'Shamil Siddique',
+      designation: 'Technical Consultant at TarkaLabs',
+      content: `Sameer is an absolute pleasure to work with. During my time on his team, I found him to be incredibly approachable and easy-going. His confidence in his skills is clear, and he consistently ensures that everything he touches is left in a better state than it was before. It was a privilege to work with him, and I look forward to more future opportunities to be a part of his team!`,
+    },
+    {
       author: 'Tarini Charana Mishra',
       designation: 'Silicon Tech Lab, Bhubaneswar',
       content: `Sameer was an exceptional student in terms of intellectual capability and his interest in development. He has undertaken
@@ -40,7 +45,7 @@ export function Testimonials() {
         forgets to add some extra efforts towards sharing the same knowledge among team mates. It was a pleasure working with
         Sameer and wish him a great future ahead.`,
     },
-  ];
+  ].sort((t1, t2) => t1.author.localeCompare(t2.author));
 
   return (
     <div className="my-8 w-[98%] sm:w-5/6 lg:w-3/4">
