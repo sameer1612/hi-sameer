@@ -35,7 +35,7 @@ export const techStack: { label: string; technologies: { name: string; imageUrl:
     ],
   },
   {
-    label: 'I know',
+    label: 'I also know',
     technologies: [
       {
         name: 'Python',
