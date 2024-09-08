@@ -2,7 +2,7 @@ export function Testimonials() {
   const testimonials = [
     {
       author: 'Shamil Siddique',
-      designation: 'Technical Consultant at TarkaLabs',
+      designation: 'Technical Consultant, TarkaLabs',
       content: `Sameer is an absolute pleasure to work with. During my time on his team, I found him to be incredibly approachable and easy-going. His confidence in his skills is clear, and he consistently ensures that everything he touches is left in a better state than it was before. It was a privilege to work with him, and I look forward to more future opportunities to be a part of his team!`,
     },
     {
@@ -40,10 +40,20 @@ export function Testimonials() {
     },
     {
       author: 'JP Mohapatra',
-      designation: 'Sr. Software engineer',
+      designation: 'Sr. Software Engineer',
       content: `He proves his uniqueness and dedication each time he get a chance to resolve complex issues or handling the client. Never
         forgets to add some extra efforts towards sharing the same knowledge among team mates. It was a pleasure working with
         Sameer and wish him a great future ahead.`,
+    },
+    {
+      author: 'Amit Soni',
+      designation: 'Sr. Software Engineer, Mindfire Solutions',
+      content: `I had the pleasure of working with Sameer at Mindfire Solutions in Bhubaneswar, where he truly distinguished himself. 
+          His deep expertise in modern technologies like Ruby on Rails and JavaScript was evident, and he showcased remarkable technical skill along with a strong understanding of business requirements. 
+          Sameer communicated seamlessly with clients and product owners, needing little supervision and making significant contributions to project’s success.
+          <br/>
+          <br/>
+          Overall, collaborating with Sameer was an excellent experience. I highly recommend him for any role that would benefit from his outstanding skills and enthusiasm.`,
     },
   ].sort((t1, t2) => t1.author.localeCompare(t2.author));
 
@@ -57,7 +67,7 @@ export function Testimonials() {
         {testimonials.map(testimonial => (
           <div className="rounded bg-white bg-opacity-60 p-4" key={testimonial.author}>
             <div className="flex h-full flex-col justify-between gap-4">
-              <p className="font-medium text-secondary">{testimonial.content}</p>
+              <p className="font-medium text-secondary" dangerouslySetInnerHTML={{ __html: testimonial.content }}></p>
               <small className="text-secondary">
                 - {testimonial.author}, {testimonial.designation}
               </small>
