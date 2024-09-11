@@ -36,7 +36,7 @@ export default async function Tech() {
         <div className="mt-4 grid grid-cols-1 gap-1 md:grid-cols-2">
           {projects.map(project => (
             <div className="card flex flex-col justify-between gap-4 p-4" key={project.title}>
-              <h4 className="text-primary">{project.title}</h4>
+              <h4 className="font-semibold text-primary">{project.title}</h4>
               <p>{project.description} </p>
               <a href={project.url} target="blank">
                 <button className="rounded bg-primary px-4 py-2 text-white">Visit</button>
