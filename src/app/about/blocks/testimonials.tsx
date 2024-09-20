@@ -1,5 +1,11 @@
+type Testimonial = {
+  author: string;
+  designation: string;
+  content: string;
+};
+
 export function Testimonials() {
-  const testimonials = [
+  const testimonials: Testimonial[] = [
     {
       author: 'Shamil Siddique',
       designation: 'Technical Consultant, TarkaLabs',
@@ -54,6 +60,12 @@ export function Testimonials() {
           <br/>
           <br/>
           Overall, collaborating with Sameer was an excellent experience. I highly recommend him for any role that would benefit from his outstanding skills and enthusiasm.`,
+    },
+
+    {
+      author: 'Vishal Bihani',
+      designation: 'Software Engineer, Zensar Technologies',
+      content: `Sameer and I worked on a common project. Though our roles were different, I have to say that he is as reliable as a sunrise every morning. His work speaks of quality. Even though I only got to see his front-end expertise, I am sure he is capable of picking up any problem statement thrown at him.`,
     },
   ].sort((t1, t2) => t1.author.localeCompare(t2.author));
 
