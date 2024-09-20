@@ -45,7 +45,15 @@ function ArticleCard(article: Readonly<Article>) {
   return (
     <div key={article.canonical_url} className="card overflow-hidden rounded">
       <Link href={article.canonical_url} target="blank">
-        <img className="rounded-t" src={article.cover_image} alt={article.title}></img>
+        <img
+          className="rounded-t"
+          src={article.cover_image}
+          alt={article.title}
+          onError={e => {
+            e.currentTarget.src =
+              'https://images.pexels.com/photos/34587/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2';
+          }}
+        ></img>
         <p className="flex min-h-16 items-center justify-center bg-primary bg-opacity-25 p-2">{article.title}</p>
       </Link>
     </div>
