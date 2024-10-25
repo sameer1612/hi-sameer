@@ -8,7 +8,7 @@ export default function About() {
     <main>
       <h1 className="title-1 my-4 text-center text-primary">About</h1>
       <div className="flex flex-col items-center">
-        <Image src="/images/sameer.png" width={400} height={400} alt="Sameer Kumar, Software Engineer"></Image>
+        <Image src="/images/sameer.png" width={400} height={400} alt="Sameer Kumar, Software Engineer" />
         <div className="card mb-4 w-11/12 rounded p-8 text-primary lg:w-4/5 xl:w-3/4">
           <p className="text-justify">
             I'm Sameer, a passionate web developer and creative enthusiast. With a deep love for all things tech, I

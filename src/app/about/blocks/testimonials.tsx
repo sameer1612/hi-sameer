@@ -9,7 +9,9 @@ export function Testimonials() {
     {
       author: 'Shamil Siddique',
       designation: 'Technical Consultant, TarkaLabs',
-      content: `Sameer is an absolute pleasure to work with. During my time on his team, I found him to be incredibly approachable and easy-going. His confidence in his skills is clear, and he consistently ensures that everything he touches is left in a better state than it was before. It was a privilege to work with him, and I look forward to more future opportunities to be a part of his team!`,
+      content: `Sameer is an absolute pleasure to work with. During my time on his team, I found him to be incredibly approachable and easy-going. 
+      His confidence in his skills is clear, and he consistently ensures that everything he touches is left in a better state than it was before. 
+      It was a privilege to work with him, and I look forward to more future opportunities to be a part of his team!`,
     },
     {
       author: 'Tarini Charana Mishra',
@@ -55,17 +57,35 @@ export function Testimonials() {
       author: 'Amit Soni',
       designation: 'Sr. Software Engineer, Mindfire Solutions',
       content: `I had the pleasure of working with Sameer at Mindfire Solutions in Bhubaneswar, where he truly distinguished himself. 
-          His deep expertise in modern technologies like Ruby on Rails and JavaScript was evident, and he showcased remarkable technical skill along with a strong understanding of business requirements. 
-          Sameer communicated seamlessly with clients and product owners, needing little supervision and making significant contributions to project’s success.
+          His deep expertise in modern technologies like Ruby on Rails and JavaScript was evident, 
+          and he showcased remarkable technical skill along with a strong understanding of business requirements. 
+          Sameer communicated seamlessly with clients and product owners, 
+          needing little supervision and making significant contributions to project's success.
           <br/>
           <br/>
-          Overall, collaborating with Sameer was an excellent experience. I highly recommend him for any role that would benefit from his outstanding skills and enthusiasm.`,
+          Overall, collaborating with Sameer was an excellent experience. 
+          I highly recommend him for any role that would benefit from his outstanding skills and enthusiasm.`,
     },
-
     {
       author: 'Vishal Bihani',
       designation: 'Software Engineer, Zensar Technologies',
-      content: `Sameer and I worked on a common project. Though our roles were different, I have to say that he is as reliable as a sunrise every morning. His work speaks of quality. Even though I only got to see his front-end expertise, I am sure he is capable of picking up any problem statement thrown at him.`,
+      content: `Sameer and I worked on a common project. 
+      Though our roles were different, I have to say that he is as reliable as a sunrise every morning. 
+      His work speaks of quality. Even though I only got to see his front-end expertise, 
+      I am sure he is capable of picking up any problem statement thrown at him.`,
+    },
+    {
+      author: 'Archit Singh',
+      designation: 'Software Engineer, Tarka Labs',
+      content: `
+       I had the chance to work with Sameer at Tarka Labs, and he's an exceptional Software Engineer. 
+       His problem-solving skills and ability to create efficient solutions always stood out. 
+       He really knows how to tackle complex challenges and simplify them in a way that makes sense for everyone involved.
+       <br />
+       <br />
+       What I appreciated most was how willing he was to share his knowledge. 
+       Anytime someone had a question or needed help, Sameer was always there to offer guidance. 
+       It definitely made the team stronger.`,
     },
   ].sort((t1, t2) => t1.author.localeCompare(t2.author));
 

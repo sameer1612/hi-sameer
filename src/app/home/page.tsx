@@ -14,7 +14,7 @@ export default function Home() {
             alt="shuriken"
             width={50}
             height={50}
-          ></Image>
+          />
         </div>
         <p className="font-kalam mt-8 w-[90%] text-center text-2xl font-medium text-dark-teal lg:mt-16 lg:w-[50%]">
           Meet Sameer, the groovy web ninja who transforms ideas into pixel-perfect realities, leaving a trail of
