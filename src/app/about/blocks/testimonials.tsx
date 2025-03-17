@@ -87,6 +87,23 @@ export function Testimonials() {
        Anytime someone had a question or needed help, Sameer was always there to offer guidance. 
        It definitely made the team stronger.`,
     },
+    {
+      author: 'Luke Burroughs',
+      designation: 'Art Direction and Design, Foolproof UK',
+      content: `At Foolproof, we worked with Sameer on a client account. 
+        Sameer was excellent, and onboarded to the project very quickly, 
+        took to the work like a duck out of water, 
+        and was a constant source of truth for the designers throughout the development setup and process. 
+        <br />
+        <br />
+        We had a short turn around time, so having Sameer be authoritative and give us the insight 
+        we needed to tweak and change the componentry for the design libraries sped up the process and 
+        created alignment all around. the stakeholders were impressed with the speed of the work and delivery 
+        and it was refreshing to work with a developer who was building daily and sharing work reguarly. 
+        <br />
+        <br />
+        Would highly recommend Sameer. He would make a great addition to any team. All the best, Sameer.`,
+    },
   ].sort((t1, t2) => t1.author.localeCompare(t2.author));
 
   return (
