@@ -104,19 +104,19 @@ export function Testimonials() {
         <br />
         Would highly recommend Sameer. He would make a great addition to any team. All the best, Sameer.`,
     },
-  ].sort((t1, t2) => t1.author.localeCompare(t2.author));
+  ];
 
   return (
-    <div className="my-8 w-[98%] sm:w-5/6 lg:w-3/4">
+    <div className="my-8 w-[93%] sm:w-5/6 lg:w-3/4">
       <div className="my-8 text-center">
         <h1 className="font-acorn text-primary">Testimonials</h1>
         <small className="text-secondary">Sourced from LinkedIn</small>
       </div>
-      <div className="grid grid-cols-1 gap-2 p-4 md:grid-cols-2">
+      <div className="columns-1 gap-2 space-y-2 md:columns-2">
         {testimonials.map(testimonial => (
-          <div className="rounded bg-white bg-opacity-60 p-4" key={testimonial.author}>
+          <div className="break-inside-avoid rounded bg-white bg-opacity-60 p-4" key={testimonial.author}>
             <div className="flex h-full flex-col justify-between gap-4">
-              <p className="font-medium text-secondary" dangerouslySetInnerHTML={{ __html: testimonial.content }}></p>
+              <p className="text-secondary" dangerouslySetInnerHTML={{ __html: testimonial.content }}></p>
               <small className="text-secondary">
                 - {testimonial.author}, {testimonial.designation}
               </small>

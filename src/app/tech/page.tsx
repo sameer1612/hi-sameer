@@ -16,7 +16,7 @@ export default async function Tech() {
 
         <div className="my-5">
           {techStack.map(({ label, technologies }) => (
-            <div className="card my-2 p-4 text-center" key={label}>
+            <div className="my-2 rounded bg-secondary bg-opacity-5 p-4 text-center" key={label}>
               <p className="mx-auto font-medium text-primary">{label}</p>
               <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 md:grid-cols-6 xl:grid-cols-8">
                 {technologies.map(tech => (
@@ -33,9 +33,12 @@ export default async function Tech() {
         </div>
 
         <h1 className="font-acorn my-4 text-primary">Fun Projects</h1>
-        <div className="mt-4 grid grid-cols-1 gap-1 md:grid-cols-2">
+        <div className="mt-4 columns-1 gap-2 space-y-2 md:columns-2">
           {projects.map(project => (
-            <div className="card flex flex-col justify-between gap-4 p-4" key={project.title}>
+            <div
+              className="flex break-inside-avoid flex-col justify-between gap-4 rounded bg-secondary bg-opacity-5 p-4"
+              key={project.title}
+            >
               <h4 className="font-medium text-primary">{project.title}</h4>
               <p>{project.description} </p>
               <a href={project.url} target="blank">

@@ -33,7 +33,7 @@ export default function Blog() {
     <main className="mx-auto p-4 md:w-5/6 lg:w-4/5 xl:w-3/4">
       <div className="text-center">
         <h1 className="title-1 mb-8 text-primary">Blog</h1>
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+        <div className="columns-1 gap-2 space-y-4 md:columns-2 md:space-y-2 xl:columns-3">
           {articles.map(article => ArticleCard(article))}
         </div>
       </div>
@@ -43,19 +43,23 @@ export default function Blog() {
 
 function ArticleCard(article: Readonly<Article>) {
   return (
-    <div key={article.canonical_url} className="card overflow-hidden rounded">
-      <Link href={article.canonical_url} target="blank">
-        <img
-          className="rounded-t"
-          src={article.cover_image}
-          alt={article.title}
-          onError={e => {
-            e.currentTarget.src =
-              'https://images.pexels.com/photos/34587/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2';
-          }}
-        ></img>
-        <p className="flex min-h-16 items-center justify-center bg-primary bg-opacity-25 p-2">{article.title}</p>
-      </Link>
-    </div>
+    <Link
+      href={article.canonical_url}
+      target="blank"
+      key={article.canonical_url}
+      className="block w-full break-inside-avoid overflow-hidden rounded-md bg-secondary bg-opacity-5"
+    >
+      <img
+        src={article.cover_image}
+        alt={article.title}
+        onError={e => {
+          e.currentTarget.src =
+            'https://images.pexels.com/photos/34587/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2';
+        }}
+      ></img>
+      <p className="w-xs flex items-center justify-start bg-primary bg-opacity-10 p-2 text-sm text-gray-700">
+        {article.title}
+      </p>
+    </Link>
   );
 }
