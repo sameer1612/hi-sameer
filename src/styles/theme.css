@@ -1,0 +1,24 @@
+@utility text-title {
+  font-size: clamp(2rem, 6vw, 3.75rem);
+
+  &.green {
+    @apply text-green-950;
+  }
+}
+
+@utility text-subtitle {
+  font-size: clamp(1rem, 4vw, 2rem);
+  @apply font-light;
+
+  &.green {
+    @apply text-green-900;
+  }
+}
+
+@utility text-medium {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+
+  &.green {
+    @apply text-green-900;
+  }
+}

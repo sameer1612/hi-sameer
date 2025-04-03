@@ -1,0 +1,6 @@
+@import 'tailwindcss';
+@import './theme.css';
+
+main {
+  @apply h-[calc(100vh-3rem)] overflow-auto;
+}
