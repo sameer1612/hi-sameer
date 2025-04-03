@@ -1,5 +1,8 @@
 ---
-import "../styles/global.css";
+import Nav from '../components/Nav.astro';
+import '../styles/global.css';
+
+const currentRoute = Astro.url.pathname.replace('/', '');
 ---
 
 <!doctype html>
@@ -11,7 +14,8 @@ import "../styles/global.css";
     <meta name="generator" content={Astro.generator} />
     <title>Sameer Kumar</title>
   </head>
-  <body>
+  <body class={`h-screen w-screen flex flex-col bg-green-50`}>
+    <Nav page={currentRoute} />
     <slot />
   </body>
 </html>
