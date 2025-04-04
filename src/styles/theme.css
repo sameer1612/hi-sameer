@@ -1,0 +1,25 @@
+:root {
+  --alpha: #f0fdf4;
+  --beta: #dcfce7;
+  --gamma: #676d68;
+  --delta: #032e15;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --alpha: #1c1f1d;
+    --beta: #1ed760;
+    --gamma: #9ea8a0;
+    --delta: #f0fdf4;
+  }
+}
+
+@theme inline {
+  --font-roboto: 'Roboto Variable';
+  --font-poppins: 'Poppins';
+  --font-montserrat: 'Montserrat Variable';
+  --color-alpha: var(--alpha);
+  --color-beta: var(--beta);
+  --color-gamma: var(--gamma);
+  --color-delta: var(--delta);
+}

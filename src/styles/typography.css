@@ -1,0 +1,29 @@
+h1 {
+  @apply font-montserrat font-bold;
+  font-size: clamp(2rem, 5vw, 3.75rem);
+}
+
+h2 {
+  @apply font-montserrat font-bold;
+  font-size: clamp(1.875rem, 4vw, 3rem);
+}
+
+h3 {
+  @apply font-montserrat font-semibold;
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+}
+
+h4 {
+  @apply font-montserrat font-semibold;
+  font-size: clamp(1.25rem, 3vw, 1.875rem);
+}
+
+h5 {
+  @apply font-montserrat font-medium;
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+}
+
+h6 {
+  @apply font-montserrat font-medium;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+}

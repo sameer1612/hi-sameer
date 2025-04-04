@@ -1,16 +1,20 @@
 @import 'tailwindcss';
+@import './theme.css';
 @import 'primeicons/primeicons.css';
-@import './tailwind-config.css';
+
 @import '@fontsource-variable/roboto';
 @import '@fontsource/poppins/400';
 @import '@fontsource/poppins/500';
 @import '@fontsource/poppins/600';
 @import '@fontsource-variable/montserrat';
 
+@import './typography.css';
+@import './button.css';
+
 body {
-  @apply text-delta mx-auto w-11/12 bg-green-50 px-6 pt-8 font-sans md:w-4/5;
+  @apply font-roboto text-delta bg-alpha mx-auto w-11/12 px-6 pt-8 md:w-4/5;
 }
 
 main {
-  @apply h-[calc(100vh-65px)];
+  @apply h-[calc(100vh-115px)];
 }

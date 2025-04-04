@@ -5,24 +5,28 @@ const routes = {
   '/blog': 'blog',
   '/contact': 'contact',
 };
+const currentRoute = Astro.url.pathname.replaceAll('/', '');
 ---
 
-<header class="bg-alpha sticky top-0 z-10 mx-auto flex items-center justify-between">
+<header class="bg-alpha sticky top-0 z-10 mx-auto flex items-center justify-between py-2">
   <a href="/">
-    <h2 class="font-montserrat text-2xl font-bold">Sameer</h2>
+    <h4>Sameer</h4>
   </a>
 
   <nav class="hidden gap-4 md:flex">
     {
       Object.entries(routes).map(([path, name]) => (
-        <a href={path} class="text-gamma font-poppins text-sm font-medium uppercase">
+        <a
+          href={path}
+          class={`text-gamma font-montserrat uppercase ${currentRoute === path.replace('/', '') ? 'font-semibold' : 'font-medium'}`}
+        >
           {name}
         </a>
       ))
     }
   </nav>
 
-  <nav class="flex items-center md:hidden">
+  <nav class="flex items-center text-lg md:hidden">
     <span class="pi pi-bars"></span>
   </nav>
 </header>
