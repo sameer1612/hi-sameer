@@ -3,14 +3,17 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-  <main class="mx-auto flex h-full flex-col items-center justify-center gap-4">
-    <div class="flex flex-col items-center p-4">
-      <h1 class="text-title green">I am Sameer</h1>
-      <h3 class="text-subtitle green">Not yet another engineer!</h3>
+  <main class="flex flex-col items-start gap-8 md:justify-center">
+    <div class="font-montserrat mt-[25vh] flex flex-col items-start gap-2 md:mt-0">
+      <h1 class="text-delta text-2xl font-bold md:text-5xl">SAMEER KUMAR</h1>
+      <h3 class="text-gamma font-medium md:text-lg">Senior Technical Consultant</h3>
     </div>
-    <p class="text-lg w-4/5 text-center md:w-1/2 green">
-      Meet Sameer, the groovy web ninja who transforms ideas into pixel-perfect realities, leaving a trail of
-      awe-inspiring web experiences!
-    </p>
+
+    <button class="border-delta bg-beta flex items-baseline gap-2 rounded-full border px-5 py-2 text-base">
+      Visit my resume
+      <span class="pi pi-arrow-right text-xs"></span>
+    </button>
+
+    <img src="/images/sameer.webp" alt="Sameer Kumar" class="fixed -right-26 -bottom-px max-h-1/2 md:right-0" />
   </main>
 </Layout>

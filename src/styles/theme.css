@@ -1,24 +1,13 @@
-@utility text-title {
-  font-size: clamp(2rem, 6vw, 3.75rem);
-
-  &.green {
-    @apply text-green-950;
-  }
+@theme {
+  --font-roboto: 'Roboto Variable';
+  --font-poppins: 'Poppins';
+  --font-montserrat: 'Montserrat Variable';
+  --color-alpha: #f0fdf4;
+  --color-beta: #dcfce7;
+  --color-gamma: #676d68;
+  --color-delta: #032e15;
 }
 
-@utility text-subtitle {
-  font-size: clamp(1rem, 4vw, 2rem);
-  @apply font-light;
-
-  &.green {
-    @apply text-green-900;
-  }
-}
-
-@utility text-medium {
-  font-size: clamp(1rem, 2vw, 1.25rem);
-
-  &.green {
-    @apply text-green-900;
-  }
+@utility btn-primary {
+  @apply border-delta bg-beta flex items-baseline gap-2 rounded-full border px-5 py-2 text-base;
 }

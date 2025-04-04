@@ -1,7 +1,6 @@
 ---
-import Nav from '../components/Nav.astro';
+import Header from '../components/Header.astro';
 import '../styles/global.css';
-
 ---
 
 <!doctype html>
@@ -13,8 +12,8 @@ import '../styles/global.css';
     <meta name="generator" content={Astro.generator} />
     <title>Sameer Kumar</title>
   </head>
-  <body class={`h-screen w-screen flex flex-col bg-green-50`}>
-    <Nav />
+  <body class="font-roboto mx-auto w-11/12 bg-green-50 px-6 pt-8 md:w-4/5">
+    <Header />
     <slot />
   </body>
 </html>

@@ -1,0 +1,28 @@
+---
+const routes = {
+  '/': 'home',
+  '/about': 'about',
+  '/blog': 'blog',
+  '/contact': 'contact',
+};
+---
+
+<header class="bg-alpha sticky top-0 z-10 mx-auto flex items-center justify-between">
+  <a href="/">
+    <h2 class="text-delta font-montserrat text-2xl font-bold">Sameer</h2>
+  </a>
+
+  <nav class="hidden gap-4 md:flex">
+    {
+      Object.entries(routes).map(([path, name]) => (
+        <a href={path} class="text-gamma font-poppins text-sm font-medium uppercase">
+          {name}
+        </a>
+      ))
+    }
+  </nav>
+
+  <nav class="flex items-center md:hidden">
+    <span class="pi pi-bars"></span>
+  </nav>
+</header>
