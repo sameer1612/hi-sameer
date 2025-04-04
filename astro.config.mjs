@@ -8,4 +8,8 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  server: {
+    host: true,
+    port: 3000,
+  },
 });

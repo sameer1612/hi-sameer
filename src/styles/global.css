@@ -1,11 +1,15 @@
 @import 'tailwindcss';
 @import 'primeicons/primeicons.css';
-@import './theme.css';
+@import './tailwind-config.css';
 @import '@fontsource-variable/roboto';
 @import '@fontsource/poppins/400';
 @import '@fontsource/poppins/500';
 @import '@fontsource/poppins/600';
 @import '@fontsource-variable/montserrat';
+
+body {
+  @apply text-delta mx-auto w-11/12 bg-green-50 px-6 pt-8 font-sans md:w-4/5;
+}
 
 main {
   @apply h-[calc(100vh-65px)];
