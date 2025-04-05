@@ -1,5 +1,6 @@
 ---
 import Header from '../components/Header.astro';
+import Seo from '../components/Seo.astro';
 import '../styles/global.css';
 ---
 
@@ -7,10 +8,11 @@ import '../styles/global.css';
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
     <title>Sameer Kumar</title>
+    <Seo />
   </head>
   <body>
     <Header />

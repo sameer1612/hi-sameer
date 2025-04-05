@@ -1,32 +1,29 @@
 ---
-const routes = {
-  '/': 'home',
-  '/about': 'about',
-  '/blog': 'blog',
-  '/contact': 'contact',
-};
-const currentRoute = Astro.url.pathname.replaceAll('/', '');
+import { rotateLeft } from '../utils/arrays';
+
+let routes = [
+  ['/', 'home'],
+  ['/about', 'about'],
+  ['/blog', 'blog'],
+  ['/contact', 'contact'],
+];
+
+const currentRouteIndex = routes.findIndex(
+  ([path]) => path.replaceAll('/', '') === Astro.url.pathname.replaceAll('/', ''),
+);
+routes = rotateLeft(routes, currentRouteIndex);
 ---
 
 <header class="bg-alpha sticky top-0 z-10 mx-auto flex items-center justify-between py-2 pt-8">
-  <a href="/">
-    <h4>Sameer</h4>
-  </a>
+  <h4 class="capitalize">{routes[0][1]}</h4>
 
-  <nav class="hidden gap-4 md:flex">
+  <nav class="flex gap-4">
     {
-      Object.entries(routes).map(([path, name]) => (
-        <a
-          href={path}
-          class={`text-gamma font-montserrat uppercase ${currentRoute === path.replace('/', '') ? 'font-semibold' : 'font-medium'}`}
-        >
+      routes.slice(1).map(([path, name]) => (
+        <a href={path} class="text-gamma font-montserrat text-sm font-medium uppercase md:text-base">
           {name}
         </a>
       ))
     }
-  </nav>
-
-  <nav class="flex items-center text-lg md:hidden">
-    <span class="pi pi-bars"></span>
   </nav>
 </header>
