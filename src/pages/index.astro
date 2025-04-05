@@ -3,11 +3,11 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-  <main class="flex flex-col items-start gap-8 md:justify-center">
-    <div class="mt-[20vh] flex flex-col items-start md:mt-0">
+  <main class="safe-width !main-height flex flex-col items-start justify-center gap-8 md:!h-screen md:justify-center">
+    <div class="flex flex-col items-start">
       <h1>SAMEER KUMAR</h1>
-      <h6 class="text-gamma dark:hidden">Senior Technical Consultant</h6>
-      <h6 class="text-gamma hidden dark:block">Not yet another engineer!</h6>
+      <h6 class="text-gamma">Not yet another engineer!</h6>
+      <!-- <h6 class="text-gamma hidden dark:block">Senior Technical Consultant</h6> -->
     </div>
 
     <a href="/about" class="z-10">
@@ -18,7 +18,7 @@ import Layout from '../layouts/Layout.astro';
     </a>
 
     <picture>
-      <source srcset="/images/sameer-dark.webp" media="(prefers-color-scheme: dark)" />
+      <!-- <source srcset="/images/sameer-dark.webp" media="(prefers-color-scheme: dark)" /> -->
       <img src="/images/sameer-light.webp" alt="Sameer Kumar" class="fixed -right-1/7 bottom-0 max-h-1/2 md:right-0" />
     </picture>
   </main>

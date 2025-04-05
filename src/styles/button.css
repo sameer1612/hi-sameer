@@ -2,9 +2,9 @@
   @apply border-delta bg-beta flex cursor-pointer items-baseline gap-2 rounded-full border px-5 py-2;
   @apply hover:btn-focus focus:btn-focus;
 
-  @apply dark:border-beta dark:text-alpha;
+  /* @apply dark:border-beta dark:text-alpha; */
 }
 
 @utility btn-focus {
-  @apply ring-delta/50 ring-1;
+  @apply ring-delta ring-1;
 }

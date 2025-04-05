@@ -14,7 +14,7 @@ const currentRouteIndex = routes.findIndex(
 routes = rotateLeft(routes, currentRouteIndex);
 ---
 
-<header class="bg-alpha sticky top-0 z-10 mx-auto flex items-center justify-between py-2 pt-8">
+<header class="bg-alpha safe-width fixed top-0 z-10 mx-auto flex w-screen items-center justify-between py-4">
   <h4 class="capitalize">{routes[0][1]}</h4>
 
   <nav class="flex gap-4">
