@@ -1,5 +1,6 @@
 ---
 import AboutText from '../components/AboutText.astro';
+import Journey from '../components/Journey.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
@@ -17,6 +18,10 @@ import Layout from '../layouts/Layout.astro';
 
     <div class="safe-width flex h-full flex-col justify-center gap-8">
       <AboutText />
+    </div>
+
+    <div class="safe-width flex h-full flex-col justify-center gap-8 md:w-3/5">
+      <Journey />
     </div>
   </main>
 </Layout>

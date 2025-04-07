@@ -1,0 +1,62 @@
+---
+const journeyList = [
+  {
+    title: 'Sedin Technologies',
+    roles: [
+      {
+        position: 'Senior Technical Consultant',
+        description: 'Angular, Azure, Mongo, Nest, Postgres, Python, Ruby on Rails, React, Tailwind, Vue',
+      },
+      {
+        position: 'Senior Software Engineer',
+        description: 'Docker, Linux, MySQL, Python, React, Ruby on Rails',
+      },
+    ],
+  },
+  {
+    title: 'Mindfire Solutions',
+    roles: [
+      {
+        position: 'Software Engineer',
+        description: 'DataStudio, Mongo, MySQL, Python, React, Ruby on Rails',
+      },
+    ],
+  },
+  {
+    title: 'Silicon Institute of Technology',
+    roles: [
+      {
+        position: 'Bachelor in Technology',
+        description: 'Computer Science and Engineering',
+      },
+    ],
+  },
+];
+---
+
+<div>
+  {
+    journeyList.map(journey => (
+      <div class="mb-8">
+        <div class="my-2 ps-2 first:mt-0">
+          <h6>{journey.title}</h6>
+        </div>
+
+        {journey.roles.map(role => (
+          <div class="group relative mb-4 flex gap-x-3">
+            <div class="relative after:absolute after:start-3.5 after:top-0 after:bottom-0 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 last:after:hidden">
+              <div class="relative z-10 flex size-7 items-center justify-center">
+                <div class="border-gamma group-hover:border-delta absolute top-6 size-2 rounded-full border-2 bg-white" />
+              </div>
+            </div>
+
+            <div class="bg-beta/50 grow space-y-1 rounded-lg p-4">
+              <p class="font-montserrat text-lg font-medium">{role.position}</p>
+              <p class="text-gamma">{role.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    ))
+  }
+</div>
