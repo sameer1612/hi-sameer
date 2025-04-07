@@ -39,20 +39,21 @@ const journeyList = [
     journeyList.map(journey => (
       <div class="mb-8">
         <div class="my-2 ps-2 first:mt-0">
-          <h6>{journey.title}</h6>
+          <h5 class="font-semibold md:hidden">{journey.title}</h5>
+          <h6 class="hidden md:block">{journey.title}</h6>
         </div>
 
         {journey.roles.map(role => (
           <div class="group relative mb-4 flex gap-x-3">
             <div class="relative after:absolute after:start-3.5 after:top-0 after:bottom-0 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 last:after:hidden">
               <div class="relative z-10 flex size-7 items-center justify-center">
-                <div class="border-gamma group-hover:border-delta absolute top-6 size-2 rounded-full border-2 bg-white" />
+                <div class="border-gamma group-hover:border-delta group-hover:bg-beta absolute top-6 size-2 rounded-full border-2 bg-white" />
               </div>
             </div>
 
-            <div class="bg-beta/50 grow space-y-1 rounded-lg p-4">
-              <p class="font-montserrat text-lg font-medium">{role.position}</p>
-              <p class="text-gamma">{role.description}</p>
+            <div class="bg-beta/75 hover:bg-beta grow space-y-1 rounded-lg p-4">
+              <p class="font-montserrat font-medium md:text-lg">{role.position}</p>
+              <p class="text-gamma text-sm md:text-base">{role.description}</p>
             </div>
           </div>
         ))}
