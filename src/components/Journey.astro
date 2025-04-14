@@ -1,63 +1,34 @@
 ---
-const journeyList = [
-  {
-    title: 'Sedin Technologies',
-    roles: [
-      {
-        position: 'Senior Technical Consultant',
-        description: 'Angular, Azure, Mongo, Nest, Postgres, Python, Ruby on Rails, React, Tailwind, Vue',
-      },
-      {
-        position: 'Senior Software Engineer',
-        description: 'Docker, Linux, MySQL, Python, React, Ruby on Rails',
-      },
-    ],
-  },
-  {
-    title: 'Mindfire Solutions',
-    roles: [
-      {
-        position: 'Software Engineer',
-        description: 'GCP, Mongo, MySQL, Python, React, Ruby on Rails',
-      },
-    ],
-  },
-  {
-    title: 'Silicon Institute of Technology',
-    roles: [
-      {
-        position: 'Bachelor in Technology',
-        description: 'Computer Science and Engineering',
-      },
-    ],
-  },
-];
+import { journeyList } from '../data/journey';
 ---
 
-<div>
-  {
-    journeyList.map(journey => (
-      <div class="mb-8">
-        <div class="my-2 ps-2 first:mt-0">
-          <h5 class="font-semibold md:hidden">{journey.title}</h5>
-          <h6 class="hidden md:block">{journey.title}</h6>
-        </div>
+<div class="flex flex-col gap-8">
+  <h2 class="text-gamma/60 flex-1">My journey</h2>
+  <div>
+    {
+      journeyList.map(journey => (
+        <div class="mb-8">
+          <div class="my-2 ps-2 first:mt-0">
+            <h5 class="font-semibold md:hidden">{journey.title}</h5>
+            <h6 class="hidden md:block">{journey.title}</h6>
+          </div>
 
-        {journey.roles.map(role => (
-          <div class="group relative mb-4 flex gap-x-3">
-            <div class="relative after:absolute after:start-3.5 after:top-0 after:bottom-0 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 last:after:hidden">
-              <div class="relative z-10 flex size-7 items-center justify-center">
-                <div class="border-gamma group-hover:border-delta group-hover:bg-beta absolute top-6 size-2 rounded-full border-2 bg-white" />
+          {journey.roles.map(role => (
+            <div class="group relative mb-4 flex gap-x-3">
+              <div class="relative after:absolute after:start-3.5 after:top-0 after:bottom-0 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 last:after:hidden">
+                <div class="relative z-10 flex size-7 items-center justify-center">
+                  <div class="border-gamma group-hover:border-delta group-hover:bg-beta absolute top-6 size-2 rounded-full border-2 bg-white" />
+                </div>
+              </div>
+
+              <div class="grow space-y-1 rounded-lg bg-white p-4">
+                <p class="font-montserrat font-medium md:text-lg">{role.position}</p>
+                <p class="text-gamma text-sm md:text-base">{role.description}</p>
               </div>
             </div>
-
-            <div class="bg-beta/75 hover:bg-beta grow space-y-1 rounded-lg p-4">
-              <p class="font-montserrat font-medium md:text-lg">{role.position}</p>
-              <p class="text-gamma text-sm md:text-base">{role.description}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    ))
-  }
+          ))}
+        </div>
+      ))
+    }
+  </div>
 </div>

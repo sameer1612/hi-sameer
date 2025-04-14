@@ -1,0 +1,22 @@
+---
+import { testimonials } from '../data/testimonials';
+---
+
+<div class="flex max-h-[65vh] flex-col gap-8">
+  <h2 class="text-gamma/60 flex-1">What people say?</h2>
+
+  <div class="relative flex snap-x snap-mandatory gap-4 overflow-x-auto">
+    {
+      testimonials.map(testimonial => (
+        <div class="flex min-w-fit snap-start flex-col gap-4 overflow-y-auto rounded-lg bg-white p-4">
+          <div>
+            <h5>{testimonial.author}</h5>
+            <p class="text-gamma">{testimonial.designation}</p>
+          </div>
+          <p class="text-lg" set:html={testimonial.content} />
+          <span class="pi pi-chevron-right text-gamma/50 absolute right-4 bottom-4" />
+        </div>
+      ))
+    }
+  </div>
+</div>
