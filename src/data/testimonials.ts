@@ -6,51 +6,11 @@ type Testimonial = {
 
 export const testimonials: Testimonial[] = [
   {
-    author: 'Shamil Siddique',
-    designation: 'Technical Consultant, TarkaLabs',
-    content: `Sameer is an absolute pleasure to work with. During my time on his team, I found him to be incredibly approachable and easy-going. 
-    His confidence in his skills is clear, and he consistently ensures that everything he touches is left in a better state than it was before. 
-    It was a privilege to work with him, and I look forward to more future opportunities to be a part of his team!`,
-  },
-  {
-    author: 'Tarini Charana Mishra',
-    designation: 'Silicon Tech Lab, Bhubaneswar',
-    content: `Sameer was an exceptional student in terms of intellectual capability and his interest in development. He has undertaken
-      projects in field of IOT and Web development. He was a technology enthusiast as well as a good teacher at college mentoring
-      his fellows and junior students.`,
-  },
-  {
-    author: 'Sarthak Sahoo',
-    designation: 'Software Engineer at Cisco',
-    content: `Sameer is a very good learner of new technologies and worked in different projects with new technologies. He is a very
-      good team player and his commitment for a work is one of the best thing.`,
-  },
-  {
     author: 'Alok Patnaik',
-    designation: 'Professor, Astronomy Researcher at KIIT',
+    designation: 'School of Applied Sciences, KIIT',
     content: `It's always a pleasure to discuss ideas with him for his in-depth knowledge of the subject. He is a thorough professional
       in his dealings - punctual, focused, sincere and dedicated. He is adventurous, would not hesitate to get in to new ideas
       and new technologies. He is an asset to any team he works with.`,
-  },
-  {
-    author: 'Nirmal Hota',
-    designation: 'Director | Co-founder | CEO',
-    content: `Sameer is a very technology passionate guy I have ever met. He has started his career in my team as an intern to fresher
-      to a fully grown developer. I witnessed his quick growth and maturity of technology in him.`,
-  },
-  {
-    author: 'Rishav Kumar',
-    designation: 'Software Engineer, Big Binary',
-    content: `Sameer's multitasking ability was unlike I've seen before. I've worked with many developers but when it comes to Ruby on
-      Rails, he's really good at it. In short span of time, he has gained ample of experience in Ruby on Rails. Sameer will be a
-      valuable asset to any company.`,
-  },
-  {
-    author: 'JP Mohapatra',
-    designation: 'Sr. Software Engineer',
-    content: `He proves his uniqueness and dedication each time he get a chance to resolve complex issues or handling the client. Never
-      forgets to add some extra efforts towards sharing the same knowledge among team mates. It was a pleasure working with
-      Sameer and wish him a great future ahead.`,
   },
   {
     author: 'Amit Soni',
@@ -66,14 +26,6 @@ export const testimonials: Testimonial[] = [
         I highly recommend him for any role that would benefit from his outstanding skills and enthusiasm.`,
   },
   {
-    author: 'Vishal Bihani',
-    designation: 'Software Engineer, Zensar Technologies',
-    content: `Sameer and I worked on a common project. 
-    Though our roles were different, I have to say that he is as reliable as a sunrise every morning. 
-    His work speaks of quality. Even though I only got to see his front-end expertise, 
-    I am sure he is capable of picking up any problem statement thrown at him.`,
-  },
-  {
     author: 'Archit Singh',
     designation: 'Software Engineer, Tarka Labs',
     content: `
@@ -85,6 +37,13 @@ export const testimonials: Testimonial[] = [
      What I appreciated most was how willing he was to share his knowledge. 
      Anytime someone had a question or needed help, Sameer was always there to offer guidance. 
      It definitely made the team stronger.`,
+  },
+  {
+    author: 'JP Mohapatra',
+    designation: 'Sr. Software Engineer',
+    content: `He proves his uniqueness and dedication each time he get a chance to resolve complex issues or handling the client. Never
+      forgets to add some extra efforts towards sharing the same knowledge among team mates. It was a pleasure working with
+      Sameer and wish him a great future ahead.`,
   },
   {
     author: 'Luke Burroughs',
@@ -103,4 +62,45 @@ export const testimonials: Testimonial[] = [
       <br />
       Would highly recommend Sameer. He would make a great addition to any team. All the best, Sameer.`,
   },
-].sort((a, b) => a.author.localeCompare(b.author));
+  {
+    author: 'Nirmal Hota',
+    designation: 'Chief Executive Officer, Utkal Labs',
+    content: `Sameer is a very technology passionate guy I have ever met. He has started his career in my team as an intern to fresher
+      to a fully grown developer. I witnessed his quick growth and maturity of technology in him.`,
+  },
+  {
+    author: 'Rishav Kumar',
+    designation: 'Senior Software Engineer, Big Binary',
+    content: `Sameer's multitasking ability was unlike I've seen before. I've worked with many developers but when it comes to Ruby on
+      Rails, he's really good at it. In short span of time, he has gained ample of experience in Ruby on Rails. Sameer will be a
+      valuable asset to any company.`,
+  },
+  {
+    author: 'Sarthak Sahoo',
+    designation: 'Software Engineer at Cisco',
+    content: `Sameer is a very good learner of new technologies and worked in different projects with new technologies. He is a very
+      good team player and his commitment for a work is one of the best thing.`,
+  },
+  {
+    author: 'Shamil Siddique',
+    designation: 'Technical Consultant, TarkaLabs',
+    content: `Sameer is an absolute pleasure to work with. During my time on his team, I found him to be incredibly approachable and easy-going. 
+    His confidence in his skills is clear, and he consistently ensures that everything he touches is left in a better state than it was before. 
+    It was a privilege to work with him, and I look forward to more future opportunities to be a part of his team!`,
+  },
+  {
+    author: 'Tarini Charana Mishra',
+    designation: 'Silicon Tech Lab, Bhubaneswar',
+    content: `Sameer was an exceptional student in terms of intellectual capability and his interest in development. He has undertaken
+      projects in field of IOT and Web development. He was a technology enthusiast as well as a good teacher at college mentoring
+      his fellows and junior students.`,
+  },
+  {
+    author: 'Vishal Bihani',
+    designation: 'Software Engineer, Zensar Technologies',
+    content: `Sameer and I worked on a common project. 
+    Though our roles were different, I have to say that he is as reliable as a sunrise every morning. 
+    His work speaks of quality. Even though I only got to see his front-end expertise, 
+    I am sure he is capable of picking up any problem statement thrown at him.`,
+  },
+];
