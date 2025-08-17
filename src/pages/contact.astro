@@ -1,9 +1,49 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const links = [
+  {
+    name: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/sameerkumar1612/',
+    icon: 'pi-linkedin',
+  },
+  {
+    name: 'GitHub',
+    url: 'https://github.com/sameer1612',
+    icon: 'pi-github',
+  },
+  {
+    name: 'Medium',
+    url: 'https://medium.com/@sameer-kumar-1612',
+    icon: 'pi-book',
+  },
+  {
+    name: 'Email',
+    url: 'mailto:kumar.sam1612@gmail.com',
+    icon: 'pi-envelope',
+  },
+];
 ---
 
 <Layout>
-  <main class="grid h-screen place-items-center">
-    <h5>Coming soon...</h5>
+  <main class="safe-width !main-height flex flex-col items-start justify-center gap-8 md:!h-screen md:justify-center">
+    <div class="flex flex-col items-start">
+      <h1>Let's connect</h1>
+    </div>
+
+    <div class="flex flex-wrap gap-2">
+      {
+        links.map(link => (
+          <a href={link.url} target="_blank" rel="noopener noreferrer">
+            <button class="btn-primary">
+              {link.name}
+              <span class={`pi ${link.icon} text-gamma/80`} />
+            </button>
+          </a>
+        ))
+      }
+    </div>
+
+    <img src="/images/sameer-dark.webp" alt="Sameer Kumar" class="fixed -right-1/3 -bottom-1 max-h-1/2 md:right-0" />
   </main>
 </Layout>

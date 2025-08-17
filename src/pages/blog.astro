@@ -9,25 +9,25 @@ const blogs: BlogArticle[] = await response.json();
 <Layout>
   <main class="bg-alpha grid h-screen place-items-center">
     <h2 class="text-gamma mb-8 text-center text-3xl font-bold">Blog</h2>
-    <div class="safe-width grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    <div class="safe-width grid auto-rows-fr gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {
         blogs.map(blog => (
           <a
             href={blog.canonical_url}
             target="_blank"
             rel="noopener noreferrer"
-            class="hover:border-gamma block overflow-hidden rounded-lg border-2 border-transparent bg-white shadow transition-all duration-300 hover:border-2"
+            class="relative overflow-hidden rounded-lg shadow"
           >
             {blog.cover_image && (
-              <img src={blog.cover_image} alt={blog.title} class="w-full object-cover object-top" loading="lazy" />
+              <img
+                src={blog.cover_image}
+                alt={blog.title}
+                class="aspect-[2/1] w-full object-cover object-top"
+                loading="lazy"
+              />
             )}
-            <div class="mt-2 flex flex-col gap-3 p-6">
-              <h6 class="text-gamma text-xl font-semibold">{blog.title}</h6>
-              <div class="flex flex-wrap gap-2">
-                {blog.tag_list.map(tag => (
-                  <span class="bg-beta text-gamma rounded px-2 py-0.5 text-xs">#{tag}</span>
-                ))}
-              </div>
+            <div class="absolute inset-x-0 bottom-0 flex h-1/2 items-end bg-gradient-to-t from-black to-transparent p-4">
+              <p class="text-white">{blog.title}</p>
             </div>
           </a>
         ))
