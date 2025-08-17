@@ -5,7 +5,7 @@
   --delta: #525752;
 }
 
-/* @media (prefers-color-scheme: dark) { 
+/* @media (prefers-color-scheme: dark) {
   :root {
     --alpha: #1c1f1d;
     --beta: #1ed760;
@@ -22,4 +22,18 @@
   --color-beta: var(--beta);
   --color-gamma: var(--gamma);
   --color-delta: var(--delta);
+}
+
+@keyframes bounce-x {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(25%);
+  }
+}
+
+@utility animate-bounce-x {
+  animation: bounce-x 1s infinite;
 }
