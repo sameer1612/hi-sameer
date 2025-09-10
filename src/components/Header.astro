@@ -6,6 +6,7 @@ let routes = [
   ['/about', 'about'],
   ['/blog', 'blog'],
   ['/contact', 'contact'],
+  ['/resume.pdf', 'resume'],
 ];
 
 const currentRouteIndex = routes.findIndex(
@@ -20,7 +21,11 @@ routes = rotateLeft(routes, currentRouteIndex);
   <nav class="flex gap-4">
     {
       routes.slice(1).map(([path, name]) => (
-        <a href={path} class="text-gamma font-montserrat text-sm font-medium uppercase md:text-base">
+        <a
+          href={path}
+          target={path === '/resume.pdf' ? '_blank' : '_self'}
+          class="text-gamma font-montserrat text-sm font-medium uppercase md:text-base"
+        >
           {name}
         </a>
       ))
