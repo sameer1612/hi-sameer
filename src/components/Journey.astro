@@ -3,7 +3,7 @@ import { journeyList } from '../data/journey';
 ---
 
 <div class="flex flex-col gap-8">
-  <h2 class="text-gamma/60 flex-1">My journey</h2>
+  <h2 class="text-gamma flex-1">My journey</h2>
   <div>
     {
       journeyList.map(journey => (
@@ -23,7 +23,9 @@ import { journeyList } from '../data/journey';
 
               <div class="grow space-y-1 rounded-lg bg-white p-4">
                 <p class="font-montserrat font-medium md:text-lg">{role.position}</p>
-                <p class="text-gamma text-sm md:text-base">{role.description}</p>
+                {role.description.split('\n').map((line, index) => (
+                  <p class="text-delta my-4 text-sm md:text-base">{line}</p>
+                ))}
               </div>
             </div>
           ))}

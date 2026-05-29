@@ -4,11 +4,13 @@ export const journeyList = [
     roles: [
       {
         position: 'Senior Technical Consultant',
-        description: 'Angular, Azure, Mongo, Nest, Postgres, Python, Ruby on Rails, React, Tailwind, Vue',
+        description: `Led and contributed to large-scale frontend and full-stack modernization projects across aviation, analytics, healthcare, and enterprise SaaS platforms using Angular, React, Django, Rails, NestJS, and cloud-native tooling.
+        Specialized in platform migrations, microservices adoption, performance optimization, FHIR integrations, reusable component systems, CI/CD modernization, and scalable enterprise UI architecture.`,
       },
       {
         position: 'Senior Software Engineer',
-        description: 'Docker, Linux, MySQL, Python, React, Ruby on Rails',
+        description: `Worked on healthcare modernization initiatives involving SSR-enabled React within Rails monoliths, secure data ingestion pipelines, and document processing automation.
+        Built integrations and backend services using Ruby on Rails, Java Spring Boot, SFTP workflows, and Aspose-based document processing systems for enterprise healthcare platforms.`,
       },
     ],
   },
@@ -17,7 +19,8 @@ export const journeyList = [
     roles: [
       {
         position: 'Software Engineer',
-        description: 'GCP, Mongo, MySQL, Python, React, Ruby on Rails',
+        description: `Built real-time influencer analytics and content intelligence platforms for theAmplify using Ruby, Python, React, and Google AutoML technologies.
+        Developed data visualization dashboards, NLP utilities, anomaly detection systems, and modernized legacy Rails + React applications into scalable TypeScript-based architectures.`,
       },
     ],
   },
