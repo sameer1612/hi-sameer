@@ -21,7 +21,7 @@ import Layout from '../layouts/Layout.astro';
       class="hidden h-3/4 md:fixed md:right-0 md:bottom-0 md:block md:w-auto"
     />
 
-    <div class="safe-width bg-alpha flex h-full flex-col justify-center gap-8 md:w-3/5">
+    <div class="safe-width bg-alpha flex min-h-full flex-col justify-center gap-8 md:w-3/5">
       <AboutText />
       <img
         src="/scroll-down.svg"
@@ -30,11 +30,11 @@ import Layout from '../layouts/Layout.astro';
       />
     </div>
 
-    <div class="safe-width bg-alpha flex h-full flex-col justify-center gap-8 md:w-3/5">
+    <div class="safe-width bg-alpha flex min-h-full flex-col justify-center gap-8 md:w-3/5">
       <Journey />
     </div>
 
-    <div class="safe-width bg-alpha flex h-full flex-col justify-center gap-8 md:w-3/5">
+    <div class="safe-width bg-alpha flex min-h-full flex-col justify-center gap-8 md:w-3/5">
       <Testimonials />
     </div>
   </main>
