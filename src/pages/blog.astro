@@ -7,30 +7,30 @@ const blogs: BlogArticle[] = await response.json();
 ---
 
 <Layout>
-  <main class="bg-alpha mt-16 grid h-screen place-items-center md:mt-auto">
-    <div class="safe-width grid auto-rows-fr gap-6 sm:grid-cols-2 lg:grid-cols-3">
+  <main class="bg-alpha safe-width mt-16">
+    <section aria-label="Latest blog posts" class="grid gap-3 lg:mt-auto lg:grid-cols-2">
       {
         blogs.map(blog => (
-          <a
-            href={blog.canonical_url}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="relative overflow-hidden rounded-lg shadow"
-          >
-            {blog.cover_image && (
-              <img
-                src={blog.cover_image}
-                alt={blog.title}
-                class="aspect-[2/1] w-full object-cover object-top"
-                loading="lazy"
-              />
-            )}
-            <div class="absolute inset-x-0 bottom-0 flex h-1/2 items-end bg-gradient-to-t from-black to-transparent p-4">
-              <p class="text-white">{blog.title}</p>
-            </div>
-          </a>
+          <article class="border-gamma/50 hover:border-delta overflow-hidden rounded-lg border-2 p-3 transition-all duration-200 hover:scale-[99.75%]">
+            <a
+              href={blog.canonical_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex h-full min-h-36 flex-col gap-4 lg:flex-row"
+            >
+              {blog.cover_image && (
+                <img src={blog.cover_image} alt={blog.title} class="rounded-lg object-cover lg:w-1/3" loading="lazy" />
+              )}
+              <div class="flex flex-col justify-between">
+                <header>
+                  <h2 class="text-delta text-lg! font-medium">{blog.title}</h2>
+                </header>
+                <p class="text-gamma mt-2 text-sm">{blog.description}</p>
+              </div>
+            </a>
+          </article>
         ))
       }
-    </div>
+    </section>
   </main>
 </Layout>
