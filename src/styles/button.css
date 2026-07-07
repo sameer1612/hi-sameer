@@ -1,8 +1,6 @@
 @utility btn-primary {
   @apply border-delta bg-beta flex cursor-pointer items-center gap-2 rounded-full border px-5 py-2;
   @apply hover:btn-focus focus:btn-focus;
-
-  /* @apply dark:border-beta dark:text-alpha; */
 }
 
 @utility btn-focus {

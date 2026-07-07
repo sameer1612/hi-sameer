@@ -1,18 +1,9 @@
 :root {
-  --alpha: #f0fdf4;
-  --beta: #dcfce7;
-  --gamma: #676d68;
-  --delta: #525752;
+  --alpha: #17181a;
+  --beta: #26272b;
+  --gamma: #97979d;
+  --delta: #f2f2f0;
 }
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --alpha: #1c1f1d;
-    --beta: #1ed760;
-    --gamma: #9ea8a0;
-    --delta: #f0fdf4;
-  }
-} */
 
 @theme inline {
   --font-roboto: 'Roboto Variable';

@@ -11,7 +11,7 @@ const blogs: BlogArticle[] = await response.json();
     <section aria-label="Latest blog posts" class="grid gap-3 lg:mt-auto lg:grid-cols-2">
       {
         blogs.map(blog => (
-          <article class="border-gamma/50 hover:border-delta overflow-hidden rounded-lg border-2 p-3 transition-all duration-200 hover:scale-[99.75%]">
+          <article class="bg-beta hover:bg-beta/70 overflow-hidden rounded-lg p-3 transition-all duration-200 hover:scale-[99.75%]">
             <a
               href={blog.canonical_url}
               target="_blank"
