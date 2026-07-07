@@ -1,8 +1,10 @@
 :root {
-  --alpha: #17181a;
-  --beta: #26272b;
-  --gamma: #97979d;
-  --delta: #f2f2f0;
+  --alpha: #1d2021;
+  --beta: #3c3836;
+  --gamma: #a89984;
+  --delta: #ebdbb2;
+  --accent: #b57614;
+  --accent-hover: #fabd2f;
 }
 
 @theme inline {
@@ -13,6 +15,8 @@
   --color-beta: var(--beta);
   --color-gamma: var(--gamma);
   --color-delta: var(--delta);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
 }
 
 @keyframes bounce-x {

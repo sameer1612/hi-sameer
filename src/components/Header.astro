@@ -16,7 +16,7 @@ routes = rotateLeft(routes, currentRouteIndex);
 ---
 
 <header class="bg-alpha safe-width fixed top-0 z-10 mx-auto flex w-screen items-center justify-between py-4">
-  <h4 class="capitalize">{routes[0][1]}</h4>
+  <h4 class="text-accent capitalize">{routes[0][1]}</h4>
 
   <nav class="flex gap-4">
     {
@@ -24,7 +24,7 @@ routes = rotateLeft(routes, currentRouteIndex);
         <a
           href={path}
           target={path === '/resume.pdf' ? '_blank' : '_self'}
-          class="text-gamma font-montserrat text-sm font-medium uppercase md:text-base"
+          class="text-gamma hover:text-accent-hover font-montserrat text-sm font-medium uppercase underline-offset-4 transition-colors hover:underline md:text-base"
         >
           {name}
         </a>
