@@ -11,17 +11,17 @@ const blogs: BlogArticle[] = await response.json();
     <section aria-label="Latest blog posts" class="grid gap-3 md:grid-cols-2 lg:mt-auto lg:grid-cols-3">
       {
         blogs.map(blog => (
-          <article class="bg-beta hover:bg-beta/70 rounded-lg p-3 transition-all duration-200 hover:scale-[99.75%]">
-            <a href={blog.canonical_url} target="_blank" rel="noopener noreferrer" class="flex items-center gap-4">
+          <article class="bg-beta hover:bg-beta/70 rounded-lg p-2 transition-all duration-200 hover:scale-[99.75%]">
+            <a href={blog.canonical_url} target="_blank" rel="noopener noreferrer" class="flex items-start gap-2">
               {blog.cover_image && (
                 <img
                   src={blog.cover_image}
                   alt={blog.title}
-                  class="size-20 shrink-0 rounded-lg object-cover"
+                  class="size-28 shrink-0 rounded-lg object-cover"
                   loading="lazy"
                 />
               )}
-              <div class="flex flex-col gap-1">
+              <div class="flex flex-col gap-2">
                 <h2 class="text-delta font-roboto text-base! leading-snug font-medium">{blog.title}</h2>
                 <p class="text-gamma line-clamp-2 text-sm">{blog.description}</p>
               </div>
