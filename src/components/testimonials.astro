@@ -2,21 +2,141 @@
 import { testimonials } from '../data/testimonials';
 ---
 
-<div class="flex max-h-[65vh] flex-col gap-8">
-  <h2 class="text-gamma flex-1">What people say?</h2>
+<div class="flex flex-col gap-8">
+  <div class="flex flex-wrap items-center justify-between gap-4">
+    <h2 class="text-gamma flex-1">What people say?</h2>
 
-  <div class="relative flex snap-x snap-mandatory gap-4 overflow-x-auto">
-    {
-      testimonials.map(testimonial => (
-        <div class="bg-beta flex min-w-fit snap-start flex-col gap-8 overflow-y-auto rounded-lg p-4">
-          <div>
-            <h5>{testimonial.author}</h5>
-            <p class="text-gamma">{testimonial.designation}</p>
-          </div>
-          <p class="text-gamma text-base" set:html={testimonial.content} />
-          <span class="pi pi-angle-double-right text-gamma/10 animate-bounce-x absolute right-4 bottom-4" />
+    <div class="flex items-center gap-4">
+      <p class="text-gamma tabular-nums" aria-hidden="true">
+        <strong id="testimonial-current" class="text-delta font-semibold"></strong> / <span id="testimonial-total"
+        ></span>
+      </p>
+
+      <div class="flex gap-2">
+        <button
+          id="testimonial-prev"
+          type="button"
+          aria-label="Previous testimonial"
+          class="border-accent hover:border-accent-hover hover:text-accent-hover focus-visible:ring-accent-hover flex size-10 items-center justify-center rounded-full border outline-none transition-colors focus-visible:ring-2"
+        >
+          <span class="pi pi-angle-left"></span>
+        </button>
+        <button
+          id="testimonial-next"
+          type="button"
+          aria-label="Next testimonial"
+          class="border-accent hover:border-accent-hover hover:text-accent-hover focus-visible:ring-accent-hover flex size-10 items-center justify-center rounded-full border outline-none transition-colors focus-visible:ring-2"
+        >
+          <span class="pi pi-angle-right"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="testimonial-carousel" class="flex flex-col gap-6" data-testimonials={JSON.stringify(testimonials)}>
+    <div
+      role="region"
+      aria-roledescription="carousel"
+      aria-label="Testimonials"
+      tabindex="0"
+      class="focus-visible:ring-accent-hover rounded-lg outline-none focus-visible:ring-2"
+    >
+      <div id="testimonial-card" class="testimonial-fade bg-beta flex min-h-[720px] flex-col gap-6 rounded-lg p-6 md:min-h-[520px]">
+        <div>
+          <h5 id="testimonial-author"></h5>
+          <p id="testimonial-role" class="text-gamma"></p>
         </div>
-      ))
-    }
+        <p id="testimonial-quote" class="text-delta/90 text-base leading-relaxed" aria-live="polite" />
+      </div>
+    </div>
+
+    <div id="testimonial-dots" role="tablist" aria-label="Choose testimonial" class="flex flex-wrap justify-center gap-2"
+    ></div>
   </div>
 </div>
+
+<style>
+  .testimonial-fade {
+    animation: testimonial-fade-in 0.25s ease both;
+  }
+
+  @keyframes testimonial-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .testimonial-fade {
+      animation: none;
+    }
+  }
+</style>
+
+<script>
+  const root = document.getElementById('testimonial-carousel');
+  const testimonials = JSON.parse(root.dataset.testimonials || '[]');
+
+  const stage = root.querySelector('[role="region"]');
+  const card = document.getElementById('testimonial-card');
+  const authorEl = document.getElementById('testimonial-author');
+  const roleEl = document.getElementById('testimonial-role');
+  const quoteEl = document.getElementById('testimonial-quote');
+  const currentEl = document.getElementById('testimonial-current');
+  const totalEl = document.getElementById('testimonial-total');
+  const prevBtn = document.getElementById('testimonial-prev');
+  const nextBtn = document.getElementById('testimonial-next');
+  const dotsWrap = document.getElementById('testimonial-dots');
+
+  let index = 0;
+  totalEl.textContent = String(testimonials.length);
+
+  testimonials.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.setAttribute('role', 'tab');
+    dot.setAttribute('aria-label', `Go to testimonial ${i + 1} of ${testimonials.length}`);
+    dot.className =
+      'bg-beta data-[current=true]:bg-accent data-[current=true]:w-4 focus-visible:ring-accent-hover size-2 rounded-full outline-none transition-all focus-visible:ring-2';
+    dot.addEventListener('click', () => render(i));
+    dotsWrap.appendChild(dot);
+  });
+
+  function render(next) {
+    index = (next + testimonials.length) % testimonials.length;
+    const t = testimonials[index];
+
+    authorEl.textContent = t.author;
+    roleEl.textContent = t.designation;
+    quoteEl.innerHTML = t.content;
+    currentEl.textContent = String(index + 1);
+
+    card.classList.remove('testimonial-fade');
+    requestAnimationFrame(() => card.classList.add('testimonial-fade'));
+
+    [...dotsWrap.children].forEach((dot, i) => {
+      dot.setAttribute('data-current', String(i === index));
+    });
+  }
+
+  prevBtn.addEventListener('click', () => render(index - 1));
+  nextBtn.addEventListener('click', () => render(index + 1));
+
+  stage.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      render(index - 1);
+    }
+    if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      render(index + 1);
+    }
+  });
+
+  render(0);
+</script>
