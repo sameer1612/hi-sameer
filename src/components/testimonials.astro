@@ -17,7 +17,7 @@ import { testimonials } from '../data/testimonials';
           id="testimonial-prev"
           type="button"
           aria-label="Previous testimonial"
-          class="border-accent hover:border-accent-hover hover:text-accent-hover focus-visible:ring-accent-hover flex size-10 items-center justify-center rounded-full border outline-none transition-colors focus-visible:ring-2"
+          class="border-accent hover:border-accent-hover hover:text-accent-hover focus-visible:ring-accent-hover flex size-10 cursor-pointer items-center justify-center rounded-full border transition-colors outline-none focus-visible:ring-2"
         >
           <span class="pi pi-angle-left"></span>
         </button>
@@ -25,7 +25,7 @@ import { testimonials } from '../data/testimonials';
           id="testimonial-next"
           type="button"
           aria-label="Next testimonial"
-          class="border-accent hover:border-accent-hover hover:text-accent-hover focus-visible:ring-accent-hover flex size-10 items-center justify-center rounded-full border outline-none transition-colors focus-visible:ring-2"
+          class="border-accent hover:border-accent-hover hover:text-accent-hover focus-visible:ring-accent-hover flex size-10 cursor-pointer items-center justify-center rounded-full border transition-colors outline-none focus-visible:ring-2"
         >
           <span class="pi pi-angle-right"></span>
         </button>
@@ -41,17 +41,25 @@ import { testimonials } from '../data/testimonials';
       tabindex="0"
       class="focus-visible:ring-accent-hover rounded-lg outline-none focus-visible:ring-2"
     >
-      <div id="testimonial-card" class="testimonial-fade bg-beta flex min-h-[720px] flex-col gap-6 rounded-lg p-6 md:min-h-[520px]">
+      <div
+        id="testimonial-card"
+        class="testimonial-fade bg-beta flex min-h-180 flex-col gap-6 rounded-lg p-6 md:min-h-130"
+      >
         <div>
           <h5 id="testimonial-author"></h5>
           <p id="testimonial-role" class="text-gamma"></p>
         </div>
-        <p id="testimonial-quote" class="text-delta/90 text-base leading-relaxed" aria-live="polite" />
+        <p id="testimonial-quote" class="text-delta/90 text-base leading-relaxed" aria-live="polite"></p>
       </div>
     </div>
 
-    <div id="testimonial-dots" role="tablist" aria-label="Choose testimonial" class="flex flex-wrap justify-center gap-2"
-    ></div>
+    <div
+      id="testimonial-dots"
+      role="tablist"
+      aria-label="Choose testimonial"
+      class="flex flex-wrap justify-center gap-2"
+    >
+    </div>
   </div>
 </div>
 
@@ -96,22 +104,29 @@ import { testimonials } from '../data/testimonials';
     const nextBtn = document.getElementById('testimonial-next');
     const dotsWrap = document.getElementById('testimonial-dots');
 
+    if (
+      !stage ||
+      !card ||
+      !authorEl ||
+      !roleEl ||
+      !quoteEl ||
+      !currentEl ||
+      !totalEl ||
+      !prevBtn ||
+      !nextBtn ||
+      !dotsWrap ||
+      testimonials.length === 0
+    ) {
+      return;
+    }
+
     let index = 0;
     totalEl.textContent = String(testimonials.length);
-
     dotsWrap.innerHTML = '';
-    testimonials.forEach((_, i) => {
-      const dot = document.createElement('button');
-      dot.type = 'button';
-      dot.setAttribute('role', 'tab');
-      dot.setAttribute('aria-label', `Go to testimonial ${i + 1} of ${testimonials.length}`);
-      dot.className =
-        'bg-beta data-[current=true]:bg-accent data-[current=true]:w-4 focus-visible:ring-accent-hover size-2 rounded-full outline-none transition-all focus-visible:ring-2';
-      dot.addEventListener('click', () => render(i));
-      dotsWrap.appendChild(dot);
-    });
 
-    function render(next) {
+    // Defined as an arrow function (rather than hoisted `function render`) so TS
+    // keeps the non-null narrowing from the guard above inside this closure.
+    const render = (next: number) => {
       index = (next + testimonials.length) % testimonials.length;
       const t = testimonials[index];
 
@@ -126,12 +141,24 @@ import { testimonials } from '../data/testimonials';
       [...dotsWrap.children].forEach((dot, i) => {
         dot.setAttribute('data-current', String(i === index));
       });
-    }
+    };
+
+    testimonials.forEach((_: unknown, i: number) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.setAttribute('role', 'tab');
+      dot.setAttribute('aria-label', `Go to testimonial ${i + 1} of ${testimonials.length}`);
+      dot.className =
+        'bg-beta data-[current=true]:bg-accent data-[current=true]:w-4 focus-visible:ring-accent-hover size-2 rounded-full outline-none transition-all focus-visible:ring-2';
+      dot.addEventListener('click', () => render(i));
+      dotsWrap.appendChild(dot);
+    });
 
     prevBtn.addEventListener('click', () => render(index - 1));
     nextBtn.addEventListener('click', () => render(index + 1));
 
     stage.addEventListener('keydown', e => {
+      if (!(e instanceof KeyboardEvent)) return;
       if (e.key === 'ArrowLeft') {
         e.preventDefault();
         render(index - 1);
