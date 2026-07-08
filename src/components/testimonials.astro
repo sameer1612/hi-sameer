@@ -79,64 +79,71 @@ import { testimonials } from '../data/testimonials';
 </style>
 
 <script>
-  const root = document.getElementById('testimonial-carousel');
-  const testimonials = JSON.parse(root.dataset.testimonials || '[]');
+  function initTestimonials() {
+    const root = document.getElementById('testimonial-carousel');
+    if (!root) return;
 
-  const stage = root.querySelector('[role="region"]');
-  const card = document.getElementById('testimonial-card');
-  const authorEl = document.getElementById('testimonial-author');
-  const roleEl = document.getElementById('testimonial-role');
-  const quoteEl = document.getElementById('testimonial-quote');
-  const currentEl = document.getElementById('testimonial-current');
-  const totalEl = document.getElementById('testimonial-total');
-  const prevBtn = document.getElementById('testimonial-prev');
-  const nextBtn = document.getElementById('testimonial-next');
-  const dotsWrap = document.getElementById('testimonial-dots');
+    const testimonials = JSON.parse(root.dataset.testimonials || '[]');
 
-  let index = 0;
-  totalEl.textContent = String(testimonials.length);
+    const stage = root.querySelector('[role="region"]');
+    const card = document.getElementById('testimonial-card');
+    const authorEl = document.getElementById('testimonial-author');
+    const roleEl = document.getElementById('testimonial-role');
+    const quoteEl = document.getElementById('testimonial-quote');
+    const currentEl = document.getElementById('testimonial-current');
+    const totalEl = document.getElementById('testimonial-total');
+    const prevBtn = document.getElementById('testimonial-prev');
+    const nextBtn = document.getElementById('testimonial-next');
+    const dotsWrap = document.getElementById('testimonial-dots');
 
-  testimonials.forEach((_, i) => {
-    const dot = document.createElement('button');
-    dot.type = 'button';
-    dot.setAttribute('role', 'tab');
-    dot.setAttribute('aria-label', `Go to testimonial ${i + 1} of ${testimonials.length}`);
-    dot.className =
-      'bg-beta data-[current=true]:bg-accent data-[current=true]:w-4 focus-visible:ring-accent-hover size-2 rounded-full outline-none transition-all focus-visible:ring-2';
-    dot.addEventListener('click', () => render(i));
-    dotsWrap.appendChild(dot);
-  });
+    let index = 0;
+    totalEl.textContent = String(testimonials.length);
 
-  function render(next) {
-    index = (next + testimonials.length) % testimonials.length;
-    const t = testimonials[index];
-
-    authorEl.textContent = t.author;
-    roleEl.textContent = t.designation;
-    quoteEl.innerHTML = t.content;
-    currentEl.textContent = String(index + 1);
-
-    card.classList.remove('testimonial-fade');
-    requestAnimationFrame(() => card.classList.add('testimonial-fade'));
-
-    [...dotsWrap.children].forEach((dot, i) => {
-      dot.setAttribute('data-current', String(i === index));
+    dotsWrap.innerHTML = '';
+    testimonials.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.setAttribute('role', 'tab');
+      dot.setAttribute('aria-label', `Go to testimonial ${i + 1} of ${testimonials.length}`);
+      dot.className =
+        'bg-beta data-[current=true]:bg-accent data-[current=true]:w-4 focus-visible:ring-accent-hover size-2 rounded-full outline-none transition-all focus-visible:ring-2';
+      dot.addEventListener('click', () => render(i));
+      dotsWrap.appendChild(dot);
     });
+
+    function render(next) {
+      index = (next + testimonials.length) % testimonials.length;
+      const t = testimonials[index];
+
+      authorEl.textContent = t.author;
+      roleEl.textContent = t.designation;
+      quoteEl.innerHTML = t.content;
+      currentEl.textContent = String(index + 1);
+
+      card.classList.remove('testimonial-fade');
+      requestAnimationFrame(() => card.classList.add('testimonial-fade'));
+
+      [...dotsWrap.children].forEach((dot, i) => {
+        dot.setAttribute('data-current', String(i === index));
+      });
+    }
+
+    prevBtn.addEventListener('click', () => render(index - 1));
+    nextBtn.addEventListener('click', () => render(index + 1));
+
+    stage.addEventListener('keydown', e => {
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        render(index - 1);
+      }
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        render(index + 1);
+      }
+    });
+
+    render(0);
   }
 
-  prevBtn.addEventListener('click', () => render(index - 1));
-  nextBtn.addEventListener('click', () => render(index + 1));
-
-  stage.addEventListener('keydown', e => {
-    if (e.key === 'ArrowLeft') {
-      e.preventDefault();
-      render(index - 1);
-    }
-    if (e.key === 'ArrowRight') {
-      e.preventDefault();
-      render(index + 1);
-    }
-  });
-
-  render(0);
+  document.addEventListener('astro:page-load', initTestimonials);
 </script>
