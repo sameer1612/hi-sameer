@@ -2,10 +2,6 @@
   @apply p-6 md:p-32;
 }
 
-@utility main-height {
-  @apply main-height;
-}
-
 .fading-image {
   object-fit: cover;
   mask-image: linear-gradient(to bottom, black 97%, transparent 100%);
