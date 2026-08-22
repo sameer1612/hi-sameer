@@ -1,4 +1,21 @@
-export const journeyList = [
+type Journey = {
+  title: string;
+  roles: {
+    position: string;
+    description: string;
+  }[];
+};
+
+export const journeyList: Journey[] = [
+  {
+    title: 'Zensar Technologies',
+    roles: [
+      {
+        position: 'Senior Lead of Engineering',
+        description: `Leading workforce transformation through agentic engineering acceleration and establishing a Center of Excellence.`,
+      },
+    ],
+  },
   {
     title: 'Sedin Technologies',
     roles: [
