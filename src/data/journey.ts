@@ -21,13 +21,8 @@ export const journeyList: Journey[] = [
     roles: [
       {
         position: 'Senior Technical Consultant',
-        description: `Led and contributed to large-scale frontend and full-stack modernization projects across aviation, analytics, healthcare, and enterprise SaaS platforms using Angular, React, Django, Rails, NestJS, and cloud-native tooling.
-        Specialized in platform migrations, microservices adoption, performance optimization, FHIR integrations, reusable component systems, CI/CD modernization, and scalable enterprise UI architecture.`,
-      },
-      {
-        position: 'Senior Software Engineer',
-        description: `Worked on healthcare modernization initiatives involving SSR-enabled React within Rails monoliths, secure data ingestion pipelines, and document processing automation.
-        Built integrations and backend services using Ruby on Rails, Java Spring Boot, SFTP workflows, and Aspose-based document processing systems for enterprise healthcare platforms.`,
+        description: `Led frontend and full-stack modernization across aviation, analytics, healthcare, and enterprise SaaS platforms, using Angular, React, Rails, Django, NestJS, Spring Boot, and cloud-native tooling.
+        Specialized in platform migrations, microservices adoption, performance optimization, reusable component systems, and CI/CD. In healthcare, built SSR-enabled React inside Rails monoliths, FHIR integrations, secure data ingestion pipelines, and document processing automation.`,
       },
     ],
   },
