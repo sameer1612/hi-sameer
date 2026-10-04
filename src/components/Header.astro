@@ -10,14 +10,7 @@ const current = Astro.url.pathname.replace(/\/$/, '');
 ---
 
 <header class="flex items-baseline justify-between gap-6 pt-8 font-sans text-[0.9375rem]">
-  <!-- Hidden on Home, where the byline already shows the name; kept in layout so the nav stays right-aligned. -->
-  <a
-    href="/"
-    class:list={[
-      'text-delta hover:text-accent-hover font-semibold tracking-tight transition-colors',
-      current === '' && 'invisible',
-    ]}
-  >
+  <a href="/" class="text-delta hover:text-accent-hover font-semibold tracking-tight transition-colors">
     Sameer<span class="max-sm:hidden"> Kumar</span>
   </a>
 
