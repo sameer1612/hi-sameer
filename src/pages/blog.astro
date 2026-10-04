@@ -9,7 +9,10 @@ const formatDate = (date: Date) =>
   date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
 ---
 
-<Layout title="Blog">
+<Layout
+  title="Blog"
+  description="Articles by Sameer Kumar on software architecture, React, Ruby on Rails, JavaScript, developer tools and the craft of engineering."
+>
   <h1 class="text-4xl font-semibold tracking-tight md:text-5xl">Blog</h1>
   <p class="prose text-gamma mt-6">
     Notes on software architecture, programming, developer tools and the craft of engineering.

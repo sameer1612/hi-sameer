@@ -15,7 +15,7 @@ const { title, date, readingTime, summary, cover } = post.data;
 const published = date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 ---
 
-<Layout title={title} description={summary} image={cover?.src} type="article">
+<Layout title={title} description={summary} image={cover?.src} type="article" published={date}>
   <article class="prose post mx-auto max-w-[46rem]">
     <a href="/blog" class="text-gamma hover:text-delta font-sans text-sm no-underline transition-colors">
       ← Blog

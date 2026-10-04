@@ -7,6 +7,10 @@ interface Props {
   /** Image path or absolute URL for link previews. */
   image?: string;
   type?: 'website' | 'article';
+  /** Post headline without the site suffix; used for article structured data. */
+  headline?: string;
+  /** Publication date of an article. */
+  published?: Date;
 }
 
 const {
@@ -16,17 +20,61 @@ const {
   canonical = new URL(Astro.url.pathname.replace(/(.)\/$/, '$1'), Astro.site).href,
   image = '/images/sameer.png',
   type = 'website',
+  headline = title,
+  published,
 } = Astro.props;
 
 const imageUrl = new URL(image, Astro.site).href;
+
+const person = {
+  '@type': 'Person',
+  name: 'Sameer Kumar',
+  url: 'https://hi-sameer.web.app',
+  image: 'https://hi-sameer.web.app/images/sameer.png',
+  jobTitle: 'Senior Lead of Engineering',
+  worksFor: {
+    '@type': 'Organization',
+    name: 'Zensar Technologies',
+  },
+  description:
+    'Senior Lead of Engineering at Zensar Technologies. Writing about software architecture, frontend and engineering practice.',
+  sameAs: [
+    'https://www.linkedin.com/in/sameerkumar1612/',
+    'https://github.com/sameer1612',
+    'https://medium.com/@sameer-kumar-1612',
+  ],
+  alumniOf: {
+    '@type': 'CollegeOrUniversity',
+    name: 'Silicon Institute of Technology, Bhubaneswar',
+  },
+  knowsAbout: [
+    'Software Engineering',
+    'Technical Consulting',
+    'Web Development',
+    'System Architecture',
+    'Project Management',
+  ],
+  nationality: 'Indian',
+};
+
+const structuredData =
+  type === 'article'
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'BlogPosting',
+        headline,
+        description,
+        image: imageUrl,
+        url: canonical,
+        mainEntityOfPage: canonical,
+        datePublished: published?.toISOString(),
+        author: person,
+      }
+    : { '@context': 'https://schema.org', ...person };
 ---
 
 <!-- SEO Meta Tags -->
 <meta name="description" content={description} />
-<meta
-  name="keywords"
-  content="Sameer Kumar, developer, portfolio, projects, blogs, software engineer, technical consultant, web development, system architecture, programming, technology, innovation"
-/>
 <meta name="author" content="Sameer Kumar" />
 <meta name="robots" content="index, follow" />
 
@@ -37,6 +85,7 @@ const imageUrl = new URL(image, Astro.site).href;
 <meta property="og:url" content={canonical} />
 <meta property="og:image" content={imageUrl} />
 <meta property="og:locale" content="en_US" />
+{published && <meta property="article:published_time" content={published.toISOString()} />}
 
 <!-- Twitter Card Meta Tags -->
 <meta name="twitter:card" content="summary_large_image" />
@@ -45,37 +94,6 @@ const imageUrl = new URL(image, Astro.site).href;
 <meta name="twitter:image" content={imageUrl} />
 
 <link rel="canonical" href={canonical} />
+<link rel="sitemap" href="/sitemap.xml" />
 
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Sameer Kumar",
-    "url": "https://hi-sameer.web.app",
-    "image": "https://hi-sameer.web.app/images/sameer.png",
-    "jobTitle": "Senior Lead of Engineering",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Zensar Technologies"
-    },
-    "description": "Senior Lead of Engineering at Zensar Technologies. Writing about software architecture, frontend and engineering practice.",
-    "sameAs": [
-      "https://www.linkedin.com/in/sameerkumar1612/",
-      "https://github.com/sameer1612",
-      "https://medium.com/@sameer-kumar-1612",
-      "https://hi-sameer.vercel.app"
-    ],
-    "alumniOf": {
-      "@type": "CollegeOrUniversity",
-      "name": "Silicon Institute of Technology, Bhubaneswar"
-    },
-    "knowsAbout": [
-      "Software Engineering",
-      "Technical Consulting",
-      "Web Development",
-      "System Architecture",
-      "Project Management"
-    ],
-    "nationality": "Indian"
-  }
-</script>
+<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />

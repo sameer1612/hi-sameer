@@ -12,9 +12,11 @@ interface Props {
   canonical?: string;
   image?: string;
   type?: 'website' | 'article';
+  /** Publication date, for articles. */
+  published?: Date;
 }
 
-const { title, center = false, description, canonical, image, type } = Astro.props;
+const { title, center = false, description, canonical, image, type, published } = Astro.props;
 const fullTitle = title ? `${title} · Sameer Kumar` : 'Sameer Kumar';
 ---
 
@@ -34,7 +36,15 @@ const fullTitle = title ? `${title} · Sameer Kumar` : 'Sameer Kumar';
       theme ??= matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
       document.documentElement.dataset.theme = theme;
     </script>
-    <Seo title={fullTitle} description={description} canonical={canonical} image={image} type={type} />
+    <Seo
+      title={fullTitle}
+      headline={title}
+      description={description}
+      canonical={canonical}
+      image={image}
+      type={type}
+      published={published}
+    />
   </head>
   <body class="mx-auto flex min-h-dvh w-full flex-col px-5 md:w-[80vw] md:px-0">
     <Header />
