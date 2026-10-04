@@ -14,25 +14,21 @@ A lot of jargon in the introduction itself? Thought so.
 
 > Some quick bullet points to wash off that cult image of FP
 
-*   There isn’t a clear line dividing functional programming languages from other languages.
-*   You can write functional code in almost all languages. Even in boundaries of strict OOP languages.
-*   Your code doesn’t need to be 100% functional. Try to keep it as immutable and pure as humanely possible.
-*   FP doesn’t make you cool. It may do a little bit of idiot-proofing though.
-
+- There isn’t a clear line dividing functional programming languages from other languages.
+- You can write functional code in almost all languages. Even in boundaries of strict OOP languages.
+- Your code doesn’t need to be 100% functional. Try to keep it as immutable and pure as humanely possible.
+- FP doesn’t make you cool. It may do a little bit of idiot-proofing though.
 
 ![I ate a monad for breakfast and two endofunctors for lunch](./assets/image-01.webp)
 
-
 Today we’ll go through a few jargon to set the stage for upcoming adventures. I’ll stick to dumb JavaScript for code examples. Let’s keep Haskell/Elixir show off for later, hold peace it’ll come.
 
-1.  Pure functions
-2.  Immutability
-3.  Side effects
-4.  Higher order functions
+1. Pure functions
+2. Immutability
+3. Side effects
+4. Higher order functions
 
-**Pure functions**
-==================
-
+## Pure functions
 
 ![Walter white likes pure blue crystals](./assets/image-02.webp)
 
@@ -48,7 +44,7 @@ Well easier said than done in large codebases where everything is like a mess of
 
 Pure functions:
 
-```
+```js
 function add(a, b) {
     return a + b;
 }
@@ -58,7 +54,7 @@ console.log(add(2, 3)); // 5
 console.log(add(2, 3)); // 5
 ```
 
-```
+```js
 function toUpperCase(str) {
     return str.toUpperCase();
 }
@@ -70,7 +66,7 @@ console.log(toUpperCase("hello")); // "HELLO"
 
 Impure functions:
 
-```
+```js
 let counter = 0;
 
 function incrementCounter() {
@@ -83,7 +79,7 @@ console.log(incrementCounter()); // 1
 console.log(incrementCounter()); // 2
 ```
 
-```
+```js
 // Outputs a random number between 1 and 10
 function getRandomNumber() {
     return Math.floor(Math.random() * 10) + 1;
@@ -96,13 +92,11 @@ console.log(getRandomNumber()); // 6
 
 However rudimentary, that gives a general idea. A pure function will always be consistent. Impure ones can and will backstab you in most unexpected places. Imagine, one time your bank account shows $150,000 and you refresh the page to see $150. Good enough for a minor heart attack, aye?
 
-**Immutability**
-================
+## Immutability
 
 Let’s define mutation first
+
 ![Let’s define mutation first](./assets/image-04.webp)
-
-
 
 ![Sheldon from BBT doesn’t like changes. Triggers his OCD](./assets/image-05.webp)
 
@@ -110,7 +104,7 @@ Let’s define mutation first
 
 Now that we have semi-formally defined it, let’s look at how it works. After all, programming is all about changing one data into another. We’ll write a small mutable code and see the perks of its immutable version.
 
-```
+```js
 function updateAge(obj, newAge) {
     obj.age = newAge;
     return obj;
@@ -129,7 +123,7 @@ Let’s dissect. Good Alice is 25 years old, to begin with. If I come to the las
 
 Let’s fix this mutation:
 
-```
+```js
 function updateAge(obj, newAge) {
     return { ...obj, age: newAge };
 }
@@ -147,13 +141,12 @@ Now, anywhere we meet this `person`, we are guaranteed to know its state by seei
 
 Benefits you ask. Here are a few:
 
-1.  It becomes easy for the language’s internal tools to clean the used memory, aka, garbage collection.
-2.  An implicit guarantee that value will remain consistent throughout the life of a variable.
-3.  A ton of predictability in the code. You can just skim a few lines and tell what the value is at any point in time, without reading the entire code.
-4.  **Idiot proofing. You know that someone else won’t modify what you read the first time. Ah! Do those edited WhatsApp messages ring a bell?**
+1. It becomes easy for the language’s internal tools to clean the used memory, aka, garbage collection.
+2. An implicit guarantee that value will remain consistent throughout the life of a variable.
+3. A ton of predictability in the code. You can just skim a few lines and tell what the value is at any point in time, without reading the entire code.
+4. **Idiot proofing. You know that someone else won’t modify what you read the first time. Ah! Do those edited WhatsApp messages ring a bell?**
 
-Higher order functions
-======================
+## Higher order functions
 
 This one ain’t much. Simply said, a function can take and return functions too, just like it plays with regular data.
 
@@ -161,7 +154,7 @@ Depending on your previous programming experience this may look normal or whaaaa
 
 When you treat functions as first-class citizens, you can do some pretty amazing things by combining or passing them around. Let’s see a few examples:
 
-```
+```js
 // High-order function that returns another function
 function makeMultiplier(multiplier) {
     return function(number) {
@@ -170,26 +163,29 @@ function makeMultiplier(multiplier) {
 }
 ```
 
-```
+```js
 // Example usage (custom tailored functions on the fly)
 const double = makeMultiplier(2);
-const triple = makeMultiplier(3);console.log(double(5)); // 10
+const triple = makeMultiplier(3);
+
+console.log(double(5)); // 10
 console.log(triple(5)); // 15
 ```
 
-```
+```js
 import {map} from 'lodash';
 ```
 
-```
+```js
 const numbers = [1, 2, 3, 4, 5]; // This map function takes a list of some data and a function.
 // Basically running the same function on each item in the list.
-const doubledNumbers = map(numbers, number => number * 2 );// Example usage
+const doubledNumbers = map(numbers, number => number * 2 );
+
+// Example usage
 console.log(doubledNumbers); // [2, 4, 6, 8, 10]
 ```
 
-**Side Effects**
-================
+## Side Effects
 
 ![Now I Am Become Death, the Destroyer of Worlds](./assets/image-06.webp)
 
@@ -197,14 +193,12 @@ Here the real trouble starts. As the name suggests, your code will poke its nose
 
 Too many fancy words? My sympathies. Let’s see the code you wrote some days back.
 
-
 ![Yeah Yeah Yeah! Now you tell me that you didn’t know that bunnies too have nukes. Classic](./assets/image-07.webp)
-Yeah Yeah Yeah! Now you tell me that you didn’t know that bunnies too have nukes. Classic!
-
+_Yeah Yeah Yeah! Now you tell me that you didn’t know that bunnies too have nukes. Classic!_
 
 Let’s create a cocktail of what we learned from pure functions and immutability. Side effects totally rack jacks our two beloved concepts.
 
-```
+```js
 const numbers = [1, 2, 3];
 
 export function addNumber(number) {
@@ -229,13 +223,6 @@ These functions are making side effects on the numbers array. Our good user Sinj
 
 Sinjo wants answers, Sinjo wants justice! ❤️‍🩹
 
-![](./assets/image-08.webp)
+![Porky Pig saying “That’s all Folks!”](./assets/image-08.webp)
 
 That’s all folks for today. Reflect on this jargon list. Whatever we went through should give a clear idea about what problems we are trying to solve. In the next piece, we’ll get our hands dirty with some deeper concepts. Ciao.
-
-Want to connect?
-================
-
-[LinkedIn](https://www.linkedin.com/in/sameerkumar1612/)
-
-[Website](https://hi-sameer.vercel.app/)

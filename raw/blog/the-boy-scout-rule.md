@@ -1,0 +1,40 @@
+---
+id: 1093609
+title: "The Boy Scout Rule 💡👩‍💻"
+published_at: "2022-05-23T14:06:27Z"
+tags: []
+reading_time_minutes: 1
+cover_image: "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fm9qphkueofucjae10u29.jpg"
+canonical_url: "https://sameer-kumar-1612.medium.com/the-boy-scout-rule-de11f5b2c6a"
+devto_url: "https://dev.to/sameer1612/the-boy-scout-rule-2njn"
+---
+
+#### This post is going to be a little different.
+
+---
+
+> Most engineers have heard of the 'boy-scout rule': 'Always leave the code better than you found it.' It's often been heralded as a magic cure for technical debt; if only all software engineers behaved like good citizens, our software wouldn't deteriorate so relentlessly.
+
+---
+
+A small snippet from an office talk describing impact of it on real projects:
+{% embed https://www.linkedin.com/posts/sameerkumar1612_sameer-on-coding-standards-activity-6934497182557315072-NcIC?utm_source=linkedin_share&utm_medium=member_desktop_web %}
+
+---
+
+Audio snippet:
+{% embed https://twitter.com/tarkalabs/status/1528731583473065985?s=20&t=MAC5AUIXinFzidF6wFozYA %}
+
+---
+
+What you think about conscious negligence and voluntarily clearing technical debt left by previous engineers?
+
+---
+
+Quote referred from: [Here](https://www.stepsize.com/blog/how-to-be-an-effective-boy-girl-scout-engineer#:~:text=Most%20engineers%20have%20heard%20of,wouldn't%20deteriorate%20so%20relentlessly.)
+
+---
+## To Connect
+🏭 LinkedIn: https://www.linkedin.com/in/sameerkumar1612
+✍️ Medium: https://sameer-kumar-1612.medium.com
+✍️ Dev.to: https://dev.to/sameer1612
