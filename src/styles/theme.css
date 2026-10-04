@@ -7,6 +7,15 @@
   --accent-hover: #fabd2f;
 }
 
+:root[data-theme='light'] {
+  --alpha: #fbf8ec;
+  --beta: #f2ebd3;
+  --gamma: #7c6f64;
+  --delta: #3c3836;
+  --accent: #b57614;
+  --accent-hover: #af3a03;
+}
+
 @theme inline {
   --font-roboto: 'Roboto Variable';
   --font-poppins: 'Poppins';

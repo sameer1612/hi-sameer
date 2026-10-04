@@ -15,6 +15,18 @@ import { ClientRouter } from 'astro:transitions';
     <link rel="icon" href="/images/ninja.png" type="image/x-icon" />
     <meta name="generator" content={Astro.generator} />
     <title>Sameer Kumar</title>
+    <script is:inline>
+      const applyTheme = () => {
+        let theme;
+        try {
+          theme = localStorage.getItem('theme');
+        } catch {}
+        theme ??= matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        document.documentElement.dataset.theme = theme;
+      };
+      applyTheme();
+      document.addEventListener('astro:after-swap', applyTheme);
+    </script>
     <ClientRouter />
     <Seo />
   </head>
