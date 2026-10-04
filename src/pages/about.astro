@@ -1,4 +1,5 @@
 ---
+import Testimonial from '../components/Testimonial.astro';
 import Layout from '../layouts/Layout.astro';
 import { journeyList } from '../data/journey';
 import { testimonials } from '../data/testimonials';
@@ -33,6 +34,8 @@ const paragraphs = (text: string) =>
       </p>
     </div>
 
+    <hr class="border-gamma/30 mt-20" />
+
     <section aria-labelledby="experience" class="mt-20">
       <h2 id="experience" class="eyebrow">Experience</h2>
 
@@ -59,21 +62,13 @@ const paragraphs = (text: string) =>
       </ol>
     </section>
 
+    <hr class="border-gamma/30 mt-20" />
+
     <section aria-labelledby="kind-words" class="mt-20">
       <h2 id="kind-words" class="eyebrow">Kind words</h2>
 
       <div class="mt-8 space-y-10">
-        {
-          featured.map(t => (
-            <figure class="border-accent/60 border-l-2 pl-5 md:pl-6">
-              <blockquote class="prose" set:html={t.content} />
-              <figcaption class="mt-4 font-sans text-sm">
-                <span class="text-delta font-medium">{t.author}</span>
-                <span class="text-gamma"> · {t.designation}</span>
-              </figcaption>
-            </figure>
-          ))
-        }
+        {featured.map(t => <Testimonial testimonial={t} featured />)}
       </div>
 
       <details class="group mt-10">
@@ -85,17 +80,7 @@ const paragraphs = (text: string) =>
         </summary>
 
         <div class="mt-10 space-y-10">
-          {
-            others.map(t => (
-              <figure class="border-beta border-l-2 pl-5 md:pl-6">
-                <blockquote class="prose" set:html={t.content} />
-                <figcaption class="mt-4 font-sans text-sm">
-                  <span class="text-delta font-medium">{t.author}</span>
-                  <span class="text-gamma"> · {t.designation}</span>
-                </figcaption>
-              </figure>
-            ))
-          }
+          {others.map(t => <Testimonial testimonial={t} />)}
         </div>
       </details>
     </section>
