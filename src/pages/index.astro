@@ -4,34 +4,38 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout center>
   <section>
-    <div class="bg-beta size-24 overflow-hidden rounded-full md:size-28">
-      <img
-        src="/images/sameer.png"
-        alt="Portrait of Sameer Kumar"
-        class="size-full origin-[50%_18%] scale-[1.7] object-cover"
-      />
-    </div>
-
-    <h1 class="mt-8 text-[2.5rem] leading-tight font-semibold tracking-tight md:text-5xl">Sameer Kumar</h1>
-    <p class="text-gamma mt-3 font-sans">
-      Senior Lead of Engineering at{' '}
-      <a
-        href="https://www.zensar.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="link hover:text-delta transition-colors">Zensar Technologies</a
-      >
+    <p class="text-[3.5rem] leading-[1.02] font-medium tracking-tight sm:text-7xl md:text-8xl">
+      Quietly<br />engineering.
     </p>
 
-    <div class="prose mt-8">
-      <p>
-        Engineer by title, systems builder by instinct. I enjoy building scalable products, modernizing messy systems,
-        and turning complicated workflows into clean, maintainable solutions.
-      </p>
-      <p class="text-gamma italic">Quietly engineering.</p>
+    <div class="mt-12 flex items-center gap-4 md:mt-16">
+      <div class="bg-beta size-14 shrink-0 overflow-hidden rounded-full">
+        <img
+          src="/images/sameer.png"
+          alt="Portrait of Sameer Kumar"
+          class="size-full origin-[50%_18%] scale-[1.7] object-cover"
+        />
+      </div>
+      <div class="font-sans">
+        <h1 class="text-delta font-medium">Sameer Kumar</h1>
+        <p class="text-gamma text-sm">
+          Senior Lead of Engineering at{' '}
+          <a
+            href="https://www.zensar.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="link hover:text-delta transition-colors">Zensar Technologies</a
+          >
+        </p>
+      </div>
     </div>
 
-    <ul class="mt-10 flex flex-wrap gap-x-8 gap-y-3 font-sans">
+    <p class="text-gamma mt-6 max-w-[56ch] text-[1.0625rem] leading-relaxed">
+      Engineer by title, systems builder by instinct. I enjoy building scalable products, modernizing messy systems, and
+      turning complicated workflows into clean, maintainable solutions.
+    </p>
+
+    <ul class="mt-8 flex flex-wrap gap-x-8 gap-y-3 font-sans text-[0.9375rem]">
       <li><a href="/about" class="link">More about me →</a></li>
       <li><a href="/blog" class="link">Read the blog →</a></li>
     </ul>
