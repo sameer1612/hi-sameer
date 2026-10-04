@@ -1,0 +1,44 @@
+# Canonical URL updates
+
+hi-sameer.web.app is now the original for every post. Each copy below should set its canonical URL
+to the "New canonical" link. The menu paths below are approximate; the setting is called
+"canonical link" on both platforms.
+
+The new URLs must be live (pushed and deployed) before you switch the copies over.
+
+- **Medium** (16 posts): open the story → Edit → ⋯ menu → Story settings → Advanced settings →
+  "Customize Canonical Link" → paste the new canonical → Save. Better Programming posts are Medium
+  stories too; you can edit them as the author.
+- **dev.to** (all 28 posts): Edit post → ⚙ (post options) → "Canonical URL" → paste → Save changes.
+- **railsfactory.com** (1 post): the company blog; ask them to add a canonical tag if they can.
+
+| # | Post | New canonical | First published at | dev.to copy |
+|---|---|---|---|---|
+| 1 | 🔮 Functional Programming for Humans — Foundations (2024) | https://hi-sameer.web.app/blog/functional-programming-for-humans-foundations | https://medium.com/@sameer-kumar-1612/functional-programming-for-humans-foundations-861bd9b40718 | https://dev.to/sameer1612/functional-programming-for-humans-foundations-hel |
+| 2 | PostGraphile — The Gateway Drug To GraphQL (2023) | https://hi-sameer.web.app/blog/postgraphile-the-gateway-drug-to-graphql | https://betterprogramming.pub/postgraphile-the-gateway-drug-to-graphql-c6b335cd2bda | https://dev.to/sameer1612/postgraphile-the-gateway-drug-to-graphql-5505 |
+| 3 | No More Drama: Conflict Resolution (2023) | https://hi-sameer.web.app/blog/no-more-drama-conflict-resolution | https://medium.com/@sameer-kumar-1612/no-more-drama-conflict-resolution-b33d94d1dc75 | https://dev.to/sameer1612/no-more-drama-conflict-resolution-4837 |
+| 4 | The Pragmatic Guide to Your First JavaScript Library (2023) | https://hi-sameer.web.app/blog/the-pragmatic-guide-to-your-first-javascript-library | https://medium.com/better-programming/the-pragmatic-guide-to-your-first-javascript-library-516a7b08c677 | https://dev.to/sameer1612/the-pragmatic-guide-to-your-first-javascript-library-1cfa |
+| 5 | Overcoming Vim-Phobia: My journey of redemption (2023) | https://hi-sameer.web.app/blog/overcoming-vim-phobia-my-journey-of-redemption | https://betterprogramming.pub/overcoming-vim-phobia-my-journey-of-redemption-d1114e6922ab | https://dev.to/sameer1612/overcoming-vim-phobia-my-journey-of-redemption-2m7d |
+| 6 | JetBrains Fleet — A VS Code killer? (2022) | https://hi-sameer.web.app/blog/jetbrains-fleet-a-vs-code-killer | https://sameer-kumar-1612.medium.com/jetbrains-fleet-a-vs-code-killer-f662f45f6478 | https://dev.to/sameer1612/jetbrains-fleet-a-vs-code-killer-2odb |
+| 7 | 5 must have softwares for pros like you. (2022) | https://hi-sameer.web.app/blog/5-must-have-softwares-for-pros-like-you | https://sameer-kumar-1612.medium.com/5-software-that-makes-a-pro-productive-fb33f6f45c22 | https://dev.to/sameer1612/5-must-have-softwares-for-pros-like-you-2pn |
+| 8 | React 18: When to use “useImperativeHandle” and “forwardRefs” (2022) | https://hi-sameer.web.app/blog/react-18-when-to-use-useimperativehandle-and-forwardrefs | https://betterprogramming.pub/when-to-use-useimperativehandle-and-forwardrefs-in-react-18-89cce42b3309 | https://dev.to/sameer1612/when-to-use-useimperativehandle-and-forwardrefs-in-react-18-3l1b |
+| 9 | React v18: useRef — What, When and Why? (2022) | https://hi-sameer.web.app/blog/react-v18-useref-what-when-and-why | https://betterprogramming.pub/react-v18-demystifying-useref-forwardref-and-useimperativehandle-feec2fc5b2f6 | https://dev.to/sameer1612/react-v18-useref-what-when-and-why-m0l |
+| 10 | The Boy Scout Rule 💡👩‍💻 (2022) | https://hi-sameer.web.app/blog/the-boy-scout-rule | https://sameer-kumar-1612.medium.com/the-boy-scout-rule-de11f5b2c6a | https://dev.to/sameer1612/the-boy-scout-rule-2njn |
+| 11 | React v18: Why useEffect suddenly go crazy? (2022) | https://hi-sameer.web.app/blog/react-v18-why-useeffect-suddenly-go-crazy | https://sameer-kumar-1612.medium.com/react-v18-why-useeffect-suddenly-go-crazy-db1b42eb2730 | https://dev.to/sameer1612/react-v18-why-useeffect-suddenly-go-crazy-2678 |
+| 12 | Console.log and his Ninja Pals 🥷 (2022) | https://hi-sameer.web.app/blog/consolelog-and-his-ninja-pals | https://sameer-kumar-1612.medium.com/console-log-and-his-ninja-pals-4fc0863ad5f4 | https://dev.to/sameer1612/consolelog-and-his-ninja-pals-2n4f |
+| 13 | React v18: useTransition hook — Why??? (2022) | https://hi-sameer.web.app/blog/react-v18-usetransition-hook-why | https://sameer-kumar-1612.medium.com/react-v18-usetransition-hook-why-f5d8880dc64d | https://dev.to/sameer1612/react-v18-usetransition-hook-why-3bml |
+| 14 | PyScript - JavaScript's sweet cousin. (2022) | https://hi-sameer.web.app/blog/pyscript-javascripts-sweet-cousin | https://dev.to/sameer1612/pyscript-javascripts-cousin-df3 | https://dev.to/sameer1612/pyscript-javascripts-cousin-df3 |
+| 15 | Testim - Automation testing on Steroids (2022) | https://hi-sameer.web.app/blog/testim-automation-testing-on-steroids | https://medium.com/p/ee5eeeb3fa50 | https://dev.to/sameer1612/testim-automation-testing-on-steroids-4mc6 |
+| 16 | Technical Consultant vs Software Engineer. Which career is for you? (2022) | https://hi-sameer.web.app/blog/technical-consultant-vs-software-engineer-which-career-is-for-you | https://dev.to/sameer1612/technical-consultant-vs-software-engineer-which-career-is-for-you-1iph | https://dev.to/sameer1612/technical-consultant-vs-software-engineer-which-career-is-for-you-1iph |
+| 17 | How do motivation and procrastination work? (2022) | https://hi-sameer.web.app/blog/how-do-motivation-and-procrastination-work | https://dev.to/sameer1612/how-do-motivation-and-procrastination-work-30jl | https://dev.to/sameer1612/how-do-motivation-and-procrastination-work-30jl |
+| 18 | Why does Competitive Programming love Data Structures and Algorithms? (2022) | https://hi-sameer.web.app/blog/why-does-competitive-programming-love-data-structures-and-algorithms | https://dev.to/sameer1612/why-does-competitive-programming-love-data-structures-and-algorithms-kkh | https://dev.to/sameer1612/why-does-competitive-programming-love-data-structures-and-algorithms-kkh |
+| 19 | 01. Product of Array Except Self (2022) | https://hi-sameer.web.app/blog/01-product-of-array-except-self | https://dev.to/sameer1612/01-product-of-array-except-self-20ak | https://dev.to/sameer1612/01-product-of-array-except-self-20ak |
+| 20 | Thinking in React (2022) | https://hi-sameer.web.app/blog/thinking-in-react | https://dev.to/sameer1612/thinking-in-react-3m73 | https://dev.to/sameer1612/thinking-in-react-3m73 |
+| 21 | Enum on Rails — A shallow dive 💎 (2022) | https://hi-sameer.web.app/blog/enum-on-rails-a-shallow-dive | https://dev.to/sameer1612/enum-on-rails-a-shallow-dive-e4m | https://dev.to/sameer1612/enum-on-rails-a-shallow-dive-e4m |
+| 22 | Why is Shopify using \"Ruby on Rails\" to build its $3 billion dollar e-commerce business? (2021) | https://hi-sameer.web.app/blog/why-is-shopify-using-ruby-on-rails-to-build-its-3-billion-dollar-e-commerce-business | https://railsfactory.com/shopify-using-ror-to-built-multi-billion-dollar-ecommerce-business | https://dev.to/sameer1612/why-is-shopify-using-a-dead-programming-language-to-build-its-3-billion-dollar-e-commerce-business-4a52 |
+| 23 | 🔝 3 CSS frameworks for you. (2021) | https://hi-sameer.web.app/blog/3-css-frameworks-for-you | https://dev.to/sameer1612/3-css-frameworks-for-you-4noe | https://dev.to/sameer1612/3-css-frameworks-for-you-4noe |
+| 24 | Top 5 Extensions for your VS Code 🏅 (2021) | https://hi-sameer.web.app/blog/top-5-extensions-for-your-vs-code | https://dev.to/sameer1612/top-5-extensions-for-your-vs-code-him | https://dev.to/sameer1612/top-5-extensions-for-your-vs-code-him |
+| 25 | Cron Jobs — Master Worker Strategy 🧮 (2021) | https://hi-sameer.web.app/blog/cron-jobs-master-worker-strategy | https://dev.to/sameer1612/cron-jobs-master-worker-strategy-55d2 | https://dev.to/sameer1612/cron-jobs-master-worker-strategy-55d2 |
+| 26 | SERVICE OBJECTS — At your service… (2021) | https://hi-sameer.web.app/blog/service-objects-at-your-service | https://dev.to/sameer1612/service-objects-at-your-service-3532 | https://dev.to/sameer1612/service-objects-at-your-service-3532 |
+| 27 | Coding Styles: Imperative, Declarative and DSL🤯 (2021) | https://hi-sameer.web.app/blog/coding-styles-imperative-declarative-and-dsl | https://sameer-kumar-1612.medium.com/imperative-declarative-and-dsl-coding-styles-89a50202896f | https://dev.to/sameer1612/coding-styles-imperative-declarative-and-dsl-emb |
+| 28 | DATATABLE ON RAILS (2021) | https://hi-sameer.web.app/blog/datatable-on-rails | https://sameer-kumar-1612.medium.com/datatable-on-rails-e371fe5a747d | https://dev.to/sameer1612/datatable-on-rails-176f |
