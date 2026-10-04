@@ -1,9 +1,40 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import type { BlogArticle } from '../types/blog';
+import { excerpt } from '../utils/excerpt';
 
 const response = await fetch('https://dev.to/api/articles/latest?username=sameer1612');
-const blogs: BlogArticle[] = await response.json();
+const articles: BlogArticle[] = await response.json();
+
+// The list API only returns a ~100-character summary ending in "...", so fetch each
+// article's body (a few at a time, to stay polite to the API) and build a longer excerpt.
+// Falls back to the summary if a request fails.
+const loadSummary = async (article: BlogArticle) => {
+  for (let attempt = 0; attempt < 4; attempt++) {
+    try {
+      const res = await fetch(`https://dev.to/api/articles/${article.id}`);
+      if (res.status === 429) {
+        await new Promise(resolve => setTimeout(resolve, 1000 * (attempt + 1)));
+        continue;
+      }
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const { body_markdown }: { body_markdown: string } = await res.json();
+      return excerpt(body_markdown) || article.description;
+    } catch (error) {
+      console.warn(`[blog] Using short summary for "${article.title}": ${error}`);
+      return article.description;
+    }
+  }
+  console.warn(`[blog] Using short summary for "${article.title}": rate limited`);
+  return article.description;
+};
+
+const blogs: (BlogArticle & { summary: string })[] = [];
+for (let i = 0; i < articles.length; i += 4) {
+  const batch = articles.slice(i, i + 4);
+  const summaries = await Promise.all(batch.map(loadSummary));
+  batch.forEach((article, j) => blogs.push({ ...article, summary: summaries[j] }));
+}
 
 const byYear = Map.groupBy(blogs, blog => new Date(blog.published_at).getFullYear());
 const formatDate = (iso: string) =>
@@ -37,7 +68,7 @@ const host = (url: string) => new URL(url).hostname.replace(/^www\./, '');
                   <h3 class="decoration-accent/50 group-hover:decoration-accent-hover text-xl leading-snug font-semibold underline-offset-4 group-hover:underline">
                     {blog.title}
                   </h3>
-                  <p class="text-gamma mt-1.5 line-clamp-2 leading-relaxed">{blog.description}</p>
+                  <p class="text-gamma mt-1.5 max-w-[75ch] leading-relaxed">{blog.summary}</p>
                   <p class="text-gamma mt-2 font-sans text-[0.8125rem]">
                     <time datetime={blog.published_at}>{formatDate(blog.published_at)}</time>
                     <span aria-hidden="true"> · </span>
