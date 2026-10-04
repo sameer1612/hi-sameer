@@ -1,0 +1,3 @@
+[install]
+# Pin exact versions when adding packages, so nothing updates on its own.
+exact = true
