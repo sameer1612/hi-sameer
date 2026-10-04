@@ -11,8 +11,8 @@ const host = (url: string) => new URL(url).hostname.replace(/^www\./, '');
 <Layout title="Blog">
   <h1 class="text-4xl font-semibold tracking-tight md:text-5xl">Blog</h1>
   <p class="prose text-gamma mt-6">
-    Notes on software architecture, programming, developer tools and the craft of engineering. Posts open on the site where they were first
-    published.
+    Notes on software architecture, programming, developer tools and the craft of engineering. Posts open on the site
+    where they were first published.
   </p>
 
   {
@@ -49,7 +49,7 @@ const host = (url: string) => new URL(url).hostname.replace(/^www\./, '');
                     src={blog.cover}
                     alt=""
                     loading="lazy"
-                    class="bg-beta hidden aspect-[100/42] w-40 shrink-0 rounded-md object-cover opacity-90 transition-opacity group-hover:opacity-100 sm:block"
+                    class="bg-beta ring-gamma/20 hidden aspect-[100/42] w-40 shrink-0 rounded-md object-cover opacity-90 ring-1 transition-[opacity,filter] group-hover:opacity-100 group-hover:brightness-100 in-data-[theme=dark]:brightness-[.8] sm:block"
                   />
                 )}
               </a>
