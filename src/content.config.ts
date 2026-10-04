@@ -17,8 +17,8 @@ const blog = defineCollection({
       tags: z.array(z.string()).default([]),
       readingTime: z.number(),
       cover: image().optional(),
-      /** Where the post was first published (Medium, dev.to, …). This site is now the canonical copy. */
-      originalUrl: z.url(),
+      /** Where an older post was first published (Medium, dev.to, …). This site is now the canonical copy. */
+      originalUrl: z.url().optional(),
     }),
 });
 
