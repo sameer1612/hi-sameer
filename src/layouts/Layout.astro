@@ -8,9 +8,14 @@ interface Props {
   title?: string;
   /** Vertically center short pages between header and footer. */
   center?: boolean;
+  description?: string;
+  canonical?: string;
+  image?: string;
+  type?: 'website' | 'article';
 }
 
-const { title, center = false } = Astro.props;
+const { title, center = false, description, canonical, image, type } = Astro.props;
+const fullTitle = title ? `${title} · Sameer Kumar` : 'Sameer Kumar';
 ---
 
 <!doctype html>
@@ -20,7 +25,7 @@ const { title, center = false } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/images/ninja.png" type="image/png" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title ? `${title} · Sameer Kumar` : 'Sameer Kumar'}</title>
+    <title>{fullTitle}</title>
     <script is:inline>
       let theme;
       try {
@@ -29,7 +34,7 @@ const { title, center = false } = Astro.props;
       theme ??= matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
       document.documentElement.dataset.theme = theme;
     </script>
-    <Seo />
+    <Seo title={fullTitle} description={description} canonical={canonical} image={image} type={type} />
   </head>
   <body class="mx-auto flex min-h-dvh w-full flex-col px-5 md:w-[80vw] md:px-0">
     <Header />

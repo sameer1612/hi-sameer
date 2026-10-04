@@ -30,8 +30,114 @@
     @apply max-w-[65ch] text-[1.125rem] leading-[1.75] md:text-[1.1875rem];
   }
 
-  .prose p + p {
+  .prose > * + * {
     @apply mt-5;
+  }
+
+  /* Article content (blog posts). Utilities on individual elements still win over these. */
+  .prose h2 {
+    @apply mt-14 text-[1.625rem] leading-snug font-semibold tracking-tight;
+  }
+
+  .prose h3 {
+    @apply mt-10 text-[1.3125rem] leading-snug font-semibold;
+  }
+
+  .prose h4,
+  .prose h5,
+  .prose h6 {
+    @apply mt-8 font-semibold;
+  }
+
+  .prose :is(h2, h3, h4, h5, h6) + * {
+    @apply mt-3;
+  }
+
+  .prose strong {
+    @apply font-semibold;
+  }
+
+  .prose :is(ul, ol) {
+    @apply pl-6;
+  }
+
+  .prose ul {
+    @apply list-disc;
+  }
+
+  .prose ol {
+    @apply list-decimal;
+  }
+
+  .prose li + li,
+  .prose li > :is(ul, ol) {
+    @apply mt-2;
+  }
+
+  .prose li::marker {
+    @apply text-gamma;
+  }
+
+  .prose blockquote {
+    @apply border-accent/60 text-delta/90 border-l-2 pl-5 italic;
+  }
+
+  .prose img {
+    @apply mx-auto block h-auto max-w-full rounded-md;
+  }
+
+  /* Image caption: an italic line written directly under an image (`![..](..)` then `_caption_`). */
+  .prose img + em {
+    @apply text-gamma mt-2 block text-center font-sans text-sm not-italic;
+  }
+
+  .prose a {
+    overflow-wrap: anywhere;
+  }
+
+  .prose hr {
+    @apply border-gamma/25 my-12;
+  }
+
+  .prose table {
+    @apply w-full border-collapse font-sans text-sm;
+  }
+
+  .prose :is(th, td) {
+    @apply border-gamma/25 border-b px-2 py-2 text-left;
+  }
+
+  .prose :not(pre) > code {
+    @apply bg-beta rounded px-1.5 py-0.5 font-mono text-[0.85em];
+  }
+
+  .prose pre {
+    @apply ring-gamma/15 overflow-x-auto rounded-lg p-4 font-mono text-[0.875rem] leading-relaxed ring-1;
+  }
+
+  .prose .code-block {
+    @apply relative;
+  }
+
+  .code-copy {
+    @apply bg-alpha/80 text-gamma hover:text-delta ring-gamma/20 absolute top-2 right-2 cursor-pointer rounded px-2 py-1 font-sans text-xs opacity-0 ring-1 transition-opacity group-hover:opacity-100 focus-visible:opacity-100;
+  }
+
+  .code-block:hover .code-copy {
+    @apply opacity-100;
+  }
+
+  /* Shiki writes both Gruvbox palettes as CSS variables; pick one per site theme. */
+  html[data-theme='light'] .astro-code,
+  html[data-theme='light'] .astro-code span {
+    color: var(--shiki-light);
+    background-color: var(--shiki-light-bg);
+  }
+
+  html[data-theme='dark'] .astro-code,
+  html[data-theme='dark'] .astro-code span {
+    color: var(--shiki-dark);
+    background-color: var(--shiki-dark-bg);
   }
 
   .prose a,

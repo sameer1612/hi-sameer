@@ -1,53 +1,46 @@
 ---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
-import { blogs } from '../data/blogs';
 
-const byYear = Map.groupBy(blogs, blog => new Date(blog.date).getUTCFullYear());
-const formatDate = (iso: string) =>
-  new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
-const host = (url: string) => new URL(url).hostname.replace(/^www\./, '');
+const posts = (await getCollection('blog')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const byYear = Map.groupBy(posts, post => post.data.date.getUTCFullYear());
+const formatDate = (date: Date) =>
+  date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
 ---
 
 <Layout title="Blog">
   <h1 class="text-4xl font-semibold tracking-tight md:text-5xl">Blog</h1>
   <p class="prose text-gamma mt-6">
-    Notes on software architecture, programming, developer tools and the craft of engineering. Posts open on the site
-    where they were first published.
+    Notes on software architecture, programming, developer tools and the craft of engineering.
   </p>
 
-  {[...byYear].map(([year, posts]) => (
+  {[...byYear].map(([year, yearPosts]) => (
     <section aria-labelledby={`year-${year}`} class="mt-16">
       <h2 id={`year-${year}`} class="eyebrow">
         {year}
       </h2>
       <ul class="mt-6 space-y-12">
-        {posts.map(blog => (
+        {yearPosts.map(({ id, data }) => (
           <li>
-            <a
-              href={blog.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group flex flex-col gap-4 sm:w-fit sm:flex-row sm:items-start sm:gap-6"
-            >
+            <a href={`/blog/${id}`} class="group flex flex-col gap-4 sm:w-fit sm:flex-row sm:items-start sm:gap-6">
               <div class="max-w-[75ch] min-w-0">
                 <h3 class="decoration-accent/50 group-hover:decoration-accent-hover text-xl leading-snug font-semibold underline-offset-4 group-hover:underline">
-                  {blog.title}
+                  {data.title}
                 </h3>
-                <p class="text-gamma mt-1.5 leading-relaxed">{blog.summary}</p>
+                <p class="text-gamma mt-1.5 leading-relaxed">{data.summary}</p>
                 <p class="text-gamma mt-2 font-sans text-[0.8125rem]">
-                  <time datetime={blog.date}>{formatDate(blog.date)}</time>
+                  <time datetime={data.date.toISOString()}>{formatDate(data.date)}</time>
                   <span aria-hidden="true"> · </span>
-                  {blog.readingTime} min read
-                  <span aria-hidden="true"> · </span>
-                  {host(blog.url)} <span aria-hidden="true">↗</span>
-                  <span class="sr-only">(opens in new tab)</span>
+                  {data.readingTime} min read
                 </p>
               </div>
-              {blog.cover && (
-                <img
-                  src={blog.cover}
+              {data.cover && (
+                <Image
+                  src={data.cover}
                   alt=""
-                  loading="lazy"
+                  widths={[352, 704]}
+                  sizes="(min-width: 640px) 176px, 100vw"
                   class="bg-beta ring-gamma/20 order-first aspect-[100/42] w-full shrink-0 rounded-md object-cover opacity-90 ring-1 transition-[opacity,filter] group-hover:opacity-100 group-hover:brightness-100 in-data-[theme=dark]:brightness-[.8] sm:mt-1 sm:w-44"
                 />
               )}

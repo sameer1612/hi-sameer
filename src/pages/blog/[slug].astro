@@ -1,0 +1,66 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({ params: { slug: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const { title, date, readingTime, summary, cover, originalUrl } = post.data;
+
+const published = date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+const originalHost = new URL(originalUrl).hostname.replace(/^www\./, '');
+---
+
+<Layout title={title} description={summary} canonical={originalUrl} image={cover?.src} type="article">
+  <article class="prose">
+    <a href="/blog" class="text-gamma hover:text-delta font-sans text-sm no-underline transition-colors">
+      ← Blog
+    </a>
+
+    <h1 class="mt-8 text-[2.25rem] leading-tight font-semibold tracking-tight md:text-5xl">{title}</h1>
+    <p class="text-gamma mt-4 font-sans text-sm">
+      <time datetime={date.toISOString()}>{published}</time>
+      <span aria-hidden="true"> · </span>
+      {readingTime} min read
+    </p>
+
+    {cover && <Image src={cover} alt="" widths={[700, 1400]} sizes="(min-width: 768px) 65ch, 100vw" class="mt-10" />}
+
+    <Content />
+
+    <p class="border-gamma/25 text-gamma mt-16 border-t pt-6 font-sans text-sm">
+      Originally published on <a href={originalUrl}>{originalHost}</a>
+      <span aria-hidden="true">↗</span>
+    </p>
+  </article>
+</Layout>
+
+<script>
+  // Copy buttons for code blocks. Each <pre> is wrapped so the button stays put while the code scrolls sideways.
+  for (const pre of document.querySelectorAll<HTMLPreElement>('article pre')) {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'code-block';
+    pre.replaceWith(wrapper);
+    wrapper.append(pre);
+
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'code-copy';
+    button.textContent = 'Copy';
+    button.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(pre.innerText);
+        button.textContent = 'Copied';
+      } catch {
+        button.textContent = 'Copy failed';
+      }
+      setTimeout(() => (button.textContent = 'Copy'), 1500);
+    });
+    wrapper.append(button);
+  }
+</script>
