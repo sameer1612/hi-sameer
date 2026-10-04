@@ -59,5 +59,3 @@ _Tailwind growth chart_
 ## Conclusion
 
 Just one rule to stay ahead, pick any framework and stick to the way sites are supposed to be built using them. If you ask for a personal recommendation I’ll say use **Bootstrap** for any general-purpose site, **Material** looks great in dashboard-type systems with complex transitions and UI elements and **Tailwind** is well for experiments, especially recommended for react components.
-
-Do follow for more [Ruby on Rails](https://railsfactory.com/hire-ruby-on-rails-developer) posts.

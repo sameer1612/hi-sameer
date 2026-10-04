@@ -10,7 +10,7 @@ originalUrl: "https://betterprogramming.pub/when-to-use-useimperativehandle-and-
 
 > Sometimes, you have to take out the big guns
 
-This article is a continuation of [React v18: useRef — What, When and Why?](https://medium.com/react-v18-demystifying-useref-forwardref-and-useimperativehandle-feec2fc5b2f6) where we saw what refs are and how they operate. With the knowledge gained from the previous article, let’s dive into a little more complex understanding, which can come in handy in real-world projects with a lot of component nesting and a bit of real DOM-based needs.
+This article is a continuation of [React v18: useRef — What, When and Why?](/blog/react-v18-useref-what-when-and-why) where we saw what refs are and how they operate. With the knowledge gained from the previous article, let’s dive into a little more complex understanding, which can come in handy in real-world projects with a lot of component nesting and a bit of real DOM-based needs.
 
 ## Forward Ref
 

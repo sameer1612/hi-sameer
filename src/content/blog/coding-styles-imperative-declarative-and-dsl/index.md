@@ -90,5 +90,3 @@ The secret for best decomposition is to assume your first function is being read
 > These paradigms are like a number line, Imperative on left and Declarative on right. You can always move toward one paradigm but never reach the ultimate end. On left you'll find your language to be more general purpose and on right it takes path to become a DSL.
 
 This was an attempt to dive into less explored zones of software development and if you like it or otherwise, do provide your suggestions. These things won’t help you start writing codes right away but will definitely upgrade you to a better engineer in some capacity. 👨‍💻
-
-Do follow for more [Ruby on Rails](https://railsfactory.com/hire-ruby-on-rails-developer) posts.

@@ -161,5 +161,3 @@ Let whole reading stuff aside, we can write value even more elegantly [Validatio
 _Photo by [Ben White](https://unsplash.com/@benwhitephotography?utm_source=medium&utm_medium=referral) on [Unsplash](https://unsplash.com?utm_source=medium&utm_medium=referral)_
 
 That was all on fundamentals of Enums on Rails. Well I think, now you have a smile on your face, hence, one on mine. Stay tuned. We’ll catchup again next week to discuss something amazing!
-
-Do follow for more [Ruby on Rails](https://railsfactory.com/hire-ruby-on-rails-developer) posts.

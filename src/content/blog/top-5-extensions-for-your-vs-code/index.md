@@ -69,5 +69,3 @@ _CodeSnap extension for vscode._
 Extension Link: [marketplace.visualstudio.com/items?itemName=adpyke.codesnap](https://marketplace.visualstudio.com/items?itemName=adpyke.codesnap)
 
 Do comment if you guys have explored any hidden gem in the jungle of VS Code extensions that tops your recommendation list.
-
-Do follow for more [Ruby on Rails](https://railsfactory.com/hire-ruby-on-rails-developer) posts.

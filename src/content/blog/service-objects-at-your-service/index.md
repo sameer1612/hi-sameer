@@ -77,5 +77,3 @@ _app/services/social_media/platform/facebook.rb_
 > READ IT, DIGEST IT and then IMPLEMENT IT.
 
 Share, Discuss, Learn and Support others, if you liked it… 😊
-
-Do follow for more [Ruby on Rails](https://railsfactory.com/hire-ruby-on-rails-developer) posts.

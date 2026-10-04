@@ -34,5 +34,3 @@ The main idea was to create a platform where the tool merchants can build their 
 In the present day, e-commerce with Ruby on Rails is more relevant than ever. As the companies face imminent losses due to unseen circumstances, geographical preferences, customer needs, and much more, the companies aim to save more money, while reaching more customers. And, having a mobile eCommerce platform with RoR can reduce that operational burden by half.
 
 Name it and RoR has it all: payment gateways, campaign platforms, merchant helpdesks, etc. If you are planning to build an online shop, RoR has one of the best development frameworks as it includes many gems built particularly for e-commerce. Unique merchants deserve unique solutions. If you need to cover an extra mile for mature technology and a competent app development partner, that technology is Ruby on Rails and the partner is [RailsFactory](https://railsfactory.com/).
-
-Do follow for more Ruby on Rails posts.

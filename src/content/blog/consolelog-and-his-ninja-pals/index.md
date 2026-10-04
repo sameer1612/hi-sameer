@@ -77,5 +77,3 @@ The `console` object provides access to the browser's debugging console (e.g. th
 ## Conclusion
 
 So, ninja pals, today we have learnt about many ninja tools that the console provides us with. These methods can make our stressful debugging moments a little bit happier and add a lot of semantic meaning to the power of almighty **console.log(“Live Long and Prosper…”)**.
-
-[Some rights reserved](http://creativecommons.org/licenses/by/4.0/)

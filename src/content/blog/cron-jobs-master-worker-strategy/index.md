@@ -61,5 +61,3 @@ Major benefit comes to light when we understand that any one job failing doesn't
 ## Conclusion
 
 Hence, this strategy of using one master as cron’s reference and delegating work to parallel workers will make our work 10 times faster and even if that viral post comes in, 9/10 workers will be free to tackle next hour workload.
-
-Do follow for more [Ruby on Rails](https://railsfactory.com/hire-ruby-on-rails-developer) posts.

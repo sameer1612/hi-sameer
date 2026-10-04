@@ -14,7 +14,7 @@ React version 18 has brought some very appreciable changes to the core. One such
 
 Let’s take this fairly simple code for example. Judging by the empty dependency array in useEffect, we can expect “App Loaded” to be printed once in our console and be done with it.
 
-> If you are confused with the use of this [**console.count**](https://medium.com/console-log-and-his-ninja-pals-4fc0863ad5f4) method, do read here: [Awesome console methods](https://medium.com/console-log-and-his-ninja-pals-4fc0863ad5f4).
+> If you are confused with the use of this [**console.count**](/blog/consolelog-and-his-ninja-pals) method, do read here: [Awesome console methods](/blog/consolelog-and-his-ninja-pals).
 
 ![useEffect hook in react.](./assets/image-01.webp)
 
