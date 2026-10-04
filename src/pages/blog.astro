@@ -24,17 +24,12 @@ const host = (url: string) => new URL(url).hostname.replace(/^www\./, '');
         <ul class="mt-6 space-y-8">
           {posts.map(blog => (
             <li>
-              <a
-                href={blog.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="group flex items-start justify-between gap-8"
-              >
-                <div class="min-w-0">
+              <a href={blog.url} target="_blank" rel="noopener noreferrer" class="group flex w-fit items-start gap-6">
+                <div class="max-w-[75ch] min-w-0">
                   <h3 class="decoration-accent/50 group-hover:decoration-accent-hover text-xl leading-snug font-semibold underline-offset-4 group-hover:underline">
                     {blog.title}
                   </h3>
-                  <p class="text-gamma mt-1.5 max-w-[75ch] leading-relaxed">{blog.summary}</p>
+                  <p class="text-gamma mt-1.5 leading-relaxed">{blog.summary}</p>
                   <p class="text-gamma mt-2 font-sans text-[0.8125rem]">
                     <time datetime={blog.date}>{formatDate(blog.date)}</time>
                     <span aria-hidden="true"> · </span>
@@ -49,7 +44,7 @@ const host = (url: string) => new URL(url).hostname.replace(/^www\./, '');
                     src={blog.cover}
                     alt=""
                     loading="lazy"
-                    class="bg-beta ring-gamma/20 hidden aspect-[100/42] w-40 shrink-0 rounded-md object-cover opacity-90 ring-1 transition-[opacity,filter] group-hover:opacity-100 group-hover:brightness-100 in-data-[theme=dark]:brightness-[.8] sm:block"
+                    class="bg-beta ring-gamma/20 order-first mt-1 hidden aspect-[100/42] w-44 shrink-0 rounded-md object-cover opacity-90 ring-1 transition-[opacity,filter] group-hover:opacity-100 group-hover:brightness-100 in-data-[theme=dark]:brightness-[.8] sm:block"
                   />
                 )}
               </a>
