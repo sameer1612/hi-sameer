@@ -21,7 +21,7 @@ const host = (url: string) => new URL(url).hostname.replace(/^www\./, '');
         <h2 id={`year-${year}`} class="eyebrow">
           {year}
         </h2>
-        <ul class="mt-6 space-y-8">
+        <ul class="mt-6 space-y-12">
           {posts.map(blog => (
             <li>
               <a
