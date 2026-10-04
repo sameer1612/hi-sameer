@@ -119,11 +119,6 @@
     @apply relative;
   }
 
-  /* On wide screens, code boxes sit 1rem outside the text column so the code itself lines up with the text. */
-  .post .code-block {
-    @apply lg:-mx-4;
-  }
-
   .code-copy {
     @apply bg-alpha/80 text-gamma hover:text-delta ring-gamma/20 absolute top-2 right-2 cursor-pointer rounded px-2 py-1 font-sans text-xs opacity-0 ring-1 transition-opacity group-hover:opacity-100 focus-visible:opacity-100;
   }
