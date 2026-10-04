@@ -15,12 +15,10 @@ const currentRouteIndex = routes.findIndex(
 routes = rotateLeft(routes, currentRouteIndex);
 ---
 
-<header
-  class="bg-alpha safe-width fixed top-0 z-10 mx-auto flex w-screen flex-wrap items-center justify-between gap-x-6 gap-y-2 py-4"
->
-  <h4 class="text-accent order-1 capitalize">{routes[0][1]}</h4>
+<header class="bg-alpha safe-width fixed top-0 z-10 mx-auto flex w-screen items-center justify-between py-4">
+  <h4 class="text-accent capitalize">{routes[0][1]}</h4>
 
-  <nav class="order-3 flex w-full items-center justify-between gap-4 md:order-2 md:ml-auto md:w-auto md:justify-start">
+  <nav class="flex items-center gap-4">
     {
       routes.slice(1).map(([path, name]) => (
         <a
@@ -32,37 +30,51 @@ routes = rotateLeft(routes, currentRouteIndex);
         </a>
       ))
     }
-  </nav>
-
-  <button
-    id="theme-toggle"
-    type="button"
-    role="switch"
-    aria-label="Light mode"
-    class="border-gamma/40 hover:border-accent-hover relative order-2 h-6 w-11 shrink-0 cursor-pointer rounded-full border transition-colors md:order-3"
-  >
-    <span
-      class="bg-gamma text-alpha in-data-[theme=light]:bg-accent/15 in-data-[theme=light]:border-accent/40 in-data-[theme=light]:text-accent absolute top-px left-px flex size-5 items-center justify-center rounded-full transition-[translate,background-color] in-data-[theme=light]:translate-x-5 in-data-[theme=light]:border"
+    <button
+      type="button"
+      data-theme-toggle
+      role="switch"
+      aria-label="Light mode"
+      class="border-gamma/40 hover:border-accent-hover relative hidden h-6 w-11 shrink-0 cursor-pointer rounded-full border transition-colors md:block"
     >
-      <span class="flex in-data-[theme=light]:hidden"><i class="pi pi-moon text-xs!"></i></span>
-      <span class="hidden in-data-[theme=light]:flex"><i class="pi pi-sun text-xs!"></i></span>
-    </span>
-  </button>
+      <span
+        class="bg-gamma text-alpha in-data-[theme=light]:bg-accent/15 in-data-[theme=light]:border-accent/40 in-data-[theme=light]:text-accent absolute top-px left-px flex size-5 items-center justify-center rounded-full transition-[translate,background-color] in-data-[theme=light]:translate-x-5 in-data-[theme=light]:border"
+      >
+        <span class="flex in-data-[theme=light]:hidden"><i class="pi pi-moon text-xs!"></i></span>
+        <span class="hidden in-data-[theme=light]:flex"><i class="pi pi-sun text-xs!"></i></span>
+      </span>
+    </button>
+  </nav>
 </header>
+
+<button
+  type="button"
+  data-theme-toggle
+  role="switch"
+  aria-label="Light mode"
+  class="bg-beta border-gamma/40 text-gamma in-data-[theme=light]:text-accent fixed right-6 bottom-6 z-20 flex size-11 cursor-pointer items-center justify-center rounded-full border shadow-md md:hidden"
+>
+  <span class="flex in-data-[theme=light]:hidden"><i class="pi pi-moon"></i></span>
+  <span class="hidden in-data-[theme=light]:flex"><i class="pi pi-sun"></i></span>
+</button>
 
 <script>
   document.addEventListener('astro:page-load', () => {
-    const toggle = document.getElementById('theme-toggle');
-    if (!toggle) return;
-    const sync = () => toggle.setAttribute('aria-checked', String(document.documentElement.dataset.theme === 'light'));
+    const toggles = document.querySelectorAll('[data-theme-toggle]');
+    const sync = () => {
+      const light = String(document.documentElement.dataset.theme === 'light');
+      toggles.forEach(toggle => toggle.setAttribute('aria-checked', light));
+    };
     sync();
-    toggle.addEventListener('click', () => {
-      const next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
-      document.documentElement.dataset.theme = next;
-      sync();
-      try {
-        localStorage.setItem('theme', next);
-      } catch {}
-    });
+    toggles.forEach(toggle =>
+      toggle.addEventListener('click', () => {
+        const next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+        document.documentElement.dataset.theme = next;
+        sync();
+        try {
+          localStorage.setItem('theme', next);
+        } catch {}
+      }),
+    );
   });
 </script>
