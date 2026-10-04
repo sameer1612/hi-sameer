@@ -3,7 +3,7 @@ title: "🛠️ Quietly Engineering: How Claudey and I Rebuilt This Website in a
 date: 2026-10-04
 summary: "It started with a one-line request for a light mode. It ended with a full redesign, 28 blog posts pulled home from Medium, four AI clones cleaning Markdown in parallel, and a theme switch that says “Join the dark side.” Here’s how one Sunday got away from me."
 tags: ["webdev", "ai", "astro", "productivity"]
-readingTime: 9
+readingTime: 10
 cover: "./assets/cover.webp"
 ---
 
@@ -17,24 +17,40 @@ Let’s walk through it. No theory, no neck-deep history. Just what happened, wh
 
 ## Act 1: Let there be light
 
-The website already ran on a Gruvbox-ish dark palette, all wired through CSS variables. A good decision from past-me, for once. Claudey added a light palette under `[data-theme='light']`, a tiny inline script to pick the theme before the page paints (no white flash of shame), and a toggle in the header.
+The website already ran on a Gruvbox-ish dark palette, all wired through CSS variables. A good decision from past-me, for once. Claudey added a light palette under `[data-theme='light']` and a toggle in the header. The clever bit is a tiny script in the `<head>` that picks the theme before the page paints:
+
+```js
+let theme;
+try {
+  theme = localStorage.getItem('theme');
+} catch {}
+theme ??= matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+document.documentElement.dataset.theme = theme;
+```
+
+Your saved choice first, your system setting second. It runs before anything renders, so there's no white flash of shame. In Astro it needs `is:inline`, or it gets bundled and deferred, and the flash comes right back. The `try` is there because some browsers throw when storage is blocked, and a theme script that breaks the page is worse than no theme at all.
 
 Done in minutes. Then I looked at it.
 
 “The yellow is too harsh.” Fixed. “The button looks out of place.” Made it a text link. “I meant a toggle switch.” Made it a switch. And then the switch knob floated up and out of its own track like it was trying to escape.
 
-The culprit? Two CSS rules, both politely moving the knob up by half its height. Twice. Tailwind v4 uses the `translate` property, and the hand-written rule used `transform`. They don’t replace each other, they _add up_. Classic.
+The culprit? Two rules, both politely moving the knob up by half its height:
 
-Next, I asked for a sun and a moon inside the knob. Claudey added both and hid one with Tailwind’s `hidden` class. Screenshot time: **both icons, side by side, holding hands.**
+```html
+<span class="knob absolute top-1/2 -translate-y-1/2">…</span>
+```
 
 ```css
-/* primeicons.css, minding its own business */
-.pi {
-  display: inline-block;
+.knob {
+  transform: translateY(-50%);
 }
 ```
 
-Turns out the icon library ships this rule outside Tailwind’s layers, and unlayered CSS beats layered utilities. Every time. Wrap the icon in a plain `<span>`, hide the span instead, and peace was restored.
+Tailwind v4 utilities use the newer `translate` property, and the hand-written rule used `transform`. They don’t replace each other, they _add up_. Up 50%, then up another 50%. Classic.
+
+Next, I asked for a sun and a moon inside the knob. Claudey added both and hid one with Tailwind’s `hidden` class. Screenshot time: **both icons, side by side, holding hands.**
+
+Turns out the icon library sets its own `display` outside Tailwind’s layers, and unlayered CSS beats layered utilities. Every time. Wrap the icon in a plain `<span>`, hide the span instead, and peace was restored.
 
 Then came amber knobs, lighter borders, slightly-less-amber knobs. You know, the important stuff.
 
@@ -102,7 +118,15 @@ Then, a few minutes later:
 
 > create a bunch of subagents and hand it off
 
-And here’s the part that still makes me grin. Claudey wrote a one-page cleaning guide, split my terminal into four panes, and started **four copies of itself**, each taking seven-ish posts. I watched them work side by side: fixing heading levels, tagging every code block with a language, pasting gists in as real code, writing proper alt text for my memes, and politely deleting my old “Want to connect?” footers.
+And here’s the part that still makes me grin. Claudey wrote a one-page cleaning guide, split my terminal into four panes, and started **four copies of itself**, each taking seven-ish posts. The guide opened with two rules:
+
+> **Clean each post by hand.** Read the raw file top to bottom, then write the cleaned file yourself. Do not write or run scripts, sed/awk/regex passes, or any other automated transform over the Markdown.
+>
+> Change formatting only. Keep the author’s wording, spelling and tone exactly as written.
+
+The second rule mattered most. Four clones free to “improve” my writing would have been a very different Sunday.
+
+I watched them work side by side: fixing heading levels, tagging every code block with a language, pasting gists in as real code, writing proper alt text for my memes, and politely deleting my old “Want to connect?” footers.
 
 About five minutes later, all 28 posts were clean. The clones reported back what they weren’t sure about (two images never downloaded, a couple of Medium links pointing at each other), and Claudey tidied those up by hand.
 
@@ -117,6 +141,24 @@ A few more grown-up chores happened along the way, the kind nobody claps for:
 - Every dependency pinned to an exact version, Bun pinned to 1.4.2, the same version in CI. No surprise updates.
 - A long-standing bug fixed: every page had been telling Google it was a copy of my home page. Oops.
 - Code blocks now use Gruvbox colours that follow the theme switch, with a copy button.
+
+That Google one deserves a closer look, because it’s so easy to do. Back in 2025, I’d added this to the shared layout:
+
+```html
+<link rel="canonical" href="https://hi-sameer.vercel.app" />
+```
+
+One line, on every page, all pointing home. Now each page points to itself:
+
+```astro
+---
+const { canonical = new URL(Astro.url.pathname, Astro.site).href } = Astro.props;
+---
+
+<link rel="canonical" href={canonical} />
+```
+
+If you’ve ever hard-coded a canonical URL in a layout, go check. I’ll wait.
 
 ## So, what did I learn today?
 
