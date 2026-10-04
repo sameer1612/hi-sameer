@@ -11,19 +11,28 @@ const blogs: BlogArticle[] = await response.json();
     <section aria-label="Latest blog posts" class="grid gap-3 md:grid-cols-2 lg:mt-auto lg:grid-cols-3">
       {
         blogs.map(blog => (
-          <article class="bg-beta hover:bg-beta/70 rounded-lg p-2 transition-all duration-200 hover:scale-[99.75%]">
-            <a href={blog.canonical_url} target="_blank" rel="noopener noreferrer" class="flex items-start gap-2">
-              {blog.cover_image && (
-                <img
-                  src={blog.cover_image}
-                  alt={blog.title}
-                  class="size-28 shrink-0 rounded-lg object-cover"
-                  loading="lazy"
-                />
-              )}
-              <div class="flex flex-col gap-2">
+          <article class="bg-beta hover:bg-beta/70 overflow-hidden rounded-lg transition-all duration-200 hover:scale-[99.75%]">
+            <a href={blog.canonical_url} target="_blank" rel="noopener noreferrer" class="flex h-full flex-col">
+              <img
+                src={blog.cover_image ?? blog.social_image}
+                alt=""
+                class="aspect-[100/42] w-full object-cover"
+                loading="lazy"
+              />
+              <div class="flex grow flex-col gap-2 p-4">
                 <h2 class="text-delta font-roboto text-base! leading-snug font-medium">{blog.title}</h2>
                 <p class="text-gamma line-clamp-2 text-sm">{blog.description}</p>
+                <p class="text-gamma/80 mt-auto flex items-center gap-1.5 pt-2 text-xs">
+                  <time datetime={blog.published_at}>{blog.readable_publish_date}</time>
+                  <span aria-hidden="true">·</span>
+                  <span>{blog.reading_time_minutes} min read</span>
+                  <span aria-hidden="true">·</span>
+                  <span>
+                    on {new URL(blog.canonical_url).hostname.replace(/^www\./, '')}
+                    <span class="pi pi-external-link text-[0.6rem]!" aria-hidden="true" />
+                    <span class="sr-only">(opens in new tab)</span>
+                  </span>
+                </p>
               </div>
             </a>
           </article>

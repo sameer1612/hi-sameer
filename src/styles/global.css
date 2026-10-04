@@ -17,5 +17,6 @@ body {
 }
 
 main {
-  @apply h-screen overflow-auto;
+  /* Bottom padding on phones keeps content scrollable past the floating theme button. */
+  @apply h-screen overflow-auto max-md:pb-20;
 }

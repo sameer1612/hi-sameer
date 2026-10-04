@@ -4,9 +4,9 @@ import { testimonials } from '../data/testimonials';
 
 <div class="flex flex-col gap-8">
   <div class="flex flex-wrap items-center justify-between gap-4">
-    <h2 class="text-gamma flex-1">What people say?</h2>
+    <h2 class="text-gamma basis-full md:flex-1 md:basis-auto">What people say?</h2>
 
-    <div class="flex items-center gap-4">
+    <div class="flex w-full items-center justify-between gap-4 md:w-auto">
       <p class="text-gamma tabular-nums" aria-hidden="true">
         <strong id="testimonial-current" class="text-delta font-semibold"></strong> / <span id="testimonial-total"
         ></span>
@@ -41,10 +41,7 @@ import { testimonials } from '../data/testimonials';
       tabindex="0"
       class="focus-visible:ring-accent-hover rounded-lg outline-none focus-visible:ring-2"
     >
-      <div
-        id="testimonial-card"
-        class="testimonial-fade bg-beta flex min-h-180 flex-col gap-6 rounded-lg p-6 md:min-h-130"
-      >
+      <div id="testimonial-card" class="testimonial-fade bg-beta flex flex-col gap-6 rounded-lg p-6">
         <div>
           <h5 id="testimonial-author"></h5>
           <p id="testimonial-role" class="text-gamma"></p>
@@ -149,7 +146,7 @@ import { testimonials } from '../data/testimonials';
       dot.setAttribute('role', 'tab');
       dot.setAttribute('aria-label', `Go to testimonial ${i + 1} of ${testimonials.length}`);
       dot.className =
-        'bg-beta data-[current=true]:bg-accent data-[current=true]:w-4 focus-visible:ring-accent-hover size-2 rounded-full outline-none transition-all focus-visible:ring-2';
+        'bg-beta data-[current=true]:bg-accent data-[current=true]:w-4 focus-visible:ring-accent-hover relative size-2 cursor-pointer rounded-full outline-none transition-all focus-visible:ring-2 after:absolute after:-inset-2';
       dot.addEventListener('click', () => render(i));
       dotsWrap.appendChild(dot);
     });
@@ -167,6 +164,26 @@ import { testimonials } from '../data/testimonials';
         e.preventDefault();
         render(index + 1);
       }
+    });
+
+    // Swipe left/right on touch screens to change testimonial.
+    let touchStartX = 0;
+    let touchStartY = 0;
+    stage.addEventListener(
+      'touchstart',
+      e => {
+        if (!(e instanceof TouchEvent)) return;
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+      },
+      { passive: true },
+    );
+    stage.addEventListener('touchend', e => {
+      if (!(e instanceof TouchEvent)) return;
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      const dy = e.changedTouches[0].clientY - touchStartY;
+      if (Math.abs(dx) < 50 || Math.abs(dx) < Math.abs(dy)) return;
+      render(dx < 0 ? index + 1 : index - 1);
     });
 
     render(0);

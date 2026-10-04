@@ -24,7 +24,7 @@ routes = rotateLeft(routes, currentRouteIndex);
         <a
           href={path}
           target={path === '/resume.pdf' ? '_blank' : '_self'}
-          class="text-gamma hover:text-accent-hover font-montserrat text-sm font-medium uppercase underline-offset-4 transition-colors hover:underline md:text-base"
+          class="text-gamma hover:text-accent-hover font-montserrat -my-3 py-3 text-sm font-medium uppercase underline-offset-4 transition-colors hover:underline md:my-0 md:py-0 md:text-base"
         >
           {name}
         </a>
@@ -52,7 +52,7 @@ routes = rotateLeft(routes, currentRouteIndex);
   data-theme-toggle
   role="switch"
   aria-label="Light mode"
-  class="bg-beta border-gamma/40 text-gamma in-data-[theme=light]:text-accent fixed right-6 bottom-6 z-20 flex size-11 cursor-pointer items-center justify-center rounded-full border shadow-md md:hidden"
+  class="bg-beta border-gamma/40 text-gamma in-data-[theme=light]:text-accent fixed right-4 bottom-4 z-20 flex size-10 cursor-pointer items-center justify-center rounded-full border shadow-md md:hidden"
 >
   <span class="flex in-data-[theme=light]:hidden"><i class="pi pi-moon"></i></span>
   <span class="hidden in-data-[theme=light]:flex"><i class="pi pi-sun"></i></span>

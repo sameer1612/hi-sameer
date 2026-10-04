@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+const email = 'kumar.sam1612@gmail.com';
+
 const links = [
   {
     name: 'LinkedIn',
@@ -19,7 +21,7 @@ const links = [
   },
   {
     name: 'Email',
-    url: 'mailto:kumar.sam1612@gmail.com',
+    url: `mailto:${email}`,
     icon: 'pi-envelope',
   },
 ];
@@ -34,17 +36,29 @@ const links = [
     <div class="flex flex-wrap gap-2">
       {
         links.map(link => (
-          <a href={link.url} target="_blank" rel="noopener noreferrer">
-            <button class="btn-primary">
-              {link.name}
-              <span class={`pi ${link.icon} text-gamma/80`} />
-            </button>
+          <a href={link.url} target="_blank" rel="noopener noreferrer" class="btn-primary">
+            {link.name}
+            <span class={`pi ${link.icon} text-gamma/80`} />
           </a>
         ))
       }
     </div>
 
-    <div class="pointer-events-none fixed -right-1/7 bottom-0 h-1/2 md:right-0">
+    <p class="text-gamma z-10 flex items-center gap-2">
+      <span class="text-delta select-all">{email}</span>
+      <button
+        id="copy-email"
+        type="button"
+        data-email={email}
+        aria-label="Copy email address"
+        class="hover:text-accent-hover flex size-8 cursor-pointer items-center justify-center transition-colors"
+      >
+        <span class="pi pi-copy" aria-hidden="true"></span>
+      </button>
+      <span id="copy-email-status" class="text-accent text-sm" aria-live="polite"></span>
+    </p>
+
+    <div class="pointer-events-none fixed -right-1/7 bottom-0 h-2/5 md:right-0 md:h-1/2">
       <img src="/images/sameer.png" alt="Sameer Kumar" class="h-full w-auto" />
       <div
         class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,color-mix(in_oklab,var(--color-accent)_16%,transparent)_0%,transparent_65%)] mix-blend-overlay"
@@ -53,3 +67,20 @@ const links = [
     </div>
   </main>
 </Layout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const button = document.getElementById('copy-email');
+    const status = document.getElementById('copy-email-status');
+    if (!button || !status) return;
+    button.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(button.dataset.email ?? '');
+        status.textContent = 'Copied';
+      } catch {
+        status.textContent = 'Copy failed';
+      }
+      setTimeout(() => (status.textContent = ''), 2000);
+    });
+  });
+</script>
