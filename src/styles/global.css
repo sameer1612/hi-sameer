@@ -119,9 +119,9 @@
     @apply relative;
   }
 
-  /* On wide screens, post code blocks extend past the text column on both sides. */
+  /* On wide screens, code boxes sit 1rem outside the text column so the code itself lines up with the text. */
   .post .code-block {
-    @apply lg:-mx-16;
+    @apply lg:-mx-4;
   }
 
   .code-copy {
