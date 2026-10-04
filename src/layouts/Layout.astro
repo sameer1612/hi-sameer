@@ -6,9 +6,11 @@ import '../styles/global.css';
 
 interface Props {
   title?: string;
+  /** Vertically center short pages between header and footer. */
+  center?: boolean;
 }
 
-const { title } = Astro.props;
+const { title, center = false } = Astro.props;
 ---
 
 <!doctype html>
@@ -31,7 +33,7 @@ const { title } = Astro.props;
   </head>
   <body class="mx-auto flex min-h-dvh w-full flex-col px-5 md:w-[80vw] md:px-0">
     <Header />
-    <main class="grow py-12 md:py-20">
+    <main class:list={['grow py-12 md:py-20', center && 'flex flex-col justify-center']}>
       <slot />
     </main>
     <Footer />
