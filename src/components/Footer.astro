@@ -1,0 +1,18 @@
+<footer class="border-beta text-gamma flex items-center justify-between gap-4 border-t py-8 font-sans text-sm">
+  <p>© {new Date().getFullYear()} Sameer Kumar</p>
+
+  <button id="theme-toggle" type="button" class="hover:text-delta -my-3 cursor-pointer py-3 transition-colors">
+    <span class="in-data-[theme=light]:hidden">Switch to light</span>
+    <span class="hidden in-data-[theme=light]:inline">Switch to dark</span>
+  </button>
+</footer>
+
+<script>
+  document.getElementById('theme-toggle')?.addEventListener('click', () => {
+    const next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+    document.documentElement.dataset.theme = next;
+    try {
+      localStorage.setItem('theme', next);
+    } catch {}
+  });
+</script>

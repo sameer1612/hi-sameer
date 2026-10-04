@@ -1,9 +1,0 @@
-@utility safe-width {
-  @apply p-6 md:p-32;
-}
-
-.fading-image {
-  object-fit: cover;
-  mask-image: linear-gradient(to bottom, black 97%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, black 97%, transparent 100%);
-}

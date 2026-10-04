@@ -4,83 +4,76 @@ import Layout from '../layouts/Layout.astro';
 const email = 'kumar.sam1612@gmail.com';
 
 const links = [
-  {
-    name: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/sameerkumar1612/',
-    icon: 'pi-linkedin',
-  },
-  {
-    name: 'GitHub',
-    url: 'https://github.com/sameer1612',
-    icon: 'pi-github',
-  },
-  {
-    name: 'Medium',
-    url: 'https://medium.com/@sameer-kumar-1612',
-    icon: 'pi-book',
-  },
-  {
-    name: 'Email',
-    url: `mailto:${email}`,
-    icon: 'pi-envelope',
-  },
+  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/sameerkumar1612/', handle: 'sameerkumar1612' },
+  { name: 'GitHub', url: 'https://github.com/sameer1612', handle: 'sameer1612' },
+  { name: 'Medium', url: 'https://medium.com/@sameer-kumar-1612', handle: '@sameer-kumar-1612' },
+  { name: 'Resume', url: '/resume.pdf', handle: 'PDF' },
 ];
 ---
 
-<Layout>
-  <main class="safe-width main-height! flex flex-col items-start justify-center gap-8 md:h-screen! md:justify-center">
-    <div class="flex flex-col items-start">
-      <h1>Let's connect</h1>
-    </div>
+<Layout title="Contact">
+  <section class="grid items-end gap-10 md:grid-cols-[1fr_15rem]">
+    <div>
+      <h1 class="text-4xl font-semibold tracking-tight md:text-5xl">Contact</h1>
 
-    <div class="flex flex-wrap gap-2">
-      {
-        links.map(link => (
-          <a href={link.url} target="_blank" rel="noopener noreferrer" class="btn-primary">
-            {link.name}
-            <span class={`pi ${link.icon} text-gamma/80`} />
-          </a>
-        ))
-      }
-    </div>
-
-    <p class="text-gamma z-10 flex items-center gap-2">
-      <span class="text-delta select-all">{email}</span>
-      <button
-        id="copy-email"
-        type="button"
-        data-email={email}
-        aria-label="Copy email address"
-        class="hover:text-accent-hover flex size-8 cursor-pointer items-center justify-center transition-colors"
-      >
-        <span class="pi pi-copy" aria-hidden="true"></span>
-      </button>
-      <span id="copy-email-status" class="text-accent text-sm" aria-live="polite"></span>
-    </p>
-
-    <div class="pointer-events-none fixed -right-1/7 bottom-0 h-2/5 md:right-0 md:h-1/2">
-      <img src="/images/sameer.png" alt="Sameer Kumar" class="h-full w-auto" />
-      <div
-        class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,color-mix(in_oklab,var(--color-accent)_16%,transparent)_0%,transparent_65%)] mix-blend-overlay"
-      >
+      <div class="prose mt-8">
+        <p>Email is the best way to reach me — for work, a question about a post, or just to say hello.</p>
       </div>
+
+      <p class="mt-8 flex flex-wrap items-baseline gap-x-4 gap-y-2">
+        <a href={`mailto:${email}`} class="link text-xl md:text-2xl">{email}</a>
+        <button
+          id="copy-email"
+          type="button"
+          data-email={email}
+          class="text-accent hover:text-accent-hover -my-3 cursor-pointer py-3 font-sans text-sm font-medium transition-colors"
+        >
+          Copy
+        </button>
+        <span id="copy-email-status" class="text-gamma font-sans text-sm" aria-live="polite"></span>
+      </p>
+
+      <ul class="border-beta mt-12 divide-y divide-beta border-y font-sans text-[0.9375rem]">
+        {
+          links.map(link => (
+            <li>
+              <a
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group flex items-baseline justify-between gap-4 py-3.5"
+              >
+                <span class="text-delta group-hover:text-accent-hover font-medium transition-colors">{link.name}</span>
+                <span class="text-gamma">
+                  {link.handle} <span aria-hidden="true">↗</span>
+                  <span class="sr-only">(opens in new tab)</span>
+                </span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
     </div>
-  </main>
+
+    <img
+      src="/images/sameer.png"
+      alt="Portrait of Sameer Kumar"
+      class="mx-auto hidden w-full [mask-image:linear-gradient(to_bottom,black_80%,transparent)] md:block"
+    />
+  </section>
 </Layout>
 
 <script>
-  document.addEventListener('astro:page-load', () => {
-    const button = document.getElementById('copy-email');
-    const status = document.getElementById('copy-email-status');
-    if (!button || !status) return;
-    button.addEventListener('click', async () => {
-      try {
-        await navigator.clipboard.writeText(button.dataset.email ?? '');
-        status.textContent = 'Copied';
-      } catch {
-        status.textContent = 'Copy failed';
-      }
-      setTimeout(() => (status.textContent = ''), 2000);
-    });
+  const button = document.getElementById('copy-email');
+  const status = document.getElementById('copy-email-status');
+  button?.addEventListener('click', async () => {
+    if (!status) return;
+    try {
+      await navigator.clipboard.writeText(button.dataset.email ?? '');
+      status.textContent = 'Copied';
+    } catch {
+      status.textContent = 'Copy failed';
+    }
+    setTimeout(() => (status.textContent = ''), 2000);
   });
 </script>

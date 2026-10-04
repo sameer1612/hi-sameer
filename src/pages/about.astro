@@ -1,34 +1,103 @@
 ---
-import AboutText from '../components/AboutText.astro';
-import Journey from '../components/Journey.astro';
-import Testimonials from '../components/testimonials.astro';
 import Layout from '../layouts/Layout.astro';
+import { journeyList } from '../data/journey';
+import { testimonials } from '../data/testimonials';
+
+const featured = testimonials.filter(t => t.featured);
+const others = testimonials.filter(t => !t.featured);
+const paragraphs = (text: string) =>
+  text
+    .split('\n')
+    .map(line => line.trim())
+    .filter(Boolean);
 ---
 
-<Layout>
-  <main>
-    <div class="pointer-events-none relative hidden h-1/2 md:fixed md:right-0 md:bottom-0 md:block">
-      <img src="/images/sameer.png" alt="Sameer Kumar" class="h-full w-auto grayscale-35" />
-      <div class="from-alpha absolute inset-0 bg-linear-to-r via-transparent to-transparent"></div>
+<Layout title="About">
+  <article>
+    <h1 class="text-4xl font-semibold tracking-tight md:text-5xl">About</h1>
+
+    <div class="prose mt-10">
+      <p>
+        Hey, I'm Sameer — engineer by title, systems builder by instinct. I enjoy building scalable products,
+        modernizing messy systems, and turning complicated workflows into clean, maintainable solutions.
+      </p>
+      <p>
+        Most of my work revolves around architecture, performance, platform design, and solving problems that sit
+        somewhere between engineering and product thinking. I like understanding how things work under the hood,
+        simplifying complexity, and occasionally experimenting with ideas that probably shouldn’t work as well as they
+        do.
+      </p>
+      <p>
+        Outside work, I spend time exploring tech rabbit holes, teaching, tinkering with new ideas, and over-optimizing
+        things that were already fast enough.
+      </p>
     </div>
 
-    <div
-      class="safe-width bg-alpha mt-12 flex flex-col justify-center gap-8 max-md:py-10 md:mt-auto md:min-h-full md:w-3/5"
-    >
-      <AboutText />
-      <img
-        src="/scroll-down.svg"
-        alt="scroll down"
-        class="fixed right-8 bottom-1/4 -z-10 size-8 md:right-auto md:bottom-4"
-      />
-    </div>
+    <section aria-labelledby="experience" class="mt-20">
+      <h2 id="experience" class="eyebrow">Experience</h2>
 
-    <div class="safe-width bg-alpha flex flex-col justify-center gap-8 max-md:py-10 md:min-h-full md:w-3/5">
-      <Journey />
-    </div>
+      <ol class="mt-8 space-y-12">
+        {
+          journeyList.map(company => (
+            <li>
+              <h3 class="text-2xl font-semibold tracking-tight">{company.title}</h3>
+              <ol class="mt-5 space-y-8">
+                {company.roles.map(role => (
+                  <li>
+                    <p class="text-gamma font-sans text-[0.9375rem] font-medium">{role.position}</p>
+                    <div class="prose mt-2">
+                      {paragraphs(role.description).map(line => (
+                        <p>{line}</p>
+                      ))}
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </li>
+          ))
+        }
+      </ol>
+    </section>
 
-    <div class="safe-width bg-alpha flex flex-col justify-center gap-8 max-md:py-10 md:min-h-full md:w-3/5">
-      <Testimonials />
-    </div>
-  </main>
+    <section aria-labelledby="kind-words" class="mt-20">
+      <h2 id="kind-words" class="eyebrow">Kind words</h2>
+
+      <div class="mt-8 space-y-10">
+        {
+          featured.map(t => (
+            <figure class="border-accent/60 border-l-2 pl-5 md:pl-6">
+              <blockquote class="prose" set:html={t.content} />
+              <figcaption class="mt-4 font-sans text-sm">
+                <span class="text-delta font-medium">{t.author}</span>
+                <span class="text-gamma"> · {t.designation}</span>
+              </figcaption>
+            </figure>
+          ))
+        }
+      </div>
+
+      <details class="group mt-10">
+        <summary
+          class="text-accent hover:text-accent-hover w-fit cursor-pointer font-sans text-[0.9375rem] font-medium transition-colors"
+        >
+          <span class="group-open:hidden">Show {others.length} more</span>
+          <span class="hidden group-open:inline">Show fewer</span>
+        </summary>
+
+        <div class="mt-10 space-y-10">
+          {
+            others.map(t => (
+              <figure class="border-beta border-l-2 pl-5 md:pl-6">
+                <blockquote class="prose" set:html={t.content} />
+                <figcaption class="mt-4 font-sans text-sm">
+                  <span class="text-delta font-medium">{t.author}</span>
+                  <span class="text-gamma"> · {t.designation}</span>
+                </figcaption>
+              </figure>
+            ))
+          }
+        </div>
+      </details>
+    </section>
+  </article>
 </Layout>

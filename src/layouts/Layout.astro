@@ -1,37 +1,39 @@
 ---
+import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import Seo from '../components/Seo.astro';
 import '../styles/global.css';
-import { ClientRouter } from 'astro:transitions';
+
+interface Props {
+  title?: string;
+}
+
+const { title } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="/images/ninja.png" type="image/x-icon" />
-    <link rel="icon" href="/images/ninja.png" type="image/x-icon" />
+    <link rel="icon" href="/images/ninja.png" type="image/png" />
     <meta name="generator" content={Astro.generator} />
-    <title>Sameer Kumar</title>
+    <title>{title ? `${title} · Sameer Kumar` : 'Sameer Kumar'}</title>
     <script is:inline>
-      const applyTheme = () => {
-        let theme;
-        try {
-          theme = localStorage.getItem('theme');
-        } catch {}
-        theme ??= matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-        document.documentElement.dataset.theme = theme;
-      };
-      applyTheme();
-      document.addEventListener('astro:after-swap', applyTheme);
+      let theme;
+      try {
+        theme = localStorage.getItem('theme');
+      } catch {}
+      theme ??= matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      document.documentElement.dataset.theme = theme;
     </script>
-    <ClientRouter />
     <Seo />
   </head>
-  <body>
+  <body class="mx-auto flex min-h-dvh max-w-3xl flex-col px-5 md:px-8">
     <Header />
-    <slot />
+    <main class="grow py-12 md:py-20">
+      <slot />
+    </main>
+    <Footer />
   </body>
 </html>

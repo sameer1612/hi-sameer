@@ -17,27 +17,12 @@
 }
 
 @theme inline {
-  --font-roboto: 'Roboto Variable';
-  --font-poppins: 'Poppins';
-  --font-montserrat: 'Montserrat Variable';
+  --font-serif: 'Source Serif 4 Variable', Georgia, serif;
+  --font-sans: 'Inter Variable', system-ui, sans-serif;
   --color-alpha: var(--alpha);
   --color-beta: var(--beta);
   --color-gamma: var(--gamma);
   --color-delta: var(--delta);
   --color-accent: var(--accent);
   --color-accent-hover: var(--accent-hover);
-}
-
-@keyframes bounce-x {
-  0%,
-  100% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(25%);
-  }
-}
-
-@utility animate-bounce-x {
-  animation: bounce-x 1s infinite;
 }

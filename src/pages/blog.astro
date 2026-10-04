@@ -4,40 +4,47 @@ import type { BlogArticle } from '../types/blog';
 
 const response = await fetch('https://dev.to/api/articles/latest?username=sameer1612');
 const blogs: BlogArticle[] = await response.json();
+
+const byYear = Map.groupBy(blogs, blog => new Date(blog.published_at).getFullYear());
+const formatDate = (iso: string) =>
+  new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
+const host = (url: string) => new URL(url).hostname.replace(/^www\./, '');
 ---
 
-<Layout>
-  <main class="bg-alpha safe-width pt-24! md:pt-28!">
-    <section aria-label="Latest blog posts" class="grid gap-3 md:grid-cols-2 lg:mt-auto lg:grid-cols-3">
-      {
-        blogs.map(blog => (
-          <article class="bg-beta hover:bg-beta/70 overflow-hidden rounded-lg transition-all duration-200 hover:scale-[99.75%]">
-            <a href={blog.canonical_url} target="_blank" rel="noopener noreferrer" class="flex h-full flex-col">
-              <img
-                src={blog.cover_image ?? blog.social_image}
-                alt=""
-                class="aspect-[100/42] w-full object-cover"
-                loading="lazy"
-              />
-              <div class="flex grow flex-col gap-2 p-4">
-                <h2 class="text-delta font-roboto text-base! leading-snug font-medium">{blog.title}</h2>
-                <p class="text-gamma line-clamp-2 text-sm">{blog.description}</p>
-                <p class="text-gamma/80 mt-auto flex items-center gap-1.5 pt-2 text-xs">
-                  <time datetime={blog.published_at}>{blog.readable_publish_date}</time>
-                  <span aria-hidden="true">·</span>
-                  <span>{blog.reading_time_minutes} min read</span>
-                  <span aria-hidden="true">·</span>
-                  <span>
-                    on {new URL(blog.canonical_url).hostname.replace(/^www\./, '')}
-                    <span class="pi pi-external-link text-[0.6rem]!" aria-hidden="true" />
-                    <span class="sr-only">(opens in new tab)</span>
-                  </span>
+<Layout title="Blog">
+  <h1 class="text-4xl font-semibold tracking-tight md:text-5xl">Blog</h1>
+  <p class="prose text-gamma mt-6">
+    Notes on frontend, Rails, architecture and the craft of engineering. Posts open on the site where they were first
+    published.
+  </p>
+
+  {
+    [...byYear].map(([year, posts]) => (
+      <section aria-labelledby={`year-${year}`} class="mt-16">
+        <h2 id={`year-${year}`} class="eyebrow">
+          {year}
+        </h2>
+        <ul class="mt-6 space-y-8">
+          {posts.map(blog => (
+            <li>
+              <a href={blog.canonical_url} target="_blank" rel="noopener noreferrer" class="group block">
+                <h3 class="decoration-accent/50 group-hover:decoration-accent-hover text-xl leading-snug font-semibold underline-offset-4 group-hover:underline">
+                  {blog.title}
+                </h3>
+                <p class="text-gamma mt-1.5 line-clamp-2 leading-relaxed">{blog.description}</p>
+                <p class="text-gamma mt-2 font-sans text-[0.8125rem]">
+                  <time datetime={blog.published_at}>{formatDate(blog.published_at)}</time>
+                  <span aria-hidden="true"> · </span>
+                  {blog.reading_time_minutes} min read
+                  <span aria-hidden="true"> · </span>
+                  {host(blog.canonical_url)} <span aria-hidden="true">↗</span>
+                  <span class="sr-only">(opens in new tab)</span>
                 </p>
-              </div>
-            </a>
-          </article>
-        ))
-      }
-    </section>
-  </main>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))
+  }
 </Layout>

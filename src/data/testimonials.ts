@@ -2,6 +2,7 @@ type Testimonial = {
   author: string;
   designation: string;
   content: string;
+  featured?: boolean;
 };
 
 export const testimonials: Testimonial[] = [
@@ -47,6 +48,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     author: 'Luke Burroughs',
+    featured: true,
     designation: 'Art Direction and Design, Foolproof UK',
     content: `At Foolproof, we worked with Sameer on a client account. 
       Sameer was excellent, and onboarded to the project very quickly, 
@@ -83,6 +85,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     author: 'Shamil Siddique',
+    featured: true,
     designation: 'Technical Consultant, TarkaLabs',
     content: `Sameer is an absolute pleasure to work with. During my time on his team, I found him to be incredibly approachable and easy-going. 
     His confidence in his skills is clear, and he consistently ensures that everything he touches is left in a better state than it was before. 
@@ -97,6 +100,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     author: 'Vishal Bihani',
+    featured: true,
     designation: 'Software Engineer, Zensar Technologies',
     content: `Sameer and I worked on a common project. 
     Though our roles were different, I have to say that he is as reliable as a sunrise every morning. 
