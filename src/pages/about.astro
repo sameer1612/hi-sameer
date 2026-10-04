@@ -17,21 +17,30 @@ const paragraphs = (text: string) =>
   <article>
     <h1 class="text-4xl font-semibold tracking-tight md:text-5xl">About</h1>
 
-    <div class="prose mt-10">
-      <p>
-        Hey, I'm Sameer — engineer by title, systems builder by instinct. I enjoy building scalable products,
-        modernizing messy systems, and turning complicated workflows into clean, maintainable solutions.
-      </p>
-      <p>
-        Most of my work revolves around architecture, performance, platform design, and solving problems that sit
-        somewhere between engineering and product thinking. I like understanding how things work under the hood,
-        simplifying complexity, and occasionally experimenting with ideas that probably shouldn’t work as well as they
-        do.
-      </p>
-      <p>
-        Outside work, I spend time exploring tech rabbit holes, teaching, tinkering with new ideas, and over-optimizing
-        things that were already fast enough.
-      </p>
+    <div class="mt-10 grid items-center gap-16 lg:grid-cols-[minmax(0,65ch)_1fr]">
+      <div class="prose">
+        <p>
+          Hey, I'm Sameer — engineer by title, systems builder by instinct. I enjoy building scalable products,
+          modernizing messy systems, and turning complicated workflows into clean, maintainable solutions.
+        </p>
+        <p>
+          Most of my work revolves around architecture, performance, platform design, and solving problems that sit
+          somewhere between engineering and product thinking. I like understanding how things work under the hood,
+          simplifying complexity, and occasionally experimenting with ideas that probably shouldn’t work as well as they
+          do.
+        </p>
+        <p>
+          Outside work, I spend time exploring tech rabbit holes, teaching, tinkering with new ideas, and
+          over-optimizing things that were already fast enough.
+        </p>
+      </div>
+      <div class="bg-beta hidden aspect-[4/5] w-60 justify-self-center overflow-hidden rounded-2xl lg:block">
+        <img
+          src="/images/sameer.png"
+          alt="Portrait of Sameer Kumar"
+          class="size-full object-cover object-bottom opacity-90 grayscale-[35%]"
+        />
+      </div>
     </div>
 
     <hr class="border-gamma/30 mt-20" />
