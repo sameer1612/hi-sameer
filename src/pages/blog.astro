@@ -27,19 +27,34 @@ const host = (url: string) => new URL(url).hostname.replace(/^www\./, '');
         <ul class="mt-6 space-y-8">
           {posts.map(blog => (
             <li>
-              <a href={blog.canonical_url} target="_blank" rel="noopener noreferrer" class="group block">
-                <h3 class="decoration-accent/50 group-hover:decoration-accent-hover text-xl leading-snug font-semibold underline-offset-4 group-hover:underline">
-                  {blog.title}
-                </h3>
-                <p class="text-gamma mt-1.5 line-clamp-2 leading-relaxed">{blog.description}</p>
-                <p class="text-gamma mt-2 font-sans text-[0.8125rem]">
-                  <time datetime={blog.published_at}>{formatDate(blog.published_at)}</time>
-                  <span aria-hidden="true"> · </span>
-                  {blog.reading_time_minutes} min read
-                  <span aria-hidden="true"> · </span>
-                  {host(blog.canonical_url)} <span aria-hidden="true">↗</span>
-                  <span class="sr-only">(opens in new tab)</span>
-                </p>
+              <a
+                href={blog.canonical_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group flex max-w-3xl items-start justify-between gap-8"
+              >
+                <div class="min-w-0">
+                  <h3 class="decoration-accent/50 group-hover:decoration-accent-hover text-xl leading-snug font-semibold underline-offset-4 group-hover:underline">
+                    {blog.title}
+                  </h3>
+                  <p class="text-gamma mt-1.5 line-clamp-2 leading-relaxed">{blog.description}</p>
+                  <p class="text-gamma mt-2 font-sans text-[0.8125rem]">
+                    <time datetime={blog.published_at}>{formatDate(blog.published_at)}</time>
+                    <span aria-hidden="true"> · </span>
+                    {blog.reading_time_minutes} min read
+                    <span aria-hidden="true"> · </span>
+                    {host(blog.canonical_url)} <span aria-hidden="true">↗</span>
+                    <span class="sr-only">(opens in new tab)</span>
+                  </p>
+                </div>
+                {blog.cover_image && (
+                  <img
+                    src={blog.cover_image}
+                    alt=""
+                    loading="lazy"
+                    class="bg-beta hidden aspect-[100/42] w-40 shrink-0 rounded-md object-cover opacity-90 transition-opacity group-hover:opacity-100 sm:block"
+                  />
+                )}
               </a>
             </li>
           ))}
