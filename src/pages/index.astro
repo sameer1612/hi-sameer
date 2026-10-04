@@ -4,21 +4,15 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout center>
   <section>
-    <p
-      class="text-gamma text-[3.5rem] leading-[1.02] font-medium tracking-tight sm:text-7xl md:text-8xl"
-    >
-      Quietly<br />engineering.
+    <p class="text-gamma text-[3.5rem] leading-[1.02] font-medium tracking-tight sm:text-7xl md:text-8xl">
+      Quietly
+      <br />
+      engineering.
     </p>
 
     <div class="mt-12 flex items-center gap-4 md:mt-16">
-      <div
-        class="bg-beta size-14 shrink-0 overflow-hidden rounded-full in-data-[theme=light]:bg-accent/40"
-      >
-        <img
-          src="/images/sameer-bw.png"
-          alt="Portrait of Sameer Kumar"
-          class="size-full object-cover"
-        />
+      <div class="bg-beta size-14 shrink-0 overflow-hidden rounded-full in-data-[theme=light]:bg-accent/40">
+        <img src="/images/sameer-bw.png" alt="Portrait of Sameer Kumar" class="size-full object-cover" />
       </div>
       <div class="font-sans">
         <h1 class="text-delta font-medium">Sameer Kumar</h1>
@@ -28,8 +22,10 @@ import Layout from '../layouts/Layout.astro';
             href="https://www.zensar.com"
             target="_blank"
             rel="noopener noreferrer"
-            class="link hover:text-delta transition-colors">Zensar Technologies</a
+            class="link hover:text-delta transition-colors"
           >
+            Zensar Technologies
+          </a>
         </p>
       </div>
     </div>
@@ -40,8 +36,16 @@ import Layout from '../layouts/Layout.astro';
     </p>
 
     <ul class="mt-8 flex flex-wrap gap-x-8 gap-y-3 font-sans text-[0.9375rem]">
-      <li><a href="/about" class="link">More about me →</a></li>
-      <li><a href="/blog" class="link">Read the blog →</a></li>
+      <li>
+        <a href="/about" class="link">
+          More about me →
+        </a>
+      </li>
+      <li>
+        <a href="/blog" class="link">
+          Read the blog →
+        </a>
+      </li>
     </ul>
   </section>
 </Layout>

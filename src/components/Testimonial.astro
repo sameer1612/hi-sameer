@@ -12,10 +12,14 @@ const date = new Date(t.date).toLocaleDateString('en-US', { month: 'short', year
 
 <figure class:list={['border-l-2 pl-5 md:pl-6', featured ? 'border-accent/60' : 'border-beta']}>
   <blockquote class="prose">
-    {t.content.map(paragraph => <p>{paragraph}</p>)}
+    {t.content.map(paragraph => (
+      <p>{paragraph}</p>
+    ))}
   </blockquote>
   <figcaption class="mt-4 font-sans text-sm leading-relaxed">
-    <a href={t.profile} target="_blank" rel="noopener noreferrer" class="link text-delta font-medium">{t.author}</a>
+    <a href={t.profile} target="_blank" rel="noopener noreferrer" class="link text-delta font-medium">
+      {t.author}
+    </a>
     <span class="text-gamma"> · {t.designation}</span>
     <span class="text-gamma block">
       {t.relationship} · <time datetime={t.date}>{date}</time>

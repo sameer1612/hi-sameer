@@ -15,48 +15,46 @@ const host = (url: string) => new URL(url).hostname.replace(/^www\./, '');
     where they were first published.
   </p>
 
-  {
-    [...byYear].map(([year, posts]) => (
-      <section aria-labelledby={`year-${year}`} class="mt-16">
-        <h2 id={`year-${year}`} class="eyebrow">
-          {year}
-        </h2>
-        <ul class="mt-6 space-y-12">
-          {posts.map(blog => (
-            <li>
-              <a
-                href={blog.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="group flex flex-col gap-4 sm:w-fit sm:flex-row sm:items-start sm:gap-6"
-              >
-                <div class="max-w-[75ch] min-w-0">
-                  <h3 class="decoration-accent/50 group-hover:decoration-accent-hover text-xl leading-snug font-semibold underline-offset-4 group-hover:underline">
-                    {blog.title}
-                  </h3>
-                  <p class="text-gamma mt-1.5 leading-relaxed">{blog.summary}</p>
-                  <p class="text-gamma mt-2 font-sans text-[0.8125rem]">
-                    <time datetime={blog.date}>{formatDate(blog.date)}</time>
-                    <span aria-hidden="true"> · </span>
-                    {blog.readingTime} min read
-                    <span aria-hidden="true"> · </span>
-                    {host(blog.url)} <span aria-hidden="true">↗</span>
-                    <span class="sr-only">(opens in new tab)</span>
-                  </p>
-                </div>
-                {blog.cover && (
-                  <img
-                    src={blog.cover}
-                    alt=""
-                    loading="lazy"
-                    class="bg-beta ring-gamma/20 order-first aspect-[100/42] w-full shrink-0 rounded-md object-cover opacity-90 ring-1 transition-[opacity,filter] group-hover:opacity-100 group-hover:brightness-100 in-data-[theme=dark]:brightness-[.8] sm:mt-1 sm:w-44"
-                  />
-                )}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </section>
-    ))
-  }
+  {[...byYear].map(([year, posts]) => (
+    <section aria-labelledby={`year-${year}`} class="mt-16">
+      <h2 id={`year-${year}`} class="eyebrow">
+        {year}
+      </h2>
+      <ul class="mt-6 space-y-12">
+        {posts.map(blog => (
+          <li>
+            <a
+              href={blog.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group flex flex-col gap-4 sm:w-fit sm:flex-row sm:items-start sm:gap-6"
+            >
+              <div class="max-w-[75ch] min-w-0">
+                <h3 class="decoration-accent/50 group-hover:decoration-accent-hover text-xl leading-snug font-semibold underline-offset-4 group-hover:underline">
+                  {blog.title}
+                </h3>
+                <p class="text-gamma mt-1.5 leading-relaxed">{blog.summary}</p>
+                <p class="text-gamma mt-2 font-sans text-[0.8125rem]">
+                  <time datetime={blog.date}>{formatDate(blog.date)}</time>
+                  <span aria-hidden="true"> · </span>
+                  {blog.readingTime} min read
+                  <span aria-hidden="true"> · </span>
+                  {host(blog.url)} <span aria-hidden="true">↗</span>
+                  <span class="sr-only">(opens in new tab)</span>
+                </p>
+              </div>
+              {blog.cover && (
+                <img
+                  src={blog.cover}
+                  alt=""
+                  loading="lazy"
+                  class="bg-beta ring-gamma/20 order-first aspect-[100/42] w-full shrink-0 rounded-md object-cover opacity-90 ring-1 transition-[opacity,filter] group-hover:opacity-100 group-hover:brightness-100 in-data-[theme=dark]:brightness-[.8] sm:mt-1 sm:w-44"
+                />
+              )}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
 </Layout>

@@ -21,7 +21,9 @@ const links = [
       </div>
 
       <p class="mt-8 flex flex-wrap items-baseline gap-x-4 gap-y-2">
-        <a href={`mailto:${email}`} class="link text-xl md:text-2xl">{email}</a>
+        <a href={`mailto:${email}`} class="link text-xl md:text-2xl">
+          {email}
+        </a>
         <button
           id="copy-email"
           type="button"
@@ -34,24 +36,22 @@ const links = [
       </p>
 
       <ul class="border-beta divide-beta mt-12 divide-y border-y font-sans text-[0.9375rem]">
-        {
-          links.map(link => (
-            <li>
-              <a
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="group flex items-baseline justify-between gap-4 py-3.5"
-              >
-                <span class="text-delta group-hover:text-accent-hover font-medium transition-colors">{link.name}</span>
-                <span class="text-gamma">
-                  {link.handle} <span aria-hidden="true">↗</span>
-                  <span class="sr-only">(opens in new tab)</span>
-                </span>
-              </a>
-            </li>
-          ))
-        }
+        {links.map(link => (
+          <li>
+            <a
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group flex items-baseline justify-between gap-4 py-3.5"
+            >
+              <span class="text-delta group-hover:text-accent-hover font-medium transition-colors">{link.name}</span>
+              <span class="text-gamma">
+                {link.handle} <span aria-hidden="true">↗</span>
+                <span class="sr-only">(opens in new tab)</span>
+              </span>
+            </a>
+          </li>
+        ))}
       </ul>
     </div>
   </section>

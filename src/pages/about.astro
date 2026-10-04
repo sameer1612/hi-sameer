@@ -49,50 +49,54 @@ const paragraphs = (text: string) =>
     <hr class="border-gamma/30 mt-20" />
 
     <section aria-labelledby="experience" class="mt-20">
-      <h2 id="experience" class="eyebrow">Experience</h2>
+      <h2 id="experience" class="eyebrow">
+        Experience
+      </h2>
 
       <ol class="mt-8 space-y-12">
-        {
-          journeyList.map(company => (
-            <li>
-              <h3 class="text-2xl font-semibold tracking-tight">{company.title}</h3>
-              <ol class="mt-5 space-y-8">
-                {company.roles.map(role => (
-                  <li>
-                    <p class="text-gamma font-sans text-[0.9375rem] font-medium">{role.position}</p>
-                    <div class="prose mt-2">
-                      {paragraphs(role.description).map(line => (
-                        <p>{line}</p>
-                      ))}
-                    </div>
-                  </li>
-                ))}
-              </ol>
-            </li>
-          ))
-        }
+        {journeyList.map(company => (
+          <li>
+            <h3 class="text-2xl font-semibold tracking-tight">{company.title}</h3>
+            <ol class="mt-5 space-y-8">
+              {company.roles.map(role => (
+                <li>
+                  <p class="text-gamma font-sans text-[0.9375rem] font-medium">{role.position}</p>
+                  <div class="prose mt-2">
+                    {paragraphs(role.description).map(line => (
+                      <p>{line}</p>
+                    ))}
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </li>
+        ))}
       </ol>
     </section>
 
     <hr class="border-gamma/30 mt-20" />
 
     <section aria-labelledby="kind-words" class="mt-20">
-      <h2 id="kind-words" class="eyebrow">Kind words</h2>
+      <h2 id="kind-words" class="eyebrow">
+        Kind words
+      </h2>
 
       <div class="mt-8 space-y-10">
-        {featured.map(t => <Testimonial testimonial={t} featured />)}
+        {featured.map(t => (
+          <Testimonial testimonial={t} featured />
+        ))}
       </div>
 
       <details class="group mt-10">
-        <summary
-          class="text-accent hover:text-accent-hover w-fit cursor-pointer font-sans text-[0.9375rem] font-medium transition-colors"
-        >
+        <summary class="text-accent hover:text-accent-hover w-fit cursor-pointer font-sans text-[0.9375rem] font-medium transition-colors">
           <span class="group-open:hidden">Show {others.length} more</span>
           <span class="hidden group-open:inline">Show fewer</span>
         </summary>
 
         <div class="mt-10 space-y-10">
-          {others.map(t => <Testimonial testimonial={t} />)}
+          {others.map(t => (
+            <Testimonial testimonial={t} />
+          ))}
         </div>
       </details>
     </section>
