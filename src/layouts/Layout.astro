@@ -30,11 +30,22 @@ const fullTitle = title ? `${title} · Sameer Kumar` : 'Sameer Kumar';
     <title>{fullTitle}</title>
     <script is:inline>
       const query = matchMedia('(prefers-color-scheme: light)');
-      const apply = () => {
-        document.documentElement.dataset.theme = query.matches ? 'light' : 'dark';
+      const browserTheme = () => (query.matches ? 'light' : 'dark');
+      // A manual toggle is kept in sessionStorage for 5 minutes, then the browser setting wins again.
+      const override = () => {
+        try {
+          const { theme, expires } = JSON.parse(sessionStorage.getItem('theme-override'));
+          if (Date.now() < expires) return theme;
+          sessionStorage.removeItem('theme-override');
+        } catch {}
       };
-      apply();
-      query.addEventListener('change', apply);
+      document.documentElement.dataset.theme = override() ?? browserTheme();
+      query.addEventListener('change', () => {
+        try {
+          sessionStorage.removeItem('theme-override');
+        } catch {}
+        document.documentElement.dataset.theme = browserTheme();
+      });
     </script>
     <Seo
       title={fullTitle}

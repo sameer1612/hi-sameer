@@ -38,5 +38,8 @@
   document.getElementById('theme-toggle')?.addEventListener('click', () => {
     const next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
     document.documentElement.dataset.theme = next;
+    try {
+      sessionStorage.setItem('theme-override', JSON.stringify({ theme: next, expires: Date.now() + 5 * 60 * 1000 }));
+    } catch {}
   });
 </script>

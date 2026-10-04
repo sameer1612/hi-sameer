@@ -21,7 +21,7 @@ There is no test or lint script. Verify changes with `bun run build`. Don't star
 ## Conventions
 
 - Colours come from CSS variables (`alpha`, `beta`, `gamma`, `delta`, `accent`) defined per theme in `theme.css`. Use the Tailwind tokens, not raw colours.
-- Theme follows the browser's `prefers-color-scheme` and is never persisted. The footer toggle only changes `data-theme` in memory, so it resets on navigation. Don't add localStorage or cookies for it.
+- Theme follows the browser's `prefers-color-scheme`. The footer toggle is kept in `sessionStorage` (`theme-override`) with a 5 minute expiry, after which the browser setting wins again. A change to the browser setting clears it. Never use localStorage or cookies for it.
 - Code block colours are per theme in `global.css` (shiki dual themes in `astro.config.mjs`).
 
 ## Git
