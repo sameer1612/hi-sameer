@@ -29,12 +29,12 @@ const fullTitle = title ? `${title} · Sameer Kumar` : 'Sameer Kumar';
     <meta name="generator" content={Astro.generator} />
     <title>{fullTitle}</title>
     <script is:inline>
-      let theme;
-      try {
-        theme = localStorage.getItem('theme');
-      } catch {}
-      theme ??= matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-      document.documentElement.dataset.theme = theme;
+      const query = matchMedia('(prefers-color-scheme: light)');
+      const apply = () => {
+        document.documentElement.dataset.theme = query.matches ? 'light' : 'dark';
+      };
+      apply();
+      query.addEventListener('change', apply);
     </script>
     <Seo
       title={fullTitle}
