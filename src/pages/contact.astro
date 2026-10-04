@@ -12,7 +12,7 @@ const links = [
 ---
 
 <Layout title="Contact">
-  <section class="grid items-end gap-10 md:grid-cols-[1fr_15rem]">
+  <section>
     <div>
       <h1 class="text-4xl font-semibold tracking-tight md:text-5xl">Contact</h1>
 
@@ -33,7 +33,7 @@ const links = [
         <span id="copy-email-status" class="text-gamma font-sans text-sm" aria-live="polite"></span>
       </p>
 
-      <ul class="border-beta mt-12 divide-y divide-beta border-y font-sans text-[0.9375rem]">
+      <ul class="border-beta divide-beta mt-12 divide-y border-y font-sans text-[0.9375rem]">
         {
           links.map(link => (
             <li>
@@ -54,12 +54,6 @@ const links = [
         }
       </ul>
     </div>
-
-    <img
-      src="/images/sameer.png"
-      alt="Portrait of Sameer Kumar"
-      class="mx-auto hidden w-full [mask-image:linear-gradient(to_bottom,black_80%,transparent)] md:block"
-    />
   </section>
 </Layout>
 

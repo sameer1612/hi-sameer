@@ -3,29 +3,29 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-  <section class="grid items-end gap-10 md:grid-cols-[1fr_15rem]">
-    <div>
-      <h1 class="text-[2.5rem] leading-tight font-semibold tracking-tight md:text-5xl">Sameer Kumar</h1>
-      <p class="text-gamma mt-3 font-sans">Senior Lead of Engineering at Zensar Technologies</p>
-
-      <div class="prose mt-8">
-        <p>
-          Engineer by title, systems builder by instinct. I enjoy building scalable products, modernizing messy systems,
-          and turning complicated workflows into clean, maintainable solutions.
-        </p>
-        <p class="text-gamma italic">Quietly engineering.</p>
-      </div>
-
-      <ul class="mt-10 flex flex-wrap gap-x-8 gap-y-3 font-sans">
-        <li><a href="/about" class="link">More about me →</a></li>
-        <li><a href="/blog" class="link">Read the blog →</a></li>
-      </ul>
+  <section>
+    <div class="bg-beta size-24 overflow-hidden rounded-full md:size-28">
+      <img
+        src="/images/sameer.png"
+        alt="Portrait of Sameer Kumar"
+        class="size-full origin-[50%_18%] scale-[1.7] object-cover"
+      />
     </div>
 
-    <img
-      src="/images/sameer.png"
-      alt="Portrait of Sameer Kumar"
-      class="mx-auto w-48 [mask-image:linear-gradient(to_bottom,black_80%,transparent)] md:w-full"
-    />
+    <h1 class="mt-8 text-[2.5rem] leading-tight font-semibold tracking-tight md:text-5xl">Sameer Kumar</h1>
+    <p class="text-gamma mt-3 font-sans">Senior Lead of Engineering at Zensar Technologies</p>
+
+    <div class="prose mt-8">
+      <p>
+        Engineer by title, systems builder by instinct. I enjoy building scalable products, modernizing messy systems,
+        and turning complicated workflows into clean, maintainable solutions.
+      </p>
+      <p class="text-gamma italic">Quietly engineering.</p>
+    </div>
+
+    <ul class="mt-10 flex flex-wrap gap-x-8 gap-y-3 font-sans">
+      <li><a href="/about" class="link">More about me →</a></li>
+      <li><a href="/blog" class="link">Read the blog →</a></li>
+    </ul>
   </section>
 </Layout>
