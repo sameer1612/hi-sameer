@@ -14,6 +14,8 @@ const blog = defineCollection({
       title: z.string(),
       date: z.coerce.date(),
       summary: z.string(),
+      /** Search and link-preview description, about 120–155 characters. Falls back to the summary. */
+      description: z.string().optional(),
       tags: z.array(z.string()).default([]),
       readingTime: z.number(),
       cover: image().optional(),
