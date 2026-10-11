@@ -21,7 +21,9 @@ interface Props {
 }
 
 const { title, center = false, description, canonical, image, type, published, tags, noindex } = Astro.props;
-const fullTitle = title ? `${title} · Sameer Kumar` : 'Sameer Kumar · Senior Lead of Engineering';
+const suffixed = `${title} · Sameer Kumar`;
+// Long post titles drop the site suffix so search results don't truncate them.
+const fullTitle = !title ? 'Sameer Kumar · Senior Lead of Engineering' : suffixed.length <= 60 ? suffixed : title;
 ---
 
 <!doctype html>
