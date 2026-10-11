@@ -15,11 +15,16 @@ interface Props {
   published?: Date;
   /** Article topics, emitted as structured-data keywords. */
   tags?: string[];
+  /** Keep the page out of search results, e.g. the 404 page. */
+  noindex?: boolean;
 }
+
+const bio =
+  'Senior Lead of Engineering at Zensar Technologies. Building scalable products and writing about software architecture, platform design and engineering practice.';
 
 const {
   title,
-  description = 'Senior Lead of Engineering at Zensar Technologies. Writing about software architecture, frontend and engineering practice.',
+  description = bio,
   // Without a trailing slash, matching the site's links (Firebase redirects the slashed form).
   canonical = new URL(Astro.url.pathname.replace(/(.)\/$/, '$1'), Astro.site).href,
   image,
@@ -28,7 +33,11 @@ const {
   imageAlt = image ? headline : 'Portrait of Sameer Kumar',
   published,
   tags = [],
+  noindex = false,
 } = Astro.props;
+
+// Previews already show og:site_name, so posts drop the site suffix from their card title.
+const socialTitle = type === 'article' ? headline : title;
 
 const imageUrl = new URL(image ?? '/images/sameer.webp', Astro.site).href;
 // A wide preview suits a post cover; the square portrait would be cropped, so it gets the small card.
@@ -44,12 +53,12 @@ const person = {
     '@type': 'Organization',
     name: 'Zensar Technologies',
   },
-  description:
-    'Senior Lead of Engineering at Zensar Technologies. Writing about software architecture, frontend and engineering practice.',
+  description: bio,
   sameAs: [
     'https://www.linkedin.com/in/sameerkumar1612/',
     'https://github.com/sameer1612',
     'https://medium.com/@sameer-kumar-1612',
+    'https://dev.to/sameer1612',
   ],
   alumniOf: {
     '@type': 'CollegeOrUniversity',
@@ -85,12 +94,12 @@ const structuredData =
 <!-- SEO Meta Tags -->
 <meta name="description" content={description} />
 <meta name="author" content="Sameer Kumar" />
-<meta name="robots" content="index, follow" />
+<meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow'} />
 <!-- Search Console ownership; public/google762149d9329a54ed.html is the file-based fallback. -->
 <meta name="google-site-verification" content="ZfeSkGVZznicB4bWGUutG_Ih29zzos-rAcLN2fGxAKE" />
 
 <!-- Open Graph Meta Tags -->
-<meta property="og:title" content={title} />
+<meta property="og:title" content={socialTitle} />
 <meta property="og:description" content={description} />
 <meta property="og:type" content={type} />
 <meta property="og:url" content={canonical} />
@@ -102,12 +111,12 @@ const structuredData =
 
 <!-- Twitter Card Meta Tags -->
 <meta name="twitter:card" content={twitterCard} />
-<meta name="twitter:title" content={title} />
+<meta name="twitter:title" content={socialTitle} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={imageUrl} />
 <meta name="twitter:image:alt" content={imageAlt} />
 
-<link rel="canonical" href={canonical} />
+{!noindex && <link rel="canonical" href={canonical} />}
 <link rel="sitemap" href="/sitemap.xml" />
 
 <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />

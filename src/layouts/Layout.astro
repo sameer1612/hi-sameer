@@ -16,9 +16,11 @@ interface Props {
   published?: Date;
   /** Article topics, for structured data. */
   tags?: string[];
+  /** Keep the page out of search results. */
+  noindex?: boolean;
 }
 
-const { title, center = false, description, canonical, image, type, published, tags } = Astro.props;
+const { title, center = false, description, canonical, image, type, published, tags, noindex } = Astro.props;
 const fullTitle = title ? `${title} · Sameer Kumar` : 'Sameer Kumar · Senior Lead of Engineering';
 ---
 
@@ -58,6 +60,7 @@ const fullTitle = title ? `${title} · Sameer Kumar` : 'Sameer Kumar · Senior L
       type={type}
       published={published}
       tags={tags}
+      noindex={noindex}
     />
   </head>
   <body class="mx-auto flex min-h-dvh w-full flex-col px-5 md:w-[80vw] md:px-0">
