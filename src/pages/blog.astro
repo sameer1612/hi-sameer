@@ -41,7 +41,7 @@ const formatDate = (date: Date) =>
               {data.cover && (
                 <Image
                   src={data.cover}
-                  alt=""
+                  alt={data.title}
                   widths={[352, 704]}
                   sizes="(min-width: 640px) 176px, 100vw"
                   class="bg-beta ring-gamma/20 order-first aspect-[100/42] w-full shrink-0 rounded-md object-cover opacity-90 ring-1 transition-[opacity,filter] group-hover:opacity-100 group-hover:brightness-100 in-data-[theme=dark]:brightness-[.8] sm:mt-1 sm:w-44"

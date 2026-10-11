@@ -28,7 +28,7 @@ const published = date.toLocaleDateString('en-US', { month: 'long', day: 'numeri
       {readingTime} min read
     </p>
 
-    {cover && <Image src={cover} alt="" widths={[700, 1400]} sizes="(min-width: 768px) 65ch, 100vw" loading="eager" fetchpriority="high" class="mt-10" />}
+    {cover && <Image src={cover} alt={title} widths={[700, 1400]} sizes="(min-width: 768px) 65ch, 100vw" loading="eager" fetchpriority="high" class="mt-10" />}
 
     <Content />
   </article>
