@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Page not found" description="This page doesn't exist. Head back home or browse the blog." center>
+  <h1 class="text-4xl font-semibold tracking-tight md:text-5xl">Page not found</h1>
+
+  <div class="prose mt-8">
+    <p>Nothing lives at this address. It may have moved, or the link may be mistyped.</p>
+  </div>
+
+  <ul class="mt-8 flex flex-wrap gap-x-8 gap-y-3 font-sans text-[0.9375rem]">
+    <li>
+      <a href="/" class="link">Go home →</a>
+    </li>
+    <li>
+      <a href="/blog" class="link">Read the blog →</a>
+    </li>
+  </ul>
+</Layout>
