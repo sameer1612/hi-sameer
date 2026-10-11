@@ -1,5 +1,5 @@
 ---
-title: "PyScript - JavaScript's sweet cousin."
+title: "PyScript — JavaScript's sweet cousin"
 date: 2022-05-14
 summary: "🐍 Python in browser movement gained some momentum nowadays. All thanks to the PyScript library. See how easy it is to bring it into a simple HTML page with no additional setup: Although the current version is not that mature it holds a ton of potential."
 description: "PyScript runs Python in the browser with no build step. A quick look at adding it to a plain HTML page and where it could go next."

@@ -1,5 +1,5 @@
 ---
-title: "SERVICE OBJECTS — At your service…"
+title: "Service Objects — At your service"
 date: 2021-06-27
 summary: "Don’t worry its just a version of typical corporate employee… It’s a design pattern article and is independent of language you implement it into. So, Service Objects, seems fancy, right? Well let me tell you this is what you have been doing all along in a slightly un-organized way."
 description: "The service object pattern explained with a Rails example: move platform-specific logic out of models into small, single-purpose classes."

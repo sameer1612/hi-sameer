@@ -1,5 +1,5 @@
 ---
-title: "Why is Shopify using \"Ruby on Rails\" to build its $3 billion dollar e-commerce business?"
+title: "Why Shopify Runs Its $3 Billion Business on Ruby on Rails"
 date: 2021-09-15
 summary: "It would be an understatement to say Shopify is the unicorn of the eCommerce business. Shopify is used by millions of merchants all over the world to build their online presence and market their products."
 description: "What Shopify is and why it still builds its e-commerce platform on Ruby on Rails: maturity, speed of development, security and conventions."

@@ -1,5 +1,5 @@
 ---
-title: "5 must have softwares for pros like you."
+title: "5 must-have tools for pros like you"
 date: 2022-10-07
 summary: "I have been using Linux for many years and am amazed that there is a tool for every use case. The same goes for MacBook as well, there is a plethora of free tools that will make you more productive and at the same save a lot of frustration coming out of repetitive manual work."
 description: "Five free tools for your Mac that save time on repetitive work and make you more productive: Meeter, Bandwidth+, Fig, Photopea and Top Notch."

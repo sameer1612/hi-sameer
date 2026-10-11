@@ -1,5 +1,5 @@
 ---
-title: "Testim - Automation testing on Steroids"
+title: "Testim — Automation testing on steroids"
 date: 2022-05-11
 summary: "Artwork by Gaurav Singh Testim is an AI-based testing framework that extends the concepts laid by traditional testing veterans like Selenium, Capybara, Jest, etc. Coming from a web development background, I understand the time and effort dedicated to writing and maintaining end-to-end tests."
 description: "A hands-on look at Testim, an AI-based end-to-end testing tool, and how it builds on tools like Selenium, Capybara and Jest."
