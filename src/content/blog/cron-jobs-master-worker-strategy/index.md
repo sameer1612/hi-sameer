@@ -2,6 +2,7 @@
 title: "Cron Jobs — Master Worker Strategy 🧮"
 date: 2021-07-11
 summary: "😇 Well hello, and welcome back. In this article, we’ll discuss parallel execution and background processing of heavy tasks. An awesome developer like you does often write some mundane tasks to run in the background every night or so but you also want an army of elves to take control of the process and finish it as…"
+description: "Process heavy background jobs in parallel in Rails with a master-worker pattern built on Sidekiq, sidekiq-cron and Redis."
 tags: ["ruby","rails","programming","webdev"]
 readingTime: 3
 cover: "./assets/cover.webp"

@@ -2,6 +2,7 @@
 title: "How do motivation and procrastination work?"
 date: 2022-02-19
 summary: "Build an algorithm to hack the brain and keep it on track. You are feeling low but at the same time willing to make a change and waiting for the right spark to come from inside to trigger you. By now you must have understood that problem is no more hypothetical, it’s something that unifies us as human beings."
+description: "Why we need motivation, why we procrastinate, and how the dopamine loop drives both, with practical ways to keep your brain on track."
 tags: ["motivation","engineering","productivity","todayilearned"]
 readingTime: 3
 cover: "./assets/cover.webp"

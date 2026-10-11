@@ -2,6 +2,7 @@
 title: "React v18: useTransition hook — Why???"
 date: 2022-05-15
 summary: "React v18 introduced the useTransition hook, which may seem like just another hook but let’s look into the use and the indications it lays down for the future. Long long back, React hinted about the concept of concurrent mode, whose implementation was a mystery in itself."
+description: "What the useTransition hook in React 18 solves, how it keeps typing responsive during heavy renders, and how it compares to debouncing."
 tags: ["javascript","react","programming","webdev"]
 readingTime: 3
 cover: "./assets/cover.webp"

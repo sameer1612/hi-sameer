@@ -2,6 +2,7 @@
 title: "Enum on Rails — A shallow dive 💎"
 date: 2022-01-02
 summary: "After so long, active again. Let’s have a look at beloved ActiveRecord this time. It packs up too much to be covered in simple glance, one such feature is interpretation of enums in rails. Enums are nothing more than an array technically in other languages but here its high on steroids."
+description: "How ActiveRecord enums in Rails replace string status checks with readable predicates, scopes and bang methods, with a worked example."
 tags: ["rails","beginners","programming","tutorial"]
 readingTime: 3
 cover: "./assets/cover.webp"

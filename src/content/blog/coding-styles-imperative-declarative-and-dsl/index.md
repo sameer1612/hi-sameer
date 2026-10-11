@@ -2,6 +2,7 @@
 title: "Coding Styles: Imperative, Declarative and DSL🤯"
 date: 2021-06-26
 summary: "Hey You! Don’t be afraid of these terms, read, learn and confuse others! 💁 The first thing to note is in the title is that I didn’t mention Versus as no soul on this beautiful earth can draw a straight line between them."
+description: "Imperative, declarative and DSL coding styles explained with C, HTML, React and SQL examples, and why abstraction is what separates them."
 tags: ["javascript","ruby","codequality","programming"]
 readingTime: 4
 cover: "./assets/cover.webp"

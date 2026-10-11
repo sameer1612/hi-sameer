@@ -2,6 +2,7 @@
 title: "No More Drama: Conflict Resolution"
 date: 2023-10-24
 summary: "Earth and World are not same things. You might have heard people discussing their world view, and not the earth view! Oh! you are confused? Works well for me. After ages, I am writing a non-tech article solving softer problems in this diverse tech industry."
+description: "Workplace conflict in tech teams comes from perception. A practical take on shifting perspective and steps to resolve conflicts calmly."
 tags: ["softwaredevelopment","productivity","marketing","management"]
 readingTime: 5
 cover: "./assets/cover.webp"

@@ -2,6 +2,7 @@
 title: "🛠️ Quietly Engineering: How Claudey and I Rebuilt This Website in a Day"
 date: 2026-10-04
 summary: "It started with a one-line request for a light mode. It ended with a full redesign, 28 blog posts pulled home from Medium, four AI clones cleaning Markdown in parallel, and a theme switch that says “Join the dark side.” Here’s how one Sunday got away from me."
+description: "How a one-line request for light mode became a full redesign with Claudey: a new theme, 28 posts moved home from Medium, and lessons learned."
 tags: ["webdev", "ai", "astro", "productivity"]
 readingTime: 10
 cover: "./assets/cover.webp"

@@ -2,6 +2,7 @@
 title: "Console.log and his Ninja Pals 🥷"
 date: 2022-05-21
 summary: "Swiss knife of javascript ninjas, our beloved console.log has some lesser-known yet more powerful variations. In this blog, we’ll explore some methods with examples which I find very useful in day to day debugging and scripting."
+description: "Lesser-known console methods for everyday JavaScript debugging: count, error, table, time, trace, warn and assert, with examples."
 tags: ["javascript","webdev","beginners","programming"]
 readingTime: 3
 cover: "./assets/cover.webp"

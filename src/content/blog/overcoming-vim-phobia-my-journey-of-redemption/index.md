@@ -2,6 +2,7 @@
 title: "Overcoming Vim-Phobia: My journey of redemption"
 date: 2023-10-06
 summary: "Hee-haw… Here we go. I have been coding for almost a decade now. And, for anyone who spends two-thirds of his day doing so, his toolchain matters. Let’s go for a walk down the memory lane. This article is going to be different."
+description: "A decade of editors, from Notepad and Eclipse to Sublime, VS Code and finally Vim, and the lessons each step taught along the way."
 tags: ["vim","neovim","programming","productivity"]
 readingTime: 11
 cover: "./assets/cover.webp"

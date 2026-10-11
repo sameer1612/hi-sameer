@@ -2,6 +2,7 @@
 title: "Technical Consultant vs Software Engineer. Which career is for you?"
 date: 2022-03-20
 summary: "Although these two titles are used interchangeably, their whole workflow and the role in a project are complementary. For the past month, I interviewed with a good number of firms for an independent and full-time consultant role. My experiences were quite wholesome and I decided to pen down this article to share them."
+description: "How technical consultant and software engineer roles differ in workflow and responsibility, based on interviews for consulting roles."
 tags: ["webdev","programming","discuss","career"]
 readingTime: 3
 cover: "./assets/cover.webp"

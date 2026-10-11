@@ -2,6 +2,7 @@
 title: "React v18: useRef — What, When and Why?"
 date: 2022-07-22
 summary: "The concept of values and references is not new to any programmer. Values are what the name suggests, simple snapshots of data at a point in time. To jog your memory for the latter, references are pointers to some data which may change over time, but the reference itself remains the same."
+description: "What useRef is in React 18, when to use it instead of useState, how to manage DOM elements with it, and the pitfalls of mutating refs."
 tags: ["javascript","webdev","react","programming"]
 readingTime: 5
 cover: "./assets/cover.webp"

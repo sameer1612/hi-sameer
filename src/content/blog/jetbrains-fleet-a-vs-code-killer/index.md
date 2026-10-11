@@ -2,6 +2,7 @@
 title: "JetBrains Fleet — A VS Code killer?"
 date: 2022-10-19
 summary: "An excellent lightweight polyglot IDE from JetBrains. JetBrains is pure love. It doesn’t matter which code editor you use but a few things are always of personal priority. For me, it’s aesthetics, speed, and intelligent suggestions. Extra point for aesthetics 💛."
+description: "A hands-on look at JetBrains Fleet: what works in its aesthetics, keymaps and developer experience, and what holds it back against VS Code."
 tags: ["javascript","programming","webdev","productivity"]
 readingTime: 7
 cover: "./assets/cover.webp"

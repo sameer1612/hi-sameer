@@ -2,6 +2,7 @@
 title: "React v18: Why useEffect suddenly go crazy?"
 date: 2022-05-22
 summary: "React version 18 has brought some very appreciable changes to the core. One such bittersweet change is in for form of the mount -> unmount -> remount pattern of loading components in strict mode."
+description: "Why useEffect runs twice in React 18 strict mode, what the mount, unmount, remount cycle is for, and how cleanup functions make effects safe."
 tags: ["javascript","react","webdev","programming"]
 readingTime: 3
 cover: "./assets/cover.webp"

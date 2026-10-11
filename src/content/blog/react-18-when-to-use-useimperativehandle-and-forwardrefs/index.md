@@ -2,6 +2,7 @@
 title: "React 18: When to use “useImperativeHandle” and “forwardRefs”"
 date: 2022-09-13
 summary: "Sometimes, you have to take out the big guns This article is a continuation of where we saw what refs are and how they operate. With the knowledge gained from the previous article, let’s dive into a little more complex understanding, which can come in handy in real-world projects with a lot of component nesting and a…"
+description: "When and how to use forwardRef and useImperativeHandle in React 18 to expose a child component’s methods to its parent, with examples."
 tags: ["javascript","webdev","react","programming"]
 readingTime: 3
 cover: "./assets/cover.webp"

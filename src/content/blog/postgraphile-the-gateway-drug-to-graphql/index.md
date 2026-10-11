@@ -2,6 +2,7 @@
 title: "PostGraphile — The Gateway Drug To GraphQL"
 date: 2023-11-03
 summary: "Postgraphile is the quickest way to scaffold a fully functional GraphQL CRUD API for your application without touching a line of code, (well that’s a lie but let it pass for dramatic effect). This article will expose you to the basics of what GraphQL is and how can we create an api quickly with postgraphile."
+description: "What GraphQL is and isn’t, and how PostGraphile turns a PostgreSQL database into a working GraphQL CRUD API with almost no code."
 tags: ["webdev","javascript","database","graphql"]
 readingTime: 10
 cover: "./assets/cover.webp"

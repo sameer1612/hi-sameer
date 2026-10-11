@@ -2,6 +2,7 @@
 title: "01. Product of Array Except Self"
 date: 2022-01-22
 summary: "I have been discussing many topics in my blog but it’s time to start from the root once again. In this blog and upcoming few we’ll discuss how to attempt general competitive programming questions, no fancy data structures or algorithms, but thinking outside the box and cooking up some good enough solutions together."
+description: "Solving the Product of Array Except Self problem step by step, from a brute-force approach to an O(n) solution without division, with code."
 tags: ["algorithms","codenewbie","tutorial","computerscience"]
 readingTime: 3
 cover: "./assets/cover.webp"

@@ -2,6 +2,7 @@
 title: "🔝 3 CSS frameworks for you."
 date: 2021-07-30
 summary: "First of all, let's give some thought to what’s so special about frameworks and what makes them different from libraries. Libraries: We give you features, it's your will to use them the way you like. Frameworks: We give you features as well as rules on how to use them."
+description: "Why CSS frameworks exist, how they differ from libraries, and a quick comparison of Bootstrap, Material and Tailwind to help you pick one."
 tags: ["webdev","programming","css","design"]
 readingTime: 3
 cover: "./assets/cover.webp"

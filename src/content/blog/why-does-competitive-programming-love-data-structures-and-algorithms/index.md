@@ -2,6 +2,7 @@
 title: "Why does Competitive Programming love Data Structures and Algorithms?"
 date: 2022-01-29
 summary: "From the last article, I got some questions, summing up in one major query, “It's good and all, but why does everyone need to know it. There are many disciplines of engineering which doesn’t require it. I am working for the past 5 years but never needed to implement any of these”."
+description: "Why competitive programming leans so heavily on data structures and algorithms, and why practising them helps even if your job never uses them."
 tags: ["programming","computerscience","codenewbie","career"]
 readingTime: 4
 cover: "./assets/cover.webp"

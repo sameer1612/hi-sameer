@@ -2,6 +2,7 @@
 title: "🔮 Functional Programming for Humans — Foundations"
 date: 2024-07-29
 summary: "Functional programming (FP) is like the cool, rebellious middle child of the programming (language) family. Instead of following the traditional imperative way of doing things step-by-step, FP focuses on creating clean, predictable code by treating functions as first-class citizens."
+description: "The foundations of functional programming in plain terms: pure functions, immutability, higher-order functions and side effects."
 tags: ["javascript","webdev","programming","tutorial"]
 readingTime: 6
 cover: "./assets/cover.webp"

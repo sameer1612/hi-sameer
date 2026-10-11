@@ -2,6 +2,7 @@
 title: "DATATABLE ON RAILS"
 date: 2021-06-23
 summary: "You are a developer full of joy and enthusiasm toward changing the world, writing ninja codes driving million-dollar businesses every day. And, then you have to write codes for displaying customer/products/orders data in a table and you spend a month writing pagination, sorting, searching, async fetching and…"
+description: "Add sortable, searchable, paginated AJAX tables to a Rails app with the ajax-datatables-rails gem, without writing the table logic by hand."
 tags: ["rails","ruby","javascript","database"]
 readingTime: 3
 cover: "./assets/cover.webp"

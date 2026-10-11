@@ -2,6 +2,7 @@
 title: "Top 5 Extensions for your VS Code 🏅"
 date: 2021-07-18
 summary: "Your productivity is governed by your tool belt. Obviously, you can write code in a notepad or a terminal, but if productivity does count for you, then VS Code is the most customizable of all editors/IDEs."
+description: "Five VS Code extensions that boost productivity: Ruby Extension Pack, GitLens, Error Lens, Tabnine AI completion and CodeSnap."
 tags: ["vscode","ruby","programming","productivity"]
 readingTime: 3
 cover: "./assets/cover.webp"

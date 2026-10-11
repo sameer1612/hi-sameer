@@ -2,6 +2,7 @@
 title: "The Pragmatic Guide to Your First JavaScript Library"
 date: 2023-10-22
 summary: "JavaScript libraries! Every man and his dog has a node_modules folder full of them. This article will be more or less a pragmatic guide to writing these without going neck-deep in history and theory."
+description: "Build and ship your first JavaScript library: package.json, UMD, ESM and CommonJS distribution, and bundling, without the theory."
 tags: ["webdev","javascript","tutorial","programming"]
 readingTime: 10
 cover: "./assets/cover.webp"

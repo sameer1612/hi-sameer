@@ -2,6 +2,7 @@
 title: "The Boy Scout Rule 💡👩‍💻"
 date: 2022-05-23
 summary: "Most engineers have heard of the 'boy-scout rule': 'Always leave the code better than you found it.' It's often been heralded as a magic cure for technical debt; if only all software engineers behaved like good citizens, our software wouldn't deteriorate so relentlessly."
+description: "The boy scout rule says leave code better than you found it. A short take on coding standards and paying down technical debt as you go."
 tags: []
 readingTime: 1
 cover: "./assets/cover.webp"
