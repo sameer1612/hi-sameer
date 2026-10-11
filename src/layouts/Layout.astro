@@ -14,9 +14,11 @@ interface Props {
   type?: 'website' | 'article';
   /** Publication date, for articles. */
   published?: Date;
+  /** Article topics, for structured data. */
+  tags?: string[];
 }
 
-const { title, center = false, description, canonical, image, type, published } = Astro.props;
+const { title, center = false, description, canonical, image, type, published, tags } = Astro.props;
 const fullTitle = title ? `${title} · Sameer Kumar` : 'Sameer Kumar';
 ---
 
@@ -55,6 +57,7 @@ const fullTitle = title ? `${title} · Sameer Kumar` : 'Sameer Kumar';
       image={image}
       type={type}
       published={published}
+      tags={tags}
     />
   </head>
   <body class="mx-auto flex min-h-dvh w-full flex-col px-5 md:w-[80vw] md:px-0">
