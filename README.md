@@ -65,7 +65,3 @@ GitHub Actions builds and deploys to Firebase Hosting:
 
 - every push to `main` goes live
 - every pull request gets a preview channel
-
-## License
-
-MIT
