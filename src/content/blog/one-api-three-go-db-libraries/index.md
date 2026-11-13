@@ -1,5 +1,5 @@
 ---
-title: "🍕 One API, Three Go Database Libraries"
+title: "GORM, Jet and sqlc — The Good, the Bad and the 500"
 date: 2026-11-13
 summary: "I built a tiny food-photo API in Go with sqlc. Then I rewrote its data layer with go-jet. Then again with GORM. Same five endpoints, three very different opinions on where SQL should live, and one sneaky bug I’m not proud of."
 description: "Building the same Go CRUD API with sqlc, go-jet and GORM: where the SQL lives, how nulls and not-found errors behave, and which one I kept."
