@@ -5,6 +5,7 @@ summary: "I built a tiny food-photo API in Go with sqlc. Then I rewrote its data
 description: "Building the same Go CRUD API with sqlc, go-jet and GORM: where the SQL lives, how nulls and not-found errors behave, and which one I kept."
 tags: ["go", "databases", "backend", "learning"]
 readingTime: 9
+cover: "./assets/cover.webp"
 ---
 
 Confession time. I come from Rails, Node and Django land. Over there, nobody asks which database library you want. Rails hands you ActiveRecord, Django hands you its ORM, and you go back to arguing about tabs vs spaces.
