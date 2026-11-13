@@ -15,7 +15,7 @@ There is no test or lint script. Verify changes with `bun run build`. Don't star
 ## Layout
 
 - `src/pages/`: routes. `src/layouts/Layout.astro` wraps every page (head, theme script, header, footer).
-- `src/content/blog/<slug>/index.md`: blog posts, schema in `src/content.config.ts`. `scripts/fetch-devto.ts` pulls posts from dev.to.
+- `src/content/blog/<slug>/index.md`: blog posts, schema in `src/content.config.ts`.
 - `src/data/`: journey and testimonial data. `src/styles/theme.css` holds the colour variables, `global.css` the rest.
 
 ## Conventions
