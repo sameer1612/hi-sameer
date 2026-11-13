@@ -65,3 +65,7 @@ GitHub Actions builds and deploys to Firebase Hosting:
 
 - every push to `main` goes live
 - every pull request gets a preview channel
+
+## License
+
+The code is [MIT](LICENSE). The blog posts, photos and résumé are © Sameer Kumar, all rights reserved. Feel free to borrow the code, but please don't republish the writing.
