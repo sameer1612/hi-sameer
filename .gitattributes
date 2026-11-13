@@ -1,0 +1,13 @@
+# Check out every text file with LF endings on every OS, so a Windows clone matches what
+# the formatter and .editorconfig expect (Git for Windows otherwise converts to CRLF).
+* text=auto eol=lf
+
+# Binary files: never touch their bytes
+*.ico binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.woff binary
+*.woff2 binary

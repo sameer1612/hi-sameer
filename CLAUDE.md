@@ -8,9 +8,10 @@ Personal site and blog for Sameer Kumar, deployed to Firebase Hosting at https:/
 bun run dev       # astro dev on port 3000
 bun run build     # static build into dist/
 bun run preview
+bun fmt           # format with bunfig.toml's [fmt] settings
 ```
 
-There is no test or lint script. Verify changes with `bun run build`. Don't start the dev server unless asked.
+Bun only: scripts run Astro on the Bun runtime (`bun --bun`), CI installs no Node, and formatting is `bun fmt` (no Prettier or ESLint). `bun fmt` doesn't format `.astro` files, so keep those tidy by hand. There is no test or lint script. Verify changes with `bun run build`. Don't start the dev server unless asked.
 
 ## Layout
 
