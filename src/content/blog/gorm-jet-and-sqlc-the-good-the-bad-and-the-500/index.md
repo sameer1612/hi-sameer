@@ -18,11 +18,11 @@ So, while learning Go properly (the “I’ll stop copy-pasting from Stack Overf
 
 And then I did what every developer does with a perfectly working app. I broke it on purpose. Twice.
 
-- `main` uses **sqlc**
-- the `jet` branch uses **go-jet**
-- the `gorm` branch uses **GORM**
+- [`main`](https://github.com/sameer1612/yummy) uses **sqlc**
+- the [`jet`](https://github.com/sameer1612/yummy/tree/jet) branch uses **go-jet**
+- the [`gorm`](https://github.com/sameer1612/yummy/tree/gorm) branch uses **GORM**
 
-Same Gin handlers, same Postgres, same table. Only the data layer changes. The code is all on [GitHub](https://github.com/sameer1612/yummy) if you want to poke at it, or judge me. Both are welcome.
+Same Gin handlers, same Postgres, same table. Only the data layer changes. The code is all on GitHub at [sameer1612/yummy](https://github.com/sameer1612/yummy) if you want to poke at it, or judge me. Both are welcome.
 
 ## The table everyone fights over
 
@@ -205,5 +205,7 @@ My honest take after writing the same five endpoints three times:
 - **Nulls are a design decision.** `sql.NullFloat64` versus `*float64` decided how much glue code I wrote.
 - **A data layer’s errors are part of its contract.** The jet 404 bug compiled fine, passed the happy path, and was still wrong.
 - **Build the same small thing more than once.** One table and five endpoints taught me more about these libraries than any comparison post could. Including this one, lol.
+
+Want to see the 500 for yourself? Clone [the repo](https://github.com/sameer1612/yummy), check out the `jet` branch, and ask for pizza number 9999. Then switch to `gorm` and watch it become a polite 404.
 
 That’s all, folks. Now go build something small, and then break it. Twice. 😇
